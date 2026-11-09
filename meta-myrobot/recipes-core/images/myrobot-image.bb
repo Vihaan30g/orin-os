@@ -39,3 +39,14 @@ myrobot_config() {
     chmod 0440 ${IMAGE_ROOTFS}${sysconfdir}/sudoers.d/rover
     printf '%s\n' '[ -f /opt/ros/humble/setup.sh ] && . /opt/ros/humble/setup.sh' 'export ROS_LOG_DIR=/home/rover/ros2_ws/log' 'export ROS_DOMAIN_ID=42' > ${IMAGE_ROOTFS}${sysconfdir}/profile.d/myrobot.sh
 }
+
+ROOTFS_POSTPROCESS_COMMAND += "myrobot_sshfix;"
+myrobot_sshfix() {
+    for f in sshd_config sshd_config_readonly; do
+        if [ -f ${IMAGE_ROOTFS}${sysconfdir}/ssh/$f ]; then
+            sed -i '/^[[:space:]]*AuthorizedKeysFile/d' ${IMAGE_ROOTFS}${sysconfdir}/ssh/$f
+            echo 'AuthorizedKeysFile /etc/ssh/authorized_keys/%u' >> ${IMAGE_ROOTFS}${sysconfdir}/ssh/$f
+        fi
+    done
+}
+IMAGE_INSTALL:append = " myrobot-yolo"

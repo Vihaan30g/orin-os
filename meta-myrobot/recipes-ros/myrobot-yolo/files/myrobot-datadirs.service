@@ -1,0 +1,13 @@
+[Unit]
+Description=Create writable data directories for the robot
+RequiresMountsFor=/home/rover
+After=local-fs.target
+Before=myrobot-yolo.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/sh -c 'install -d -o rover -g rover -m 0755 /home/rover /home/rover/ros2_ws /home/rover/ros2_ws/log /home/rover/models'
+
+[Install]
+WantedBy=multi-user.target
