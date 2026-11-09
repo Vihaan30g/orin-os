@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>myrobot_yolo</name>
+  <version>1.0.0</version>
+  <description>YOLOv8 TensorRT webcam detector publishing vision_msgs/Detection2DArray</description>
+  <maintainer email="owner@example.com">Owner</maintainer>
+  <license>MIT</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>rclcpp</depend>
+  <depend>vision_msgs</depend>
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

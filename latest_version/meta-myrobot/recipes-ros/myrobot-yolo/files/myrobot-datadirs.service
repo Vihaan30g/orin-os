@@ -1,0 +1,13 @@
+[Unit]
+Description=Create writable data directories for the robot
+RequiresMountsFor=/home/rover
+After=local-fs.target
+Before=myrobot-yolo.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/sh -c 'mkdir -p /home/rover/ros2_ws/log /home/rover/models && chown rover:rover /home/rover /home/rover/ros2_ws /home/rover/ros2_ws/log /home/rover/models && chmod 0755 /home/rover'
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,22 @@
+[Unit]
+Description=MyRobot YOLO detector (webcam -> TensorRT -> /detections)
+After=local-fs.target NetworkManager.service myrobot-datadirs.service
+Wants=NetworkManager.service
+Requires=myrobot-datadirs.service
+RequiresMountsFor=/home/rover
+
+[Service]
+User=rover
+Group=rover
+SupplementaryGroups=video
+Environment=HOME=/home/rover
+Environment=ROS_DOMAIN_ID=42
+Environment=ROS_LOG_DIR=/home/rover/ros2_ws/log
+TimeoutStartSec=1200
+ExecStartPre=/bin/sh -c 'mkdir -p /home/rover/models /home/rover/ros2_ws/log; [ -f /home/rover/models/yolov8n.engine ] || (/usr/src/tensorrt/bin/trtexec --onnx=/usr/share/myrobot/yolov8n.onnx --saveEngine=/home/rover/models/yolov8n.engine.tmp --fp16 && mv /home/rover/models/yolov8n.engine.tmp /home/rover/models/yolov8n.engine)'
+ExecStart=/bin/sh -c '. /opt/ros/humble/setup.sh && exec /opt/ros/humble/lib/myrobot_yolo/yolo_node --ros-args -p engine_path:=/home/rover/models/yolov8n.engine'
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
