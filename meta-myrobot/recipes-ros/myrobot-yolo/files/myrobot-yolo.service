@@ -1,7 +1,7 @@
 [Unit]
 Description=MyRobot YOLO detector (webcam -> TensorRT -> /detections)
-After=local-fs.target NetworkManager.service myrobot-datadirs.service
-Wants=NetworkManager.service
+After=local-fs.target network-online.target NetworkManager.service myrobot-datadirs.service
+Wants=NetworkManager.service network-online.target
 Requires=myrobot-datadirs.service
 RequiresMountsFor=/home/rover
 

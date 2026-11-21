@@ -1,0 +1,9 @@
+# Sample local.conf additions. RECONSTRUCTED from the project history; the real file was
+# not available when this repo was assembled. Replace with artifacts/conf/local.conf.
+MACHINE = "p3737-0000-p3701-0005"      # Orin AGX 64 GB module (SKU 0005); the 32 GB-style machine caused the GPU CMA failure
+DISTRO = "poky"
+INIT_MANAGER = "systemd"
+# Needed for CUDA / TensorRT redistribution terms: check meta-tegra docs for your revision.
+# LICENSE_FLAGS_ACCEPTED += "commercial"   # VERIFY against the real local.conf
+# ROS 2 distro selection for meta-ros (humble on scarthgap): set per meta-ros README, VERIFY.
+# Build hygiene (typical): INHERIT += "rm_work"; DL_DIR and SSTATE_DIR on a large disk.

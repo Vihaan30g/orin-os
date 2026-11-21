@@ -263,7 +263,7 @@ int main(int argc, char** argv) {
     }
   } catch (const std::exception& e) {
     RCLCPP_FATAL(rclcpp::get_logger("yolo_node"), "%s", e.what());
-    rc = 1;
+    rc = rclcpp::ok() ? 1 : 0;
   }
   rclcpp::shutdown();
   return rc;

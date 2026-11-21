@@ -1,0 +1,25 @@
+Disk /dev/mmcblk0: 124190720 sectors, 59.2 GiB
+Sector size (logical/physical): 512/512 bytes
+Disk identifier (GUID): 751EB7A7-2651-49BC-A79B-627AC92F8944
+Partition table holds up to 128 entries
+Main partition table begins at sector 2 and ends at sector 33
+First usable sector is 40, last usable sector is 124190686
+Partitions will be aligned on 8-sector boundaries
+Total free space is 31 sectors (15.5 KiB)
+
+Number  Start (sector)    End (sector)  Size       Code  Name
+   1         3050048       124190679   57.8 GiB    0700  APP
+   2              40          262183   128.0 MiB   0700  A_kernel
+   3          262184          263719   768.0 KiB   0700  A_kernel-dtb
+   4          263720          328487   31.6 MiB    0700  A_reserved_on_user
+   5          328488          590631   128.0 MiB   0700  B_kernel
+   6          590632          592167   768.0 KiB   0700  B_kernel-dtb
+   7          592168          656935   31.6 MiB    0700  B_reserved_on_user
+   8          656936          820775   80.0 MiB    0700  recovery
+   9          820776          821799   512.0 KiB   0700  recovery-dtb
+  10          821800          952871   64.0 MiB    EF00  esp
+  11          952872         1116711   80.0 MiB    0700  recovery_alt
+  12         1116712         1117735   512.0 KiB   0700  recovery-dtb_alt
+  13         1117736         1248807   64.0 MiB    0700  esp_alt
+  14         1248832         2068031   400.0 MiB   0700  UDA
+  15         2068032         3050047   479.5 MiB   0700  reserved

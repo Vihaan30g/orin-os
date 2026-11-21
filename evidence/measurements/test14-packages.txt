@@ -1,0 +1,1 @@
+853 yocto/build/tmp/deploy/images/p3737-0000-p3701-0005/myrobot-image-p3737-0000-p3701-0005.rootfs.manifest

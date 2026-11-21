@@ -1,0 +1,7 @@
+Starting at 2026-11-08T03:52:39+05:30
+Machine:       jetson-agx-orin-devkit
+Rootfs device: mmcblk0p1
+Found Jetson device in recovery mode at USB 3-3
+== Step 1: Signing binaries at 2026-11-08T03:52:39+05:30 ==
+ERR: actual board SKU 0005 does not match expected board SKU 0000
+ERR: signing failed at 2026-11-08T03:52:43+05:30

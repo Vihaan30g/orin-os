@@ -1,0 +1,232 @@
+Erasing /dev/mtd0
+Erasing 65536 Kibyte @ 0 --  0 % complete Erasing 65536 Kibyte @ 0 -- 100 % complete 
+Writing br_bct_BR.bct (size=8192) to BCT (offset=0)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00000000 in flash
+Writing br_bct_BR.bct to BCT+1 (offset=16384)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00004000 in flash
+Writing br_bct_BR.bct to BCT+2 (offset=32768)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00008000 in flash
+Writing br_bct_BR.bct to BCT+3 (offset=49152)
+Copied 8192 bytes from br_bct_BR.bct to address 0x0000c000 in flash
+Writing br_bct_BR.bct to BCT+4 (offset=65536)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00010000 in flash
+Writing br_bct_BR.bct to BCT+5 (offset=81920)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00014000 in flash
+Writing br_bct_BR.bct to BCT+6 (offset=98304)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00018000 in flash
+Writing br_bct_BR.bct to BCT+7 (offset=114688)
+Copied 8192 bytes from br_bct_BR.bct to address 0x0001c000 in flash
+Writing br_bct_BR.bct to BCT+8 (offset=131072)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00020000 in flash
+Writing br_bct_BR.bct to BCT+9 (offset=147456)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00024000 in flash
+Writing br_bct_BR.bct to BCT+10 (offset=163840)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00028000 in flash
+Writing br_bct_BR.bct to BCT+11 (offset=180224)
+Copied 8192 bytes from br_bct_BR.bct to address 0x0002c000 in flash
+Writing br_bct_BR.bct to BCT+12 (offset=196608)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00030000 in flash
+Writing br_bct_BR.bct to BCT+13 (offset=212992)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00034000 in flash
+Writing br_bct_BR.bct to BCT+14 (offset=229376)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00038000 in flash
+Writing br_bct_BR.bct to BCT+15 (offset=245760)
+Copied 8192 bytes from br_bct_BR.bct to address 0x0003c000 in flash
+Writing br_bct_BR.bct to BCT+16 (offset=262144)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00040000 in flash
+Writing br_bct_BR.bct to BCT+17 (offset=278528)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00044000 in flash
+Writing br_bct_BR.bct to BCT+18 (offset=294912)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00048000 in flash
+Writing br_bct_BR.bct to BCT+19 (offset=311296)
+Copied 8192 bytes from br_bct_BR.bct to address 0x0004c000 in flash
+Writing br_bct_BR.bct to BCT+20 (offset=327680)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00050000 in flash
+Writing br_bct_BR.bct to BCT+21 (offset=344064)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00054000 in flash
+Writing br_bct_BR.bct to BCT+22 (offset=360448)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00058000 in flash
+Writing br_bct_BR.bct to BCT+23 (offset=376832)
+Copied 8192 bytes from br_bct_BR.bct to address 0x0005c000 in flash
+Writing br_bct_BR.bct to BCT+24 (offset=393216)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00060000 in flash
+Writing br_bct_BR.bct to BCT+25 (offset=409600)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00064000 in flash
+Writing br_bct_BR.bct to BCT+26 (offset=425984)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00068000 in flash
+Writing br_bct_BR.bct to BCT+27 (offset=442368)
+Copied 8192 bytes from br_bct_BR.bct to address 0x0006c000 in flash
+Writing br_bct_BR.bct to BCT+28 (offset=458752)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00070000 in flash
+Writing br_bct_BR.bct to BCT+29 (offset=475136)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00074000 in flash
+Writing br_bct_BR.bct to BCT+30 (offset=491520)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00078000 in flash
+Writing br_bct_BR.bct to BCT+31 (offset=507904)
+Copied 8192 bytes from br_bct_BR.bct to address 0x0007c000 in flash
+Writing br_bct_BR.bct to BCT+32 (offset=524288)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00080000 in flash
+Writing br_bct_BR.bct to BCT+33 (offset=540672)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00084000 in flash
+Writing br_bct_BR.bct to BCT+34 (offset=557056)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00088000 in flash
+Writing br_bct_BR.bct to BCT+35 (offset=573440)
+Copied 8192 bytes from br_bct_BR.bct to address 0x0008c000 in flash
+Writing br_bct_BR.bct to BCT+36 (offset=589824)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00090000 in flash
+Writing br_bct_BR.bct to BCT+37 (offset=606208)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00094000 in flash
+Writing br_bct_BR.bct to BCT+38 (offset=622592)
+Copied 8192 bytes from br_bct_BR.bct to address 0x00098000 in flash
+Writing br_bct_BR.bct to BCT+39 (offset=638976)
+Copied 8192 bytes from br_bct_BR.bct to address 0x0009c000 in flash
+Writing br_bct_BR.bct to BCT+40 (offset=655360)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000a0000 in flash
+Writing br_bct_BR.bct to BCT+41 (offset=671744)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000a4000 in flash
+Writing br_bct_BR.bct to BCT+42 (offset=688128)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000a8000 in flash
+Writing br_bct_BR.bct to BCT+43 (offset=704512)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000ac000 in flash
+Writing br_bct_BR.bct to BCT+44 (offset=720896)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000b0000 in flash
+Writing br_bct_BR.bct to BCT+45 (offset=737280)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000b4000 in flash
+Writing br_bct_BR.bct to BCT+46 (offset=753664)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000b8000 in flash
+Writing br_bct_BR.bct to BCT+47 (offset=770048)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000bc000 in flash
+Writing br_bct_BR.bct to BCT+48 (offset=786432)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000c0000 in flash
+Writing br_bct_BR.bct to BCT+49 (offset=802816)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000c4000 in flash
+Writing br_bct_BR.bct to BCT+50 (offset=819200)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000c8000 in flash
+Writing br_bct_BR.bct to BCT+51 (offset=835584)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000cc000 in flash
+Writing br_bct_BR.bct to BCT+52 (offset=851968)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000d0000 in flash
+Writing br_bct_BR.bct to BCT+53 (offset=868352)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000d4000 in flash
+Writing br_bct_BR.bct to BCT+54 (offset=884736)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000d8000 in flash
+Writing br_bct_BR.bct to BCT+55 (offset=901120)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000dc000 in flash
+Writing br_bct_BR.bct to BCT+56 (offset=917504)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000e0000 in flash
+Writing br_bct_BR.bct to BCT+57 (offset=933888)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000e4000 in flash
+Writing br_bct_BR.bct to BCT+58 (offset=950272)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000e8000 in flash
+Writing br_bct_BR.bct to BCT+59 (offset=966656)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000ec000 in flash
+Writing br_bct_BR.bct to BCT+60 (offset=983040)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000f0000 in flash
+Writing br_bct_BR.bct to BCT+61 (offset=999424)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000f4000 in flash
+Writing br_bct_BR.bct to BCT+62 (offset=1015808)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000f8000 in flash
+Writing br_bct_BR.bct to BCT+63 (offset=1032192)
+Copied 8192 bytes from br_bct_BR.bct to address 0x000fc000 in flash
+Writing mb1_t234_prod_aligned_sigheader.bin.encrypt (size=284048) to A_mb1 (offset=1048576)
+Copied 284048 bytes from mb1_t234_prod_aligned_sigheader.bin.encrypt to address 0x00100000 in flash
+Writing psc_bl1_t234_prod_aligned_sigheader.bin.encrypt (size=139264) to A_psc_bl1 (offset=1572864)
+Copied 139264 bytes from psc_bl1_t234_prod_aligned_sigheader.bin.encrypt to address 0x00180000 in flash
+Writing mb1_cold_boot_bct_MB1_sigheader.bct.encrypt (size=18704) to A_MB1_BCT (offset=1835008)
+Copied 18704 bytes from mb1_cold_boot_bct_MB1_sigheader.bct.encrypt to address 0x001c0000 in flash
+Writing mem_coldboot_sigheader.bct.encrypt (size=243712) to A_MEM_BCT (offset=1966080)
+Copied 243712 bytes from mem_coldboot_sigheader.bct.encrypt to address 0x001e0000 in flash
+Writing tsec_t234_sigheader.bin.encrypt (size=192512) to A_tsec-fw (offset=2228224)
+Copied 192512 bytes from tsec_t234_sigheader.bin.encrypt to address 0x00220000 in flash
+Writing nvdec_t234_prod_sigheader.fw.encrypt (size=294912) to A_nvdec (offset=3276800)
+Copied 294912 bytes from nvdec_t234_prod_sigheader.fw.encrypt to address 0x00320000 in flash
+Writing mb2_t234_with_mb2_cold_boot_bct_MB2_sigheader.bin.encrypt (size=440880) to A_mb2 (offset=4325376)
+Copied 440880 bytes from mb2_t234_with_mb2_cold_boot_bct_MB2_sigheader.bin.encrypt to address 0x00420000 in flash
+Writing xusb_t234_prod_sigheader.bin.encrypt (size=164864) to A_xusb-fw (offset=4849664)
+Copied 164864 bytes from xusb_t234_prod_sigheader.bin.encrypt to address 0x004a0000 in flash
+Writing bpmp_t234-TE990M-A1_prod_sigheader.bin.encrypt (size=1027008) to A_bpmp-fw (offset=5111808)
+Copied 1027008 bytes from bpmp_t234-TE990M-A1_prod_sigheader.bin.encrypt to address 0x004e0000 in flash
+Writing tegra234-bpmp-3701-0005-3737-0000_with_odm_sigheader.dtb.encrypt (size=264512) to A_bpmp-fw-dtb (offset=6684672)
+Copied 264512 bytes from tegra234-bpmp-3701-0005-3737-0000_with_odm_sigheader.dtb.encrypt to address 0x00660000 in flash
+Writing pscfw_t234_prod_sigheader.bin.encrypt (size=310768) to A_psc-fw (offset=10878976)
+Copied 310768 bytes from pscfw_t234_prod_sigheader.bin.encrypt to address 0x00a60000 in flash
+Writing mce_flash_o10_cr_prod_sigheader.bin.encrypt (size=187120) to A_mts-mce (offset=11665408)
+Copied 187120 bytes from mce_flash_o10_cr_prod_sigheader.bin.encrypt to address 0x00b20000 in flash
+Writing sc7_t234_prod_sigheader.bin.encrypt (size=189056) to A_sc7 (offset=12189696)
+Copied 189056 bytes from sc7_t234_prod_sigheader.bin.encrypt to address 0x00ba0000 in flash
+Writing psc_rf_t234_prod_sigheader.bin.encrypt (size=139264) to A_pscrf (offset=12386304)
+Copied 139264 bytes from psc_rf_t234_prod_sigheader.bin.encrypt to address 0x00bd0000 in flash
+Writing mb2rf_t234_sigheader.bin.encrypt (size=122688) to A_mb2rf (offset=12582912)
+Copied 122688 bytes from mb2rf_t234_sigheader.bin.encrypt to address 0x00c00000 in flash
+Writing uefi_t23x_general_with_dtb_aligned_blob_w_bin_sigheader.bin.encrypt (size=3205744) to A_cpu-bootloader (offset=12713984)
+Copied 3205744 bytes from uefi_t23x_general_with_dtb_aligned_blob_w_bin_sigheader.bin.encrypt to address 0x00c20000 in flash
+Writing tos-optee_t234_sigheader.img.encrypt (size=1656896) to A_secure-os (offset=16384000)
+Copied 1656896 bytes from tos-optee_t234_sigheader.img.encrypt to address 0x00fa0000 in flash
+Writing eks_sigheader.img.encrypt (size=9232) to A_eks (offset=22675456)
+Copied 9232 bytes from eks_sigheader.img.encrypt to address 0x015a0000 in flash
+Writing display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned_blob_w_bin_sigheader.bin.encrypt (size=787536) to A_dce-fw (offset=22937600)
+Copied 787536 bytes from display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned_blob_w_bin_sigheader.bin.encrypt to address 0x015e0000 in flash
+Writing spe_t234_sigheader.bin.encrypt (size=270336) to A_spe-fw (offset=28180480)
+Copied 270336 bytes from spe_t234_sigheader.bin.encrypt to address 0x01ae0000 in flash
+Writing camera-rtcpu-t234-rce_sigheader.img.encrypt (size=458096) to A_rce-fw (offset=28770304)
+Copied 458096 bytes from camera-rtcpu-t234-rce_sigheader.img.encrypt to address 0x01b70000 in flash
+Writing adsp-fw_sigheader.bin.encrypt (size=124832) to A_adsp-fw (offset=29818880)
+Copied 124832 bytes from adsp-fw_sigheader.bin.encrypt to address 0x01c70000 in flash
+Writing nvpva_020_aligned_blob_w_bin_sigheader.fw.encrypt (size=67024) to A_pva-fw (offset=31916032)
+Copied 67024 bytes from nvpva_020_aligned_blob_w_bin_sigheader.fw.encrypt to address 0x01e70000 in flash
+Writing mb1_t234_prod_aligned_sigheader.bin.encrypt (size=284048) to B_mb1 (offset=33292288)
+Copied 284048 bytes from mb1_t234_prod_aligned_sigheader.bin.encrypt to address 0x01fc0000 in flash
+Writing psc_bl1_t234_prod_aligned_sigheader.bin.encrypt (size=139264) to B_psc_bl1 (offset=33816576)
+Copied 139264 bytes from psc_bl1_t234_prod_aligned_sigheader.bin.encrypt to address 0x02040000 in flash
+Writing mb1_cold_boot_bct_MB1_sigheader.bct.encrypt (size=18704) to B_MB1_BCT (offset=34078720)
+Copied 18704 bytes from mb1_cold_boot_bct_MB1_sigheader.bct.encrypt to address 0x02080000 in flash
+Writing mem_coldboot_sigheader.bct.encrypt (size=243712) to B_MEM_BCT (offset=34209792)
+Copied 243712 bytes from mem_coldboot_sigheader.bct.encrypt to address 0x020a0000 in flash
+Writing tsec_t234_sigheader.bin.encrypt (size=192512) to B_tsec-fw (offset=34471936)
+Copied 192512 bytes from tsec_t234_sigheader.bin.encrypt to address 0x020e0000 in flash
+Writing nvdec_t234_prod_sigheader.fw.encrypt (size=294912) to B_nvdec (offset=35520512)
+Copied 294912 bytes from nvdec_t234_prod_sigheader.fw.encrypt to address 0x021e0000 in flash
+Writing mb2_t234_with_mb2_cold_boot_bct_MB2_sigheader.bin.encrypt (size=440880) to B_mb2 (offset=36569088)
+Copied 440880 bytes from mb2_t234_with_mb2_cold_boot_bct_MB2_sigheader.bin.encrypt to address 0x022e0000 in flash
+Writing xusb_t234_prod_sigheader.bin.encrypt (size=164864) to B_xusb-fw (offset=37093376)
+Copied 164864 bytes from xusb_t234_prod_sigheader.bin.encrypt to address 0x02360000 in flash
+Writing bpmp_t234-TE990M-A1_prod_sigheader.bin.encrypt (size=1027008) to B_bpmp-fw (offset=37355520)
+Copied 1027008 bytes from bpmp_t234-TE990M-A1_prod_sigheader.bin.encrypt to address 0x023a0000 in flash
+Writing tegra234-bpmp-3701-0005-3737-0000_with_odm_sigheader.dtb.encrypt (size=264512) to B_bpmp-fw-dtb (offset=38928384)
+Copied 264512 bytes from tegra234-bpmp-3701-0005-3737-0000_with_odm_sigheader.dtb.encrypt to address 0x02520000 in flash
+Writing pscfw_t234_prod_sigheader.bin.encrypt (size=310768) to B_psc-fw (offset=43122688)
+Copied 310768 bytes from pscfw_t234_prod_sigheader.bin.encrypt to address 0x02920000 in flash
+Writing mce_flash_o10_cr_prod_sigheader.bin.encrypt (size=187120) to B_mts-mce (offset=43909120)
+Copied 187120 bytes from mce_flash_o10_cr_prod_sigheader.bin.encrypt to address 0x029e0000 in flash
+Writing sc7_t234_prod_sigheader.bin.encrypt (size=189056) to B_sc7 (offset=44433408)
+Copied 189056 bytes from sc7_t234_prod_sigheader.bin.encrypt to address 0x02a60000 in flash
+Writing psc_rf_t234_prod_sigheader.bin.encrypt (size=139264) to B_pscrf (offset=44630016)
+Copied 139264 bytes from psc_rf_t234_prod_sigheader.bin.encrypt to address 0x02a90000 in flash
+Writing mb2rf_t234_sigheader.bin.encrypt (size=122688) to B_mb2rf (offset=44826624)
+Copied 122688 bytes from mb2rf_t234_sigheader.bin.encrypt to address 0x02ac0000 in flash
+Writing uefi_t23x_general_with_dtb_aligned_blob_w_bin_sigheader.bin.encrypt (size=3205744) to B_cpu-bootloader (offset=44957696)
+Copied 3205744 bytes from uefi_t23x_general_with_dtb_aligned_blob_w_bin_sigheader.bin.encrypt to address 0x02ae0000 in flash
+Writing tos-optee_t234_sigheader.img.encrypt (size=1656896) to B_secure-os (offset=48627712)
+Copied 1656896 bytes from tos-optee_t234_sigheader.img.encrypt to address 0x02e60000 in flash
+Writing eks_sigheader.img.encrypt (size=9232) to B_eks (offset=54919168)
+Copied 9232 bytes from eks_sigheader.img.encrypt to address 0x03460000 in flash
+Writing display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned_blob_w_bin_sigheader.bin.encrypt (size=787536) to B_dce-fw (offset=55181312)
+Copied 787536 bytes from display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned_blob_w_bin_sigheader.bin.encrypt to address 0x034a0000 in flash
+Writing spe_t234_sigheader.bin.encrypt (size=270336) to B_spe-fw (offset=60424192)
+Copied 270336 bytes from spe_t234_sigheader.bin.encrypt to address 0x039a0000 in flash
+Writing camera-rtcpu-t234-rce_sigheader.img.encrypt (size=458096) to B_rce-fw (offset=61014016)
+Copied 458096 bytes from camera-rtcpu-t234-rce_sigheader.img.encrypt to address 0x03a30000 in flash
+Writing adsp-fw_sigheader.bin.encrypt (size=124832) to B_adsp-fw (offset=62062592)
+Copied 124832 bytes from adsp-fw_sigheader.bin.encrypt to address 0x03b30000 in flash
+Writing nvpva_020_aligned_blob_w_bin_sigheader.fw.encrypt (size=67024) to B_pva-fw (offset=64159744)
+Copied 67024 bytes from nvpva_020_aligned_blob_w_bin_sigheader.fw.encrypt to address 0x03d30000 in flash
+Writing bct_backup.img (size=32768) to BCT-boot-chain_backup (offset=66715648)
+Copied 32768 bytes from bct_backup.img to address 0x03fa0000 in flash
+Writing gpt_backup_secondary_3_0.bin (size=16896) to secondary_gpt_backup (offset=66846720)
+Copied 16896 bytes from gpt_backup_secondary_3_0.bin to address 0x03fc0000 in flash
+Writing p3737-0000-p3701-0005_bootblob_ver.txt (size=109) to B_VER (offset=66912256)
+Copied 109 bytes from p3737-0000-p3701-0005_bootblob_ver.txt to address 0x03fd0000 in flash
+Writing p3737-0000-p3701-0005_bootblob_ver.txt (size=109) to A_VER (offset=66977792)
+Copied 109 bytes from p3737-0000-p3701-0005_bootblob_ver.txt to address 0x03fe0000 in flash
+Writing gpt_secondary_3_0.bin (size=16896) to secondary_gpt (offset=67091968)
+Copied 16896 bytes from gpt_secondary_3_0.bin to address 0x03ffbe00 in flash

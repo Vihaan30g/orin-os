@@ -50,3 +50,12 @@ myrobot_sshfix() {
     done
 }
 IMAGE_INSTALL:append = " myrobot-yolo"
+
+ROOTFS_POSTPROCESS_COMMAND += "myrobot_mask;"
+myrobot_mask() {
+    install -d ${IMAGE_ROOTFS}${sysconfdir}/systemd/system
+    for u in avahi-daemon.service avahi-daemon.socket bluetooth.service ofono.service rpcbind.service rpcbind.socket dnsmasq.service systemd-networkd.service systemd-networkd.socket systemd-networkd-wait-online.service; do
+        ln -sf /dev/null ${IMAGE_ROOTFS}${sysconfdir}/systemd/system/$u
+    done
+}
+IMAGE_INSTALL:append = " iproute2-ss"

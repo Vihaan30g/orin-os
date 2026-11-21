@@ -1,0 +1,18 @@
+# Sample bblayers.conf for this project. RECONSTRUCTED from the layer list, not copied
+# from the build machine; replace with artifacts/conf/bblayers.conf once collected.
+POKY_BBLAYERS_CONF_VERSION = "2"
+BBPATH = "${TOPDIR}"
+BBFILES ?= ""
+BBLAYERS ?= " \
+  ${HOME}/yocto/poky/meta \
+  ${HOME}/yocto/poky/meta-poky \
+  ${HOME}/yocto/meta-openembedded/meta-oe \
+  ${HOME}/yocto/meta-openembedded/meta-python \
+  ${HOME}/yocto/meta-openembedded/meta-networking \
+  ${HOME}/yocto/meta-openembedded/meta-multimedia \
+  ${HOME}/yocto/meta-tegra \
+  ${HOME}/yocto/meta-ros/meta-ros-common \
+  ${HOME}/yocto/meta-ros/meta-ros2 \
+  ${HOME}/yocto/meta-ros/meta-ros2-humble \
+  ${HOME}/yocto/meta-myrobot \
+"

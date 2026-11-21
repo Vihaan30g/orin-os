@@ -1,0 +1,2123 @@
+Rootfs device: mmcblk0p1
+Found Jetson device in recovery mode at USB 3-3
+== Step 1: Signing binaries at 2026-11-08T13:10:31+05:30 ==
+Found Jetson device in recovery mode at USB 3-3
+Welcome to Tegra Flash
+version 1.0.0
+Type ? or help for help and q or quit to exit
+Use ! to execute system commands
+ 
+[   0.0324 ] Reading fuses
+[   0.0371 ] tegrasign_v3.py --key None --getmode mode.txt
+[   0.0372 ] Assuming zero filled SBK key
+[   0.0332 ] Pre-processing config: tegra234-mb1-bct-device-p3701-0000.dts
+[   0.0390 ] Pre-processing config: tegra234-mb1-bct-misc-p3701-0000.dts
+[   0.0462 ] Parsing partition layout
+[   0.0465 ] tegraparser_v2 --pt readinfo_t234_min_prod.xml.tmp
+[   0.0473 ] Kernel DTB used: None
+[   0.0473 ] WARNING: dce base dtb is not provided
+
+[   0.0473 ] Parsing partition layout
+[   0.0475 ] tegraparser_v2 --pt readinfo_t234_min_prod.xml.tmp
+[   0.0479 ] Creating list of images to be signed
+[   0.0482 ] tegrahost_v2 --chip 0x23 0 --partitionlayout readinfo_t234_min_prod.xml.bin --list images_list.xml zerosbk
+[   0.0484 ] MB1: Nvheader already present is mb1_t234_prod_aligned.bin
+[   0.0495 ] Header already present for mb1_t234_prod_aligned_sigheader.bin
+[   0.0499 ] MB1: Nvheader already present is mb1_t234_prod_aligned.bin
+[   0.0540 ] Header already present for mb1_t234_prod_aligned_sigheader.bin
+[   0.0543 ] MB1: Nvheader already present is psc_bl1_t234_prod_aligned.bin
+[   0.0582 ] Header already present for psc_bl1_t234_prod_aligned_sigheader.bin
+[   0.0584 ] adding BCH for mb2_t234_aligned.bin
+[   0.0609 ] MB1: Nvheader already present is psc_bl1_t234_prod_aligned.bin
+[   0.0710 ] Header already present for psc_bl1_t234_prod_aligned_sigheader.bin
+[   0.0712 ] adding BCH for mb2_t234_aligned.bin
+[   0.0835 ] Filling MB1 storage info
+[   0.0835 ] Parsing dev params for multi chains
+[   0.0892 ] Generating br-bct
+[   0.0894 ] Updating dev and MSS params in BR BCT
+[   0.0894 ] tegrabct_v2 --dev_param tegra234-br-bct-diag-boot_cpp.dtb --brbct br_bct.cfg --chip 0x23 0
+[   0.0899 ] Updating bl info
+[   0.0901 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --updateblinfo readinfo_t234_min_prod.xml.bin
+[   0.0903 ] WARNING: boot chain is not completed. set to 0
+[   0.0912 ] Generating signatures
+[   0.0952 ] tegrasign_v3.py --key None --list images_list.xml --pubkeyhash pub_key.key --sha sha512
+[   0.0953 ] Assuming zero filled SBK key
+[   0.1009 ] Warning: pub_key.key is not found
+[   0.0969 ] Parsing dev params for multi chains
+[   0.0969 ] Generating br-bct
+[   0.0971 ] Updating dev and MSS params in BR BCT
+[   0.0971 ] tegrabct_v2 --dev_param tegra234-br-bct-diag-boot_cpp.dtb --brbct br_bct.cfg --chip 0x23 0
+[   0.0976 ] Updating bl info
+[   0.0978 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --updateblinfo readinfo_t234_min_prod.xml.bin --updatesig images_list_signed.xml
+[   0.0980 ] WARNING: boot chain is not completed. set to 0
+[   0.0989 ] Generating SHA2 Hash
+[   0.1035 ] Sha saved in br_bct_BR.sha
+[   0.0995 ] Get Signed section of bct
+[   0.0997 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --listbct bct_list.xml
+[   0.1002 ] Signing BCT
+[   0.1042 ] tegrasign_v3.py --key None --list bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   0.1043 ] Assuming zero filled SBK key
+[   0.1055 ] Sha saved in br_bct_BR.sha
+[   0.1056 ] Warning: pub_key.key is not found
+[   0.1015 ] Updating BCT with signature
+[   0.1017 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --updatesig bct_list_signed.xml
+[   0.1019 ] Offset :4608 Len :3584
+[   0.1023 ] Generating SHA2 Hash
+[   0.1064 ] tegrasign_v3.py --key None --list bct_list.xml --sha sha512
+[   0.1064 ] Assuming zero filled SBK key
+[   0.1065 ] Assuming zero filled SBK key
+[   0.1077 ] Sha saved in br_bct_BR.sha
+[   0.1037 ] Updating BCT with SHA2 Hash
+[   0.1039 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --updatesha bct_list_signed.xml
+[   0.1041 ] Offset :4608 Len :3584
+[   0.1044 ] Offset :68 Len :8124
+[   0.1045 ] Generating coldboot mb1-bct
+[   0.1047 ] tegrabct_v2 --chip 0x23 0 --mb1bct mb1_cold_boot_bct.cfg --misc tegra234-mb1-bct-misc-p3701-0000_cpp.dtb --device tegra234-mb1-bct-device-p3701-0000_cpp.dtb
+[   0.1049 ] MB1-BCT version: 0.13
+
+[   0.1061 ] Parsing config file :tegra234-mb1-bct-device-p3701-0000_cpp.dtb 
+[   0.1063 ] Added Platform Config 9 data with size :- 100
+[   0.1063 ] 
+[   0.1063 ] Updating mb1-bct with firmware information
+[   0.1065 ] tegrabct_v2 --chip 0x23 0 --mb1bct mb1_cold_boot_bct_MB1.bct --updatefwinfo readinfo_t234_min_prod.xml.bin
+[   0.1073 ] tegrahost_v2 --chip 0x23 0 --align mb1_cold_boot_bct_MB1_aligned.bct
+[   0.1076 ] Generating SHA2 Hash for mb1bct
+[   0.1123 ] Sha saved in mb1_cold_boot_bct_MB1_aligned.sha
+[   0.1129 ] Sha saved in mb1_cold_boot_bct_MB1.sha
+[   0.1091 ] tegrahost_v2 --chip 0x23 0 --magicid MBCT --appendsigheader mb1_cold_boot_bct_MB1_aligned.bct zerosbk
+[   0.1093 ] adding BCH for mb1_cold_boot_bct_MB1_aligned.bct
+[   0.1139 ] tegrasign_v3.py --key None --list mb1_cold_boot_bct_MB1_aligned_sigheader.bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   0.1140 ] Assuming zero filled SBK key
+[   0.1148 ] Warning: pub_key.key is not found
+[   0.1109 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mb1_cold_boot_bct_MB1_aligned_sigheader.bct.encrypt mb1_cold_boot_bct_MB1_aligned_sigheader.bct.hash zerosbk
+[   0.1116 ] Generating recovery mb1-bct
+[   0.1118 ] tegrabct_v2 --chip 0x23 0 --mb1bct mb1_bct.cfg --misc tegra234-mb1-bct-misc-p3701-0000_cpp.dtb --device tegra234-mb1-bct-device-p3701-0000_cpp.dtb
+[   0.1120 ] MB1-BCT version: 0.13
+
+[   0.1132 ] Parsing config file :tegra234-mb1-bct-device-p3701-0000_cpp.dtb 
+[   0.1134 ] Added Platform Config 9 data with size :- 100
+[   0.1134 ] 
+[   0.1134 ] Updating mb1-bct with firmware information
+[   0.1136 ] tegrabct_v2 --chip 0x23 0 --mb1bct mb1_bct_MB1.bct --recov --updatefwinfo readinfo_t234_min_prod.xml.bin
+[   0.1143 ] tegrahost_v2 --chip 0x23 0 --align mb1_bct_MB1_aligned.bct
+[   0.1146 ] Generating SHA2 Hash for mb1bct
+[   0.1192 ] Sha saved in mb1_bct_MB1_aligned.sha
+[   0.1198 ] Sha saved in mb1_bct_MB1.sha
+[   0.1160 ] tegrahost_v2 --chip 0x23 0 --magicid MBCT --appendsigheader mb1_bct_MB1_aligned.bct zerosbk
+[   0.1162 ] adding BCH for mb1_bct_MB1_aligned.bct
+[   0.1208 ] tegrasign_v3.py --key None --list mb1_bct_MB1_aligned_sigheader.bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   0.1209 ] Assuming zero filled SBK key
+[   0.1216 ] Warning: pub_key.key is not found
+[   0.1178 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mb1_bct_MB1_aligned_sigheader.bct.encrypt mb1_bct_MB1_aligned_sigheader.bct.hash zerosbk
+[   0.1184 ] Info: Skip generating mem_bct because sdram_config is not defined
+[   0.1184 ] Info: Skip generating mem_bct because sdram_config is not defined
+[   0.1184 ] Copying signatures
+[   0.1187 ] tegrahost_v2 --chip 0x23 0 --partitionlayout readinfo_t234_min_prod.xml.bin --updatesig images_list_signed.xml
+[   0.1227 ] mb1_t234_prod_aligned_sigheader.bin.encrypt filename is from images_list
+[   0.1228 ] psc_bl1_t234_prod_aligned_sigheader.bin.encrypt filename is from images_list
+[   0.1228 ] Boot Rom communication
+[   0.1230 ] tegrarcm_v2 --instance 3-3 --new_session --chip 0x23 0 --uid --download bct_br br_bct_BR.bct --download mb1 mb1_t234_prod_aligned_sigheader.bin.encrypt --download psc_bl1 psc_bl1_t234_prod_aligned_sigheader.bin.encrypt --download bct_mb1 mb1_bct_MB1_sigheader.bct.encrypt
+[   0.1232 ] BR_CID: 0x80012344705DF6572400000017FE8180
+[   0.1314 ] Sending bct_br
+[   0.1376 ] Sending mb1
+[   0.1380 ] Sending psc_bl1
+[   0.1471 ] Sending bct_mb1
+[   0.1529 ] Boot Rom communication completed
+[   0.1535 ] tegrahost_v2 --chip 0x23 0 --align applet_t234_aligned.bin
+[   0.1541 ] tegrahost_v2 --chip 0x23 0 --magicid MB2A --appendsigheader applet_t234_aligned.bin zerosbk
+[   0.1544 ] adding BCH for applet_t234_aligned.bin
+[   0.1658 ] tegrasign_v3.py --key None --list applet_t234_aligned_sigheader.bin_list.xml --pubkeyhash pub_key.key --sha sha512
+[   0.1658 ] Assuming zero filled SBK key
+[   0.1670 ] Warning: pub_key.key is not found
+[   0.1632 ] tegrahost_v2 --chip 0x23 0 --updatesigheader applet_t234_aligned_sigheader.bin.encrypt applet_t234_aligned_sigheader.bin.hash zerosbk
+[   0.1645 ] Sending mb2_applet...
+
+[   0.1647 ] tegrarcm_v2 --instance 3-3 --chip 0x23 0 --pollbl --download applet applet_t234_sigheader.bin.encrypt
+[   0.1649 ] BL: version 1.4.0.8-t234-54845784-06547379 last_boot_error: 0
+[   0.3811 ] Sending applet
+[   0.4890 ] completed
+[   0.4897 ] tegrarcm_v2 --instance 3-3 --chip 0x23 0 --ismb2applet
+[   0.4901 ] MB2 Applet version 01.00.0000
+[   0.6958 ] tegrarcm_v2 --instance 3-3 --chip 0x23 0 --ismb2applet
+[   0.6961 ] MB2 Applet version 01.00.0000
+[   0.7049 ] Parsing fuse info as per xml file
+[   0.7054 ] tegraparser_v2 --chip 0x23 0 --get_fuse_names fuse_t234.xml read_fuse_names.txt
+[   0.7057 ] MagicId=0x45535546 version=0x2
+[   0.7062 ] trying to read fuse with MB2 Applet
+[   0.7066 ] tegraparser_v2 --chip 0x23 0 --read_fusetype PublicKeyHash read_fuse.bin
+[   0.7072 ] tegrarcm_v2 --instance 3-3 --oem readfuses __fuse_read_scatter.bin read_fuse.bin
+[   0.7074 ] MB2 Applet version 01.00.0000
+[   0.7224 ] Saved read fuses in file __fuse_read_scatter.bin
+[   0.7279 ] Fuse read successful
+[   0.7288 ] tegraparser_v2 --chip 0x23 0 --read_fusetype PkcPubkeyHash1 read_fuse.bin
+[   0.7294 ] tegrarcm_v2 --instance 3-3 --oem readfuses __fuse_read_scatter.bin read_fuse.bin
+[   0.7296 ] MB2 Applet version 01.00.0000
+[   0.7446 ] Saved read fuses in file __fuse_read_scatter.bin
+[   0.7500 ] Fuse read successful
+[   0.7510 ] tegraparser_v2 --chip 0x23 0 --read_fusetype PkcPubkeyHash2 read_fuse.bin
+[   0.7516 ] tegrarcm_v2 --instance 3-3 --oem readfuses __fuse_read_scatter.bin read_fuse.bin
+[   0.7518 ] MB2 Applet version 01.00.0000
+[   0.7662 ] Saved read fuses in file __fuse_read_scatter.bin
+[   0.7716 ] Fuse read successful
+[   0.7726 ] tegraparser_v2 --chip 0x23 0 --read_fusetype BootSecurityInfo read_fuse.bin
+[   0.7732 ] tegrarcm_v2 --instance 3-3 --oem readfuses __fuse_read_scatter.bin read_fuse.bin
+[   0.7734 ] MB2 Applet version 01.00.0000
+[   0.7877 ] Saved read fuses in file __fuse_read_scatter.bin
+[   0.7932 ] Fuse read successful
+[   0.7941 ] tegraparser_v2 --chip 0x23 0 --read_fusetype ArmJtagDisable read_fuse.bin
+[   0.7948 ] tegrarcm_v2 --instance 3-3 --oem readfuses __fuse_read_scatter.bin read_fuse.bin
+[   0.7949 ] MB2 Applet version 01.00.0000
+[   0.8094 ] Saved read fuses in file __fuse_read_scatter.bin
+[   0.8149 ] Fuse read successful
+[   0.8158 ] tegraparser_v2 --chip 0x23 0 --read_fusetype SecurityMode read_fuse.bin
+[   0.8165 ] tegrarcm_v2 --instance 3-3 --oem readfuses __fuse_read_scatter.bin read_fuse.bin
+[   0.8167 ] MB2 Applet version 01.00.0000
+[   0.8317 ] Saved read fuses in file __fuse_read_scatter.bin
+[   0.8372 ] Fuse read successful
+[   0.8381 ] tegraparser_v2 --chip 0x23 0 --read_fusetype SwReserved read_fuse.bin
+[   0.8387 ] tegrarcm_v2 --instance 3-3 --oem readfuses __fuse_read_scatter.bin read_fuse.bin
+[   0.8389 ] MB2 Applet version 01.00.0000
+[   0.8539 ] Saved read fuses in file __fuse_read_scatter.bin
+[   0.8594 ] Fuse read successful
+[   0.8604 ] tegraparser_v2 --chip 0x23 0 --read_fusetype DebugAuthentication read_fuse.bin
+[   0.8611 ] tegrarcm_v2 --instance 3-3 --oem readfuses __fuse_read_scatter.bin read_fuse.bin
+[   0.8613 ] MB2 Applet version 01.00.0000
+[   0.8757 ] Saved read fuses in file __fuse_read_scatter.bin
+[   0.8812 ] Fuse read successful
+[   0.8821 ] tegraparser_v2 --chip 0x23 0 --read_fusetype OdmInfo read_fuse.bin
+[   0.8827 ] tegrarcm_v2 --instance 3-3 --oem readfuses __fuse_read_scatter.bin read_fuse.bin
+[   0.8829 ] MB2 Applet version 01.00.0000
+[   0.8972 ] Saved read fuses in file __fuse_read_scatter.bin
+[   0.9027 ] Fuse read successful
+[   0.9036 ] tegraparser_v2 --chip 0x23 0 --read_fusetype OdmId read_fuse.bin
+[   0.9043 ] tegrarcm_v2 --instance 3-3 --oem readfuses __fuse_read_scatter.bin read_fuse.bin
+[   0.9045 ] MB2 Applet version 01.00.0000
+[   0.9191 ] Saved read fuses in file __fuse_read_scatter.bin
+[   0.9245 ] Fuse read successful
+[   0.9256 ] tegraparser_v2 --chip 0x23 0 --read_fusetype OdmLock read_fuse.bin
+[   0.9263 ] tegrarcm_v2 --instance 3-3 --oem readfuses __fuse_read_scatter.bin read_fuse.bin
+[   0.9265 ] MB2 Applet version 01.00.0000
+[   0.9408 ] Saved read fuses in file __fuse_read_scatter.bin
+[   0.9463 ] Fuse read successful
+[   0.9472 ] tegraparser_v2 --chip 0x23 0 --read_fusetype ReservedOdm0 read_fuse.bin
+[   0.9479 ] tegrarcm_v2 --instance 3-3 --oem readfuses __fuse_read_scatter.bin read_fuse.bin
+[   0.9480 ] MB2 Applet version 01.00.0000
+[   0.9622 ] Saved read fuses in file __fuse_read_scatter.bin
+[   0.9676 ] Fuse read successful
+[   0.9686 ] tegraparser_v2 --chip 0x23 0 --read_fusetype ReservedOdm1 read_fuse.bin
+[   0.9693 ] tegrarcm_v2 --instance 3-3 --oem readfuses __fuse_read_scatter.bin read_fuse.bin
+[   0.9695 ] MB2 Applet version 01.00.0000
+[   0.9839 ] Saved read fuses in file __fuse_read_scatter.bin
+[   0.9894 ] Fuse read successful
+[   0.9903 ] tegraparser_v2 --chip 0x23 0 --read_fusetype ReservedOdm2 read_fuse.bin
+[   0.9909 ] tegrarcm_v2 --instance 3-3 --oem readfuses __fuse_read_scatter.bin read_fuse.bin
+[   0.9911 ] MB2 Applet version 01.00.0000
+[   1.0055 ] Saved read fuses in file __fuse_read_scatter.bin
+[   1.0109 ] Fuse read successful
+[   1.0119 ] tegraparser_v2 --chip 0x23 0 --read_fusetype ReservedOdm3 read_fuse.bin
+[   1.0128 ] tegrarcm_v2 --instance 3-3 --oem readfuses __fuse_read_scatter.bin read_fuse.bin
+[   1.0130 ] MB2 Applet version 01.00.0000
+[   1.0273 ] Saved read fuses in file __fuse_read_scatter.bin
+[   1.0327 ] Fuse read successful
+[   1.0337 ] tegraparser_v2 --chip 0x23 0 --read_fusetype ReservedOdm4 read_fuse.bin
+[   1.0344 ] tegrarcm_v2 --instance 3-3 --oem readfuses __fuse_read_scatter.bin read_fuse.bin
+[   1.0346 ] MB2 Applet version 01.00.0000
+[   1.0487 ] Saved read fuses in file __fuse_read_scatter.bin
+[   1.0541 ] Fuse read successful
+[   1.0551 ] tegraparser_v2 --chip 0x23 0 --read_fusetype ReservedOdm5 read_fuse.bin
+[   1.0559 ] tegrarcm_v2 --instance 3-3 --oem readfuses __fuse_read_scatter.bin read_fuse.bin
+[   1.0561 ] MB2 Applet version 01.00.0000
+[   1.0704 ] Saved read fuses in file __fuse_read_scatter.bin
+[   1.0759 ] Fuse read successful
+[   1.0768 ] tegraparser_v2 --chip 0x23 0 --read_fusetype ReservedOdm6 read_fuse.bin
+[   1.0775 ] tegrarcm_v2 --instance 3-3 --oem readfuses __fuse_read_scatter.bin read_fuse.bin
+[   1.0777 ] MB2 Applet version 01.00.0000
+[   1.0921 ] Saved read fuses in file __fuse_read_scatter.bin
+[   1.0976 ] Fuse read successful
+[   1.0985 ] tegraparser_v2 --chip 0x23 0 --read_fusetype ReservedOdm7 read_fuse.bin
+[   1.0991 ] tegrarcm_v2 --instance 3-3 --oem readfuses __fuse_read_scatter.bin read_fuse.bin
+[   1.0994 ] MB2 Applet version 01.00.0000
+[   1.1136 ] Saved read fuses in file __fuse_read_scatter.bin
+[   1.1191 ] Fuse read successful
+[   1.1201 ] tegraparser_v2 --chip 0x23 0 --read_fusetype Sku read_fuse.bin
+[   1.1207 ] tegrarcm_v2 --instance 3-3 --oem readfuses __fuse_read_scatter.bin read_fuse.bin
+[   1.1209 ] MB2 Applet version 01.00.0000
+[   1.1356 ] Saved read fuses in file __fuse_read_scatter.bin
+[   1.1411 ] Fuse read successful
+[   1.1421 ] tegraparser_v2 --chip 0x23 0 --read_fusetype Uid read_fuse.bin
+[   1.1428 ] tegrarcm_v2 --instance 3-3 --oem readfuses __fuse_read_scatter.bin read_fuse.bin
+[   1.1430 ] MB2 Applet version 01.00.0000
+[   1.1573 ] Saved read fuses in file __fuse_read_scatter.bin
+[   1.1628 ] Fuse read successful
+[   1.1637 ] tegraparser_v2 --chip 0x23 0 --read_fusetype OptEmcDisable read_fuse.bin
+[   1.1643 ] tegrarcm_v2 --instance 3-3 --oem readfuses __fuse_read_scatter.bin read_fuse.bin
+[   1.1645 ] MB2 Applet version 01.00.0000
+[   1.1786 ] Saved read fuses in file __fuse_read_scatter.bin
+[   1.1841 ] Fuse read successful
+[   1.1938 ] tegrarcm_v2 --instance 3-3 --chip 0x23 0 --ismb2applet
+[   1.1940 ] MB2 Applet version 01.00.0000
+[   1.2025 ] Retrieving board information
+[   1.2027 ] tegrarcm_v2 --instance 3-3 --chip 0x23 0 --oem platformdetails chip chip_info.bin
+[   1.2029 ] MB2 Applet version 01.00.0000
+[   1.2112 ] Saved platform info in chip_info.bin
+[   1.2164 ] Chip minor revision: 1
+[   1.2165 ] Bootrom revision: 0x7
+[   1.2166 ] Ram code: 0x3
+[   1.2167 ] Chip sku: 0xd0
+[   1.2167 ] Chip Sample: prod
+[   1.2173 ] Retrieving EEPROM data
+[   1.2173 ] tegrarcm_v2 --instance 3-3 --oem platformdetails eeprom cvm /home/marsuser/flash-6b/cvm.bin.atoZq --chip 0x23 0
+[   1.2177 ] MB2 Applet version 01.00.0000
+[   1.2266 ] Saved platform info in /home/marsuser/flash-6b/cvm.bin.atoZq
+[   1.2680 ] tegrarcm_v2 --instance 3-3 --chip 0x23 0 --ismb2applet
+[   1.2682 ] MB2 Applet version 01.00.0000
+[   1.2764 ] Dumping customer Info
+[   1.2767 ] tegrarcm_v2 --instance 3-3 --chip 0x23 0 --oem dump bct tmp.bct
+[   1.2769 ] MB2 Applet version 01.00.0000
+[   1.2850 ] Saved bct in tmp.bct
+[   1.3049 ] tegrabct_v2 --brbct tmp.bct --chip 0x23 0 --custinfo /home/marsuser/flash-6b/custinfo_out.bin
+[   1.3052 ] Customer data sa[   1.3056 ] ved in /home/marsuser/flash-6b/custinfo_out.bin successfully
+[   1.3056 ] Rebooting to recovery mode
+[   1.3059 ] tegrarcm_v2 --instance 3-3 --chip 0x23 0 --ismb2
+[   1.3152 ] tegrarcm_v2 --instance 3-3 --chip 0x23 0 --ismb2applet
+[   1.3154 ] MB2 Applet version 01.00.0000
+[   1.3235 ] Booting to recovery mode
+[   1.3238 ] tegrarcm_v2 --instance 3-3 --chip 0x23 0 --reboot recovery
+[   1.3240 ] MB2 Applet version 01.00.0000
+Board ID(3701) version(501) sku(0005) revision(G.0)
+./tegraflash.py --chip 0x23 --bl uefi_t23x_rcmboot_with_dtb.bin --sdram_config tegra234-p3701-0005-sdram-l4t.dts --odmdata gbe-uphy-config-22,hsstp-lane-map-3,nvhs-uphy-config-0,hsio-uphy-config-0,gbe0-enable-10g --applet mb1_t234_prod.bin --cmd "sign"  --skipuid --cfg flash.xml --bct_backup --boot_chain A --uphy tegra234-mb1-bct-uphylane-si.dtsi --minratchet_config tegra234-mb1-bct-ratchet-p3701-0000.dts --device_config tegra234-mb1-bct-device-p3701-0000.dts --misc_config tegra234-mb1-bct-misc-p3701-0000.dts --scr_config tegra234-mb2-bct-scr-p3701-0000.dts --pinmux_config tegra234-mb1-bct-pinmux-p3701-0000-a04.dtsi --gpioint_config tegra234-mb1-bct-gpioint-p3701-0000.dts --pmic_config tegra234-mb1-bct-pmic-p3701-0005.dts --pmc_config tegra234-mb1-bct-padvoltage-p3701-0000-a04.dtsi --prod_config tegra234-mb1-bct-prod-p3701-0000.dts --br_cmd_config tegra234-mb1-bct-reset-p3701-0000.dts --dev_params tegra234-br-bct-p3701-0000.dts,tegra234-br-bct_b-p3701-0000.dts --deviceprod_config tegra234-mb1-bct-cprod-p3701-0000.dts --wb0sdram_config tegra234-p3701-0005-wb0sdram-l4t.dts --mb2bct_cfg tegra234-mb2-bct-misc-p3701-0000.dts --bldtb tegra234-p3737-0000+p3701-0005-nv.dtb --concat_cpubl_bldtb --cpubl uefi_t23x_general.bin --cpubl_rcm uefi_t23x_rcmboot.bin --overlay_dtb L4TConfiguration.dtbo,tegra234-p3737-0000+p3701-0000-dynamic.dtbo,tegra234-carveouts.dtbo,tegra-optee.dtbo,tegra234-p3737-camera-dual-imx274-overlay.dtbo,tegra234-p3737-camera-e3331-overlay.dtbo,tegra234-p3737-camera-e3333-overlay.dtbo,tegra234-p3737-camera-imx185-overlay.dtbo --cust_info custinfo_out.bin --ramcode 3 --bins "psc_fw pscfw_t234_prod.bin; mts_mce mce_flash_o10_cr_prod.bin; mb2_applet applet_t234.bin; mb2_bootloader mb2_t234.bin; xusb_fw xusb_t234_prod.bin; pva_fw nvpva_020.fw; dce_fw display-t234-dce.bin; nvdec nvdec_t234_prod.fw; bpmp_fw bpmp_t234-TE990M-A1_prod.bin; bpmp_fw_dtb tegra234-bpmp-3701-0005-3737-0000.dtb; rce_fw camera-rtcpu-t234-rce.img; ape_fw adsp-fw.bin; spe_fw spe_t234.bin; tsec_fw tsec_t234.bin; tos tos-optee_t234.img; eks eks.img" --ramcode 3 
+Welcome to Tegra Flash
+version 1.0.0
+Type ? or help for help and q or quit to exit
+Use ! to execute system commands
+ 
+[   0.0221 ] tegrasign_v3.py --key None --getmode mode.txt
+[   0.0221 ] Assuming zero filled SBK key
+[   0.0217 ] Parsing partition layout
+[   0.0220 ] tegraparser_v2 --pt flash.xml.tmp
+[   0.0253 ] Change tegra234-bpmp-3701-0005-3737-0000.dtb to tegra234-bpmp-3701-0005-3737-0000_with_odm.dtb
+[   0.0253 ] Change tegra234-bpmp-3701-0005-3737-0000.dtb to tegra234-bpmp-3701-0005-3737-0000_with_odm.dtb
+[   0.0576 ] /usr/bin/python3 dtbcheck.py -c t234 -o tegra234-bpmp-3701-0005-3737-0000_with_odm.dtb tegra234-bpmp-3701-0005-3737-0000_with_odm_tmp.dtb
+[   0.2312 ] Concatenating L4TConfiguration.dtbo,tegra234-p3737-0000+p3701-0000-dynamic.dtbo,tegra234-carveouts.dtbo,tegra-optee.dtbo,tegra234-p3737-camera-dual-imx274-overlay.dtbo,tegra234-p3737-camera-e3331-overlay.dtbo,tegra234-p3737-camera-e3333-overlay.dtbo,tegra234-p3737-camera-imx185-overlay.dtbo to tegra234-p3737-0000+p3701-0005-nv_with_odm_overlay.dtb.updated
+[   0.2314 ] Concatenating bl dtb to cpubl binary
+[   0.2336 ] Concatenating bl dtb:(tegra234-p3737-0000+p3701-0005-nv_with_odm_overlay.dtb.updated), to cpubl binary: uefi_t23x_rcmboot.bin
+[   0.2354 ] MB2 binary: mb2_t234.bin
+[   0.2354 ] Pre-processing mb2bct config: tegra234-mb2-bct-misc-p3701-0000.dts
+[   0.2437 ] Pre-processing mb2bct config: tegra234-mb2-bct-scr-p3701-0000.dts
+[   0.3847 ] Generating coldboot mb2-bct
+[   0.3847 ] tegrabct_v2 --chip 0x23 0 --mb2bct mb2_cold_boot_bct.cfg --mb2bctcfg tegra234-mb2-bct-misc-p3701-0000_cpp.dtb --scr tegra234-mb2-bct-scr-p3701-0000_cpp.dtb
+[   0.3849 ] WARNING: unknown property 'tfc_version'
+[   0.3862 ] WARNING: unknown property 'addr_header_version'
+[   0.3923 ] Updating mb2-bct with storage information
+[   0.3925 ] tegrabct_v2 --chip 0x23 0 --mb2bct mb2_cold_boot_bct_MB2.bct --updatestorageinfo flash.xml.bin
+[   0.3931 ] Concatenating mb2-bct to mb2 binary
+[   0.3931 ] mb2_bin_file = mb2_t234.bin
+[   0.3931 ] mb2_bct_file = mb2_cold_boot_bct_MB2.bct
+[   0.3966 ] DCE binary: display-t234-dce.bin
+[   0.3966 ] Kernel DTB used: kernel_tegra234-p3737-0000+p3701-0005-nv.dtb
+[   0.3967 ] Concatenating kernel-dtb to dce-fw binary
+[   0.3967 ] dce_bin = display-t234-dce.bin
+[   0.3967 ] kernel_dtb = kernel_tegra234-p3737-0000+p3701-0005-nv.dtb
+[   0.3967 ] dce_with_dtb = display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv.bin
+[   0.4077 ] Update display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv.bin to dce_fw partitions
+[   0.4100 ] Parsing partition layout
+[   0.4103 ] tegraparser_v2 --pt flash.xml.tmp
+[   0.4112 ] Creating list of images to be signed
+[   0.4116 ] Generating ratchet blob
+[   0.4116 ] Pre-processing config: tegra234-mb1-bct-reset-p3701-0000.dts
+[   0.4174 ] Pre-processing config: tegra234-mb1-bct-device-p3701-0000.dts
+[   0.4225 ] Pre-processing config: tegra234-mb1-bct-cprod-p3701-0000.dts
+[   0.4275 ] Pre-processing config: tegra234-mb1-bct-gpioint-p3701-0000.dts
+[   0.4325 ] Pre-processing config: tegra234-mb1-bct-misc-p3701-0000.dts
+[   0.4402 ] Pre-processing config: tegra234-mb1-bct-pinmux-p3701-0000-a04.dtsi
+[   0.4485 ] Pre-processing config: tegra234-mb1-bct-padvoltage-p3701-0000-a04.dtsi
+[   0.4540 ] Pre-processing config: tegra234-mb1-bct-pmic-p3701-0005.dts
+[   0.4593 ] Pre-processing config: tegra234-mb1-bct-prod-p3701-0000.dts
+[   0.4649 ] Pre-processing config: tegra234-p3701-0005-sdram-l4t.dts
+[   1.1528 ] Pre-processing config: tegra234-mb1-bct-uphylane-si.dtsi
+[   1.1585 ] Pre-processing config: tegra234-p3701-0005-wb0sdram-l4t.dts
+[   1.8794 ] Pre-processing config: tegra234-mb1-bct-ratchet-p3701-0000.dts
+[   1.8859 ] Generating coldboot mb1-bct
+[   1.8862 ] tegrabct_v2 --chip 0x23 0 --mb1bct mb1_cold_boot_bct.cfg --misc tegra234-mb1-bct-misc-p3701-0000_cpp.dtb --wb0sdram tegra234-p3701-0005-wb0sdram-l4t_cpp.dtb --pinmux tegra234-mb1-bct-pinmux-p3701-0000-a04_cpp.dtb --pmc tegra234-mb1-bct-padvoltage-p3701-0000-a04_cpp.dtb --pmic tegra234-mb1-bct-pmic-p3701-0005_cpp.dtb --brcommand tegra234-mb1-bct-reset-p3701-0000_cpp.dtb --prod tegra234-mb1-bct-prod-p3701-0000_cpp.dtb --gpioint tegra234-mb1-bct-gpioint-p3701-0000_cpp.dtb --uphy tegra234-mb1-bct-uphylane-si_cpp.dtb --device tegra234-mb1-bct-device-p3701-0000_cpp.dtb --deviceprod tegra234-mb1-bct-cprod-p3701-0000_cpp.dtb --minratchet tegra234-mb1-bct-ratchet-p3701-0000_cpp.dtb --ratchet_blob ratchet_blob.bin
+[   1.8865 ] MB1-BCT version: 0.13
+
+[   1.8878 ] Parsing config file :tegra234-mb1-bct-pinmux-p3701-0000-a04_cpp.dtb 
+[   1.8880 ] Added Platform Config 0 data with size :- 2936
+
+[   1.8892 ] Parsing config file :tegra234-mb1-bct-padvoltage-p3701-0000-a04_cpp.dtb 
+[   1.8894 ] WARNING: unknown node 'g2'
+[   1.8895 ] WARNING: unknown node 'g2'
+[   1.8896 ] WARNING: unknown node 'g9'
+[   1.8898 ] WARNING: unknown node 'g9'
+[   1.8898 ] Added Platform Config 2 data with size :- 24
+[   1.8898 ] 
+[   1.8898 ] Parsing config file :tegra234-mb1-bct-pmic-p3701-0005_cpp.dtb 
+[   1.8898 ] WARNING: unknown property 'i2c-update-only'
+[   1.8898 ] WARNING: unknown property 'i2c-verify-only'
+[   1.8898 ] WARNING: unknown property 'i2c-update-verify'
+[   1.8898 ] WARNING: unknown property 'i2c-update-only'
+[   1.8898 ] WARNING: unknown property 'i2c-verify-only'
+[   1.8898 ] WARNING: unknown property 'i2c-update-only'
+[   1.8898 ] WARNING: unknown property 'i2c-verify-only'
+[   1.8898 ] Added Platform Config 4 data with size :- 844
+[   1.8898 ] 
+[   1.8898 ] Parsing config file :tegra234-mb1-bct-reset-p3701-0000_cpp.dtb 
+[   1.8898 ] Added Platform Config 3 data with size :- 52
+[   1.8898 ] 
+[   1.8898 ] Parsing config file :tegra234-mb1-bct-prod-p3701-0000_cpp.dtb 
+[   1.8898 ] WARNING: unknown property 'major'
+[   1.8898 ] WARNING: unknown property 'minor'
+[   1.8898 ] Added Platform Config 5 data with size :- 524
+[   1.8898 ] 
+[   1.8898 ] Parsing config file :tegra234-mb1-bct-gpioint-p3701-0000_cpp.dtb 
+[   1.8898 ] WARNING: unknown property 'major'
+[   1.8898 ] WARNING: unknown property 'minor'
+[   1.8898 ] Added Platform Config 7 data with size :- 380
+[   1.8898 ] 
+[   1.8898 ] Parsing config file :tegra234-mb1-bct-uphylane-si_cpp.dtb 
+[   1.8898 ] Added Platform Config 8 data with size :- 24
+[   1.8898 ] 
+[   1.8898 ] Parsing config file :tegra234-mb1-bct-device-p3701-0000_cpp.dtb 
+[   1.8898 ] Added Platform Config 9 data with size :- 100
+[   1.8898 ] 
+[   1.8898 ] Parsing config file :tegra234-mb1-bct-cprod-p3701-0000_cpp.dtb 
+[   1.8898 ] ModuleCount 0 NumProdNames 0
+[   1.8898 ] Added Platform Config 6 data with size :- 16
+[   1.8898 ] 
+[   1.8898 ] Parsing config file :tegra234-mb1-bct-ratchet-p3701-0000_cpp.dtb 
+[   1.8898 ] 
+[   1.8898 ] Updating mb1-bct with firmware information
+[   1.8901 ] tegrabct_v2 --chip 0x23 0 --mb1bct mb1_cold_boot_bct_MB1.bct --updatefwinfo flash.xml.bin
+[   1.8911 ] tegrahost_v2 --chip 0x23 0 --align mb1_cold_boot_bct_MB1_aligned.bct
+[   1.8914 ] Generating SHA2 Hash for mb1bct
+[   1.8928 ] Sha saved in mb1_cold_boot_bct_MB1_aligned.sha
+[   1.8935 ] Sha saved in mb1_cold_boot_bct_MB1.sha
+[   1.8932 ] tegrahost_v2 --chip 0x23 0 --magicid MBCT --ratchet_blob ratchet_blob.bin --appendsigheader mb1_cold_boot_bct_MB1_aligned.bct zerosbk
+[   1.8935 ] adding BCH for mb1_cold_boot_bct_MB1_aligned.bct
+[   1.8947 ] tegrasign_v3.py --key None --list mb1_cold_boot_bct_MB1_aligned_sigheader.bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   1.8948 ] Assuming zero filled SBK key
+[   1.8959 ] Warning: pub_key.key is not found
+[   1.8958 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mb1_cold_boot_bct_MB1_aligned_sigheader.bct.encrypt mb1_cold_boot_bct_MB1_aligned_sigheader.bct.hash zerosbk
+[   1.8967 ] tegrahost_v2 --chip 0x23 0 --partitionlayout flash.xml.bin --ratchet_blob ratchet_blob.bin --list images_list.xml zerosbk
+[   1.8970 ] MB1: Nvheader already present is mb1_t234_prod_aligned.bin
+[   1.8983 ] Header already present for mb1_t234_prod_aligned_sigheader.bin
+[   1.8988 ] MB1: Nvheader already present is psc_bl1_t234_prod_aligned.bin
+[   1.9030 ] Header already present for psc_bl1_t234_prod_aligned_sigheader.bin
+[   1.9033 ] Header already present for tsec_t234_aligned.bin
+[   1.9054 ] Header already present for nvdec_t234_prod_aligned.fw
+[   1.9086 ] adding BCH for mb2_t234_with_mb2_cold_boot_bct_MB2_aligned.bin
+[   1.9133 ] adding BCH for xusb_t234_prod_aligned.bin
+[   1.9244 ] Header already present for bpmp_t234-TE990M-A1_prod_aligned.bin
+[   1.9309 ] adding BCH for tegra234-bpmp-3701-0005-3737-0000_with_odm_aligned.dtb
+[   1.9442 ] Header already present for pscfw_t234_prod_aligned.bin
+[   1.9511 ] Header already present for mce_flash_o10_cr_prod_aligned.bin
+[   1.9553 ] Header already present for sc7_t234_prod.bin
+[   1.9578 ] Header already present for psc_rf_t234_prod_aligned.bin
+[   1.9604 ] adding BCH for mb2rf_t234_aligned.bin
+[   1.9624 ] INFO: compressing uefi_t23x_general_with_dtb_aligned.bin
+[   2.0153 ] INFO: complete compression, uefi_t23x_general_with_dtb_aligned.bin, ratio = 90%
+[   2.0196 ] adding BCH for uefi_t23x_general_with_dtb_aligned_blob_w_bin_aligned.bin
+[   2.0671 ] adding BCH for tos-optee_t234_aligned.img
+[   2.1125 ] adding BCH for eks_aligned.img
+[   2.1534 ] INFO: compressing display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned.bin
+[   2.3250 ] INFO: complete compression, display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned.bin, ratio = 6%
+[   2.3409 ] adding BCH for display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned_blob_w_bin_aligned.bin
+[   2.3586 ] adding BCH for spe_t234_aligned.bin
+[   2.3689 ] adding BCH for camera-rtcpu-t234-rce_aligned.img
+[   2.3762 ] adding BCH for adsp-fw_aligned.bin
+[   2.3876 ] INFO: compressing nvpva_020_aligned.fw
+[   2.4210 ] INFO: complete compression, nvpva_020_aligned.fw, ratio = 2%
+[   2.4234 ] adding BCH for nvpva_020_aligned_blob_w_bin_aligned.fw
+[   2.4253 ] MB1: Nvheader already present is mb1_t234_prod_aligned.bin
+[   2.4268 ] Header already present for mb1_t234_prod_aligned_sigheader.bin
+[   2.4272 ] MB1: Nvheader already present is psc_bl1_t234_prod_aligned.bin
+[   2.4360 ] Header already present for psc_bl1_t234_prod_aligned_sigheader.bin
+[   2.4363 ] Header already present for tsec_t234_aligned.bin
+[   2.4384 ] Header already present for nvdec_t234_prod_aligned.fw
+[   2.4415 ] adding BCH for mb2_t234_with_mb2_cold_boot_bct_MB2_aligned.bin
+[   2.4462 ] adding BCH for xusb_t234_prod_aligned.bin
+[   2.4573 ] Header already present for bpmp_t234-TE990M-A1_prod_aligned.bin
+[   2.4641 ] adding BCH for tegra234-bpmp-3701-0005-3737-0000_with_odm_aligned.dtb
+[   2.4777 ] Header already present for pscfw_t234_prod_aligned.bin
+[   2.4848 ] Header already present for mce_flash_o10_cr_prod_aligned.bin
+[   2.4891 ] Header already present for sc7_t234_prod.bin
+[   2.4916 ] Header already present for psc_rf_t234_prod_aligned.bin
+[   2.4944 ] adding BCH for mb2rf_t234_aligned.bin
+[   2.4964 ] INFO: compressing uefi_t23x_general_with_dtb_aligned.bin
+[   2.5503 ] INFO: complete compression, uefi_t23x_general_with_dtb_aligned.bin, ratio = 90%
+[   2.5545 ] adding BCH for uefi_t23x_general_with_dtb_aligned_blob_w_bin_aligned.bin
+[   2.6039 ] adding BCH for tos-optee_t234_aligned.img
+[   2.6506 ] adding BCH for eks_aligned.img
+[   2.6920 ] INFO: compressing display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned.bin
+[   2.8675 ] INFO: complete compression, display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned.bin, ratio = 6%
+[   2.8833 ] adding BCH for display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned_blob_w_bin_aligned.bin
+[   2.9016 ] adding BCH for spe_t234_aligned.bin
+[   2.9123 ] adding BCH for camera-rtcpu-t234-rce_aligned.img
+[   2.9199 ] adding BCH for adsp-fw_aligned.bin
+[   2.9315 ] INFO: compressing nvpva_020_aligned.fw
+[   2.9657 ] INFO: complete compression, nvpva_020_aligned.fw, ratio = 2%
+[   2.9680 ] adding BCH for nvpva_020_aligned_blob_w_bin_aligned.fw
+[   2.9712 ] Filling MB1 storage info
+[   2.9712 ] Parsing dev params for multi chains
+[   2.9767 ] Generating br-bct
+[   2.9769 ] Updating dev and MSS params in BR BCT
+[   2.9769 ] tegrabct_v2 --dev_param tegra234-br-bct-p3701-0000_cpp.dtb --sdram tegra234-p3701-0005-sdram-l4t_cpp.dtb --brbct br_bct.cfg --chip 0x23 0
+[   3.0325 ] Updating bl info
+[   3.0327 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --updateblinfo flash.xml.bin
+[   3.0392 ] Generating br-bct
+[   3.0394 ] Updating dev and MSS params in BR BCT
+[   3.0394 ] tegrabct_v2 --dev_param tegra234-br-bct_b-p3701-0000_cpp.dtb --sdram tegra234-p3701-0005-sdram-l4t_cpp.dtb --brbct br_bct.cfg --chip 0x23 0
+[   3.0945 ] Updating bl info
+[   3.0948 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --updateblinfo flash.xml.bin
+[   3.0957 ] Generating BCT backup image
+[   3.0958 ] dd if=/dev/zero of=bct_backup.img bs=1 count=32768
+[   3.0960 ] 32768+0 records in
+[   3.1325 ] 32768+0 records out
+[   3.1325 ] 32768 bytes (33 kB, 32 KiB) copied, 0.0361162 s, 907 kB/s
+[   3.1325 ] 
+[   3.1325 ] Concatenating BCT for chain A to bct_backup.img
+
+[   3.1325 ] dd if=br_bct_BR.bct of=bct_backup.img bs=1 seek=0 conv=notrunc
+[   3.1329 ] 8192+0 records in
+[   3.1434 ] 8192+0 records out
+[   3.1434 ] 8192 bytes (8.2 kB, 8.0 KiB) copied, 0.0100111 s, 818 kB/s
+[   3.1434 ] 
+[   3.1434 ] Concatenating BCT for chain B to bct_backup.img
+
+[   3.1434 ] dd if=br_bct_b_BR.bct of=bct_backup.img bs=1 seek=16384 conv=notrunc
+[   3.1437 ] 8192+0 records in
+[   3.1536 ] 8192+0 records out
+[   3.1536 ] 8192 bytes (8.2 kB, 8.0 KiB) copied, 0.00941928 s, 870 kB/s
+[   3.1536 ] 
+[   3.1536 ] Generating signatures
+[   3.1541 ] tegrasign_v3.py --key None --list images_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.1542 ] Assuming zero filled SBK key
+[   3.2300 ] Warning: pub_key.key is not found
+[   3.2313 ] Parsing dev params for multi chains
+[   3.2313 ] Generating br-bct
+[   3.2315 ] Updating dev and MSS params in BR BCT
+[   3.2315 ] tegrabct_v2 --dev_param tegra234-br-bct-p3701-0000_cpp.dtb --sdram tegra234-p3701-0005-sdram-l4t_cpp.dtb --brbct br_bct.cfg --chip 0x23 0
+[   3.2869 ] Updating customer data section
+[   3.2872 ] tegrabct_v2 --chip 0x23 0 --brbct br_bct_BR.bct --update_custinfo custinfo_out.bin
+[   3.2878 ] Updating bl info
+[   3.2880 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --updateblinfo flash.xml.bin --updatesig images_list_signed.xml
+[   3.2894 ] Generating SHA2 Hash
+[   3.2905 ] Sha saved in br_bct_BR.sha
+[   3.2900 ] Get Signed section of bct
+[   3.2902 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --listbct bct_list.xml
+[   3.2906 ] Signing BCT
+[   3.2912 ] tegrasign_v3.py --key None --list bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.2912 ] Assuming zero filled SBK key
+[   3.2924 ] Sha saved in br_bct_BR.sha
+[   3.2926 ] Warning: pub_key.key is not found
+[   3.2921 ] Updating BCT with signature
+[   3.2922 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --updatesig bct_list_signed.xml
+[   3.2924 ] Offset :4608 Len :3584
+[   3.2928 ] Generating SHA2 Hash
+[   3.2933 ] tegrasign_v3.py --key None --list bct_list.xml --sha sha512
+[   3.2934 ] Assuming zero filled SBK key
+[   3.2934 ] Assuming zero filled SBK key
+[   3.2946 ] Sha saved in br_bct_BR.sha
+[   3.2942 ] Updating BCT with SHA2 Hash
+[   3.2944 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --updatesha bct_list_signed.xml
+[   3.2946 ] Offset :4608 Len :3584
+[   3.2948 ] Offset :68 Len :8124
+[   3.2949 ] Generating br-bct
+[   3.2952 ] Updating dev and MSS params in BR BCT
+[   3.2952 ] tegrabct_v2 --dev_param tegra234-br-bct_b-p3701-0000_cpp.dtb --sdram tegra234-p3701-0005-sdram-l4t_cpp.dtb --brbct br_bct.cfg --chip 0x23 0
+[   3.3500 ] Updating customer data section
+[   3.3503 ] tegrabct_v2 --chip 0x23 0 --brbct br_bct_BR.bct --update_custinfo custinfo_out.bin
+[   3.3508 ] Updating bl info
+[   3.3511 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --updateblinfo flash.xml.bin --updatesig images_list_signed.xml
+[   3.3524 ] Generating SHA2 Hash
+[   3.3536 ] Sha saved in br_bct_BR.sha
+[   3.3531 ] Get Signed section of bct
+[   3.3534 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --listbct bct_list.xml
+[   3.3538 ] Signing BCT
+[   3.3543 ] tegrasign_v3.py --key None --list bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.3544 ] Assuming zero filled SBK key
+[   3.3558 ] Sha saved in br_bct_BR.sha
+[   3.3560 ] Warning: pub_key.key is not found
+[   3.3555 ] Updating BCT with signature
+[   3.3557 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --updatesig bct_list_signed.xml
+[   3.3559 ] Offset :4608 Len :3584
+[   3.3563 ] Generating SHA2 Hash
+[   3.3568 ] tegrasign_v3.py --key None --list bct_list.xml --sha sha512
+[   3.3569 ] Assuming zero filled SBK key
+[   3.3569 ] Assuming zero filled SBK key
+[   3.3583 ] Sha saved in br_bct_BR.sha
+[   3.3580 ] Updating BCT with SHA2 Hash
+[   3.3582 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --updatesha bct_list_signed.xml
+[   3.3585 ] Offset :4608 Len :3584
+[   3.3588 ] Offset :68 Len :8124
+[   3.3590 ] Generating BCT backup image
+[   3.3590 ] dd if=/dev/zero of=bct_backup.img bs=1 count=32768
+[   3.3592 ] 32768+0 records in
+[   3.3969 ] 32768+0 records out
+[   3.3969 ] 32768 bytes (33 kB, 32 KiB) copied, 0.0371937 s, 881 kB/s
+[   3.3969 ] 
+[   3.3969 ] Concatenating BCT for chain A to bct_backup.img
+
+[   3.3969 ] dd if=br_bct_BR.bct of=bct_backup.img bs=1 seek=0 conv=notrunc
+[   3.3972 ] 8192+0 records in
+[   3.4078 ] 8192+0 records out
+[   3.4078 ] 8192 bytes (8.2 kB, 8.0 KiB) copied, 0.00994383 s, 824 kB/s
+[   3.4078 ] 
+[   3.4078 ] Concatenating BCT for chain B to bct_backup.img
+
+[   3.4078 ] dd if=br_bct_b_BR.bct of=bct_backup.img bs=1 seek=16384 conv=notrunc
+[   3.4081 ] 8192+0 records in
+[   3.4188 ] 8192+0 records out
+[   3.4188 ] 8192 bytes (8.2 kB, 8.0 KiB) copied, 0.0101742 s, 805 kB/s
+[   3.4188 ] 
+[   3.4189 ] Generating coldboot mb1-bct
+[   3.4192 ] tegrabct_v2 --chip 0x23 0 --mb1bct mb1_cold_boot_bct.cfg --misc tegra234-mb1-bct-misc-p3701-0000_cpp.dtb --wb0sdram tegra234-p3701-0005-wb0sdram-l4t_cpp.dtb --pinmux tegra234-mb1-bct-pinmux-p3701-0000-a04_cpp.dtb --pmc tegra234-mb1-bct-padvoltage-p3701-0000-a04_cpp.dtb --pmic tegra234-mb1-bct-pmic-p3701-0005_cpp.dtb --brcommand tegra234-mb1-bct-reset-p3701-0000_cpp.dtb --prod tegra234-mb1-bct-prod-p3701-0000_cpp.dtb --gpioint tegra234-mb1-bct-gpioint-p3701-0000_cpp.dtb --uphy tegra234-mb1-bct-uphylane-si_cpp.dtb --device tegra234-mb1-bct-device-p3701-0000_cpp.dtb --deviceprod tegra234-mb1-bct-cprod-p3701-0000_cpp.dtb --minratchet tegra234-mb1-bct-ratchet-p3701-0000_cpp.dtb --ratchet_blob ratchet_blob.bin
+[   3.4194 ] MB1-BCT version: 0.13
+
+[   3.4205 ] Parsing config file :tegra234-mb1-bct-pinmux-p3701-0000-a04_cpp.dtb 
+[   3.4207 ] Added Platform Config 0 data with size :- 2936
+
+[   3.4219 ] Parsing config file :tegra234-mb1-bct-padvoltage-p3701-0000-a04_cpp.dtb 
+[   3.4221 ] WARNING: unknown node 'g2'
+[   3.4222 ] WARNING: unknown node 'g2'
+[   3.4223 ] WARNING: unknown node 'g9'
+[   3.4224 ] WARNING: unknown node 'g9'
+[   3.4224 ] Added Platform Config 2 data with size :- 24
+[   3.4224 ] 
+[   3.4224 ] Parsing config file :tegra234-mb1-bct-pmic-p3701-0005_cpp.dtb 
+[   3.4224 ] WARNING: unknown property 'i2c-update-only'
+[   3.4224 ] WARNING: unknown property 'i2c-verify-only'
+[   3.4224 ] WARNING: unknown property 'i2c-update-verify'
+[   3.4224 ] WARNING: unknown property 'i2c-update-only'
+[   3.4224 ] WARNING: unknown property 'i2c-verify-only'
+[   3.4224 ] WARNING: unknown property 'i2c-update-only'
+[   3.4224 ] WARNING: unknown property 'i2c-verify-only'
+[   3.4224 ] Added Platform Config 4 data with size :- 844
+[   3.4224 ] 
+[   3.4224 ] Parsing config file :tegra234-mb1-bct-reset-p3701-0000_cpp.dtb 
+[   3.4224 ] Added Platform Config 3 data with size :- 52
+[   3.4224 ] 
+[   3.4224 ] Parsing config file :tegra234-mb1-bct-prod-p3701-0000_cpp.dtb 
+[   3.4224 ] WARNING: unknown property 'major'
+[   3.4224 ] WARNING: unknown property 'minor'
+[   3.4224 ] Added Platform Config 5 data with size :- 524
+[   3.4224 ] 
+[   3.4224 ] Parsing config file :tegra234-mb1-bct-gpioint-p3701-0000_cpp.dtb 
+[   3.4224 ] WARNING: unknown property 'major'
+[   3.4224 ] WARNING: unknown property 'minor'
+[   3.4224 ] Added Platform Config 7 data with size :- 380
+[   3.4224 ] 
+[   3.4224 ] Parsing config file :tegra234-mb1-bct-uphylane-si_cpp.dtb 
+[   3.4224 ] Added Platform Config 8 data with size :- 24
+[   3.4224 ] 
+[   3.4224 ] Parsing config file :tegra234-mb1-bct-device-p3701-0000_cpp.dtb 
+[   3.4224 ] Added Platform Config 9 data with size :- 100
+[   3.4224 ] 
+[   3.4224 ] Parsing config file :tegra234-mb1-bct-cprod-p3701-0000_cpp.dtb 
+[   3.4224 ] ModuleCount 0 NumProdNames 0
+[   3.4224 ] Added Platform Config 6 data with size :- 16
+[   3.4224 ] 
+[   3.4224 ] Parsing config file :tegra234-mb1-bct-ratchet-p3701-0000_cpp.dtb 
+[   3.4224 ] 
+[   3.4224 ] Updating mb1-bct with firmware information
+[   3.4227 ] tegrabct_v2 --chip 0x23 0 --mb1bct mb1_cold_boot_bct_MB1.bct --updatefwinfo flash.xml.bin
+[   3.4236 ] tegrahost_v2 --chip 0x23 0 --align mb1_cold_boot_bct_MB1_aligned.bct
+[   3.4239 ] Generating SHA2 Hash for mb1bct
+[   3.4251 ] Sha saved in mb1_cold_boot_bct_MB1_aligned.sha
+[   3.4258 ] Sha saved in mb1_cold_boot_bct_MB1.sha
+[   3.4256 ] tegrahost_v2 --chip 0x23 0 --magicid MBCT --ratchet_blob ratchet_blob.bin --appendsigheader mb1_cold_boot_bct_MB1_aligned.bct zerosbk
+[   3.4258 ] adding BCH for mb1_cold_boot_bct_MB1_aligned.bct
+[   3.4271 ] tegrasign_v3.py --key None --list mb1_cold_boot_bct_MB1_aligned_sigheader.bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.4271 ] Assuming zero filled SBK key
+[   3.4282 ] Warning: pub_key.key is not found
+[   3.4280 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mb1_cold_boot_bct_MB1_aligned_sigheader.bct.encrypt mb1_cold_boot_bct_MB1_aligned_sigheader.bct.hash zerosbk
+[   3.4289 ] Generating recovery mb1-bct
+[   3.4292 ] tegrabct_v2 --chip 0x23 0 --mb1bct mb1_bct.cfg --misc tegra234-mb1-bct-misc-p3701-0000_cpp.dtb --wb0sdram tegra234-p3701-0005-wb0sdram-l4t_cpp.dtb --pinmux tegra234-mb1-bct-pinmux-p3701-0000-a04_cpp.dtb --pmc tegra234-mb1-bct-padvoltage-p3701-0000-a04_cpp.dtb --pmic tegra234-mb1-bct-pmic-p3701-0005_cpp.dtb --brcommand tegra234-mb1-bct-reset-p3701-0000_cpp.dtb --prod tegra234-mb1-bct-prod-p3701-0000_cpp.dtb --gpioint tegra234-mb1-bct-gpioint-p3701-0000_cpp.dtb --uphy tegra234-mb1-bct-uphylane-si_cpp.dtb --device tegra234-mb1-bct-device-p3701-0000_cpp.dtb --deviceprod tegra234-mb1-bct-cprod-p3701-0000_cpp.dtb --minratchet tegra234-mb1-bct-ratchet-p3701-0000_cpp.dtb --ratchet_blob ratchet_blob.bin
+[   3.4294 ] MB1-BCT version: 0.13
+
+[   3.4311 ] Parsing config file :tegra234-mb1-bct-pinmux-p3701-0000-a04_cpp.dtb 
+[   3.4312 ] Added Platform Config 0 data with size :- 2936
+
+[   3.4325 ] Parsing config file :tegra234-mb1-bct-padvoltage-p3701-0000-a04_cpp.dtb 
+[   3.4327 ] WARNING: unknown node 'g2'
+[   3.4328 ] WARNING: unknown node 'g2'
+[   3.4328 ] WARNING: unknown node 'g9'
+[   3.4329 ] WARNING: unknown node 'g9'
+[   3.4329 ] Added Platform Config 2 data with size :- 24
+[   3.4329 ] 
+[   3.4329 ] Parsing config file :tegra234-mb1-bct-pmic-p3701-0005_cpp.dtb 
+[   3.4329 ] WARNING: unknown property 'i2c-update-only'
+[   3.4329 ] WARNING: unknown property 'i2c-verify-only'
+[   3.4329 ] WARNING: unknown property 'i2c-update-verify'
+[   3.4329 ] WARNING: unknown property 'i2c-update-only'
+[   3.4329 ] WARNING: unknown property 'i2c-verify-only'
+[   3.4329 ] WARNING: unknown property 'i2c-update-only'
+[   3.4329 ] WARNING: unknown property 'i2c-verify-only'
+[   3.4329 ] Added Platform Config 4 data with size :- 844
+[   3.4329 ] 
+[   3.4329 ] Parsing config file :tegra234-mb1-bct-reset-p3701-0000_cpp.dtb 
+[   3.4329 ] Added Platform Config 3 data with size :- 52
+[   3.4329 ] 
+[   3.4329 ] Parsing config file :tegra234-mb1-bct-prod-p3701-0000_cpp.dtb 
+[   3.4329 ] WARNING: unknown property 'major'
+[   3.4329 ] WARNING: unknown property 'minor'
+[   3.4329 ] Added Platform Config 5 data with size :- 524
+[   3.4329 ] 
+[   3.4329 ] Parsing config file :tegra234-mb1-bct-gpioint-p3701-0000_cpp.dtb 
+[   3.4329 ] WARNING: unknown property 'major'
+[   3.4329 ] WARNING: unknown property 'minor'
+[   3.4329 ] Added Platform Config 7 data with size :- 380
+[   3.4329 ] 
+[   3.4329 ] Parsing config file :tegra234-mb1-bct-uphylane-si_cpp.dtb 
+[   3.4329 ] Added Platform Config 8 data with size :- 24
+[   3.4329 ] 
+[   3.4329 ] Parsing config file :tegra234-mb1-bct-device-p3701-0000_cpp.dtb 
+[   3.4329 ] Added Platform Config 9 data with size :- 100
+[   3.4329 ] 
+[   3.4329 ] Parsing config file :tegra234-mb1-bct-cprod-p3701-0000_cpp.dtb 
+[   3.4329 ] ModuleCount 0 NumProdNames 0
+[   3.4329 ] Added Platform Config 6 data with size :- 16
+[   3.4329 ] 
+[   3.4329 ] Parsing config file :tegra234-mb1-bct-ratchet-p3701-0000_cpp.dtb 
+[   3.4329 ] 
+[   3.4329 ] Updating mb1-bct with firmware information
+[   3.4332 ] tegrabct_v2 --chip 0x23 0 --mb1bct mb1_bct_MB1.bct --recov --updatefwinfo flash.xml.bin
+[   3.4340 ] tegrahost_v2 --chip 0x23 0 --align mb1_bct_MB1_aligned.bct
+[   3.4343 ] Generating SHA2 Hash for mb1bct
+[   3.4356 ] Sha saved in mb1_bct_MB1_aligned.sha
+[   3.4364 ] Sha saved in mb1_bct_MB1.sha
+[   3.4361 ] tegrahost_v2 --chip 0x23 0 --magicid MBCT --ratchet_blob ratchet_blob.bin --appendsigheader mb1_bct_MB1_aligned.bct zerosbk
+[   3.4364 ] adding BCH for mb1_bct_MB1_aligned.bct
+[   3.4377 ] tegrasign_v3.py --key None --list mb1_bct_MB1_aligned_sigheader.bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.4378 ] Assuming zero filled SBK key
+[   3.4387 ] Warning: pub_key.key is not found
+[   3.4384 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mb1_bct_MB1_aligned_sigheader.bct.encrypt mb1_bct_MB1_aligned_sigheader.bct.hash zerosbk
+[   3.4391 ] Generating coldboot mem-bct
+[   3.4394 ] tegrabct_v2 --chip 0x23 0 --sdram tegra234-p3701-0005-sdram-l4t_cpp.dtb --wb0sdram tegra234-p3701-0005-wb0sdram-l4t_cpp.dtb --membct tegra234-p3701-0005-sdram-l4t_cpp_1.bct tegra234-p3701-0005-sdram-l4t_cpp_2.bct tegra234-p3701-0005-sdram-l4t_cpp_3.bct tegra234-p3701-0005-sdram-l4t_cpp_4.bct
+[   3.4396 ]  packing sdram params with Wb0 file tegra234-p3701-0005-wb0sdram-l4t_cpp.dtb
+[   3.4932 ] Packing sdram param for instance[0]
+[   3.4933 ] Packing sdram param for instance[1]
+[   3.4934 ] Packing sdram param for instance[2]
+[   3.4935 ] Packing sdram param for instance[3]
+[   3.4936 ] Packing sdram param for instance[4]
+[   3.4937 ] Packing sdram param for instance[5]
+[   3.4938 ] Packing sdram param for instance[6]
+[   3.4939 ] Packing sdram param for instance[7]
+[   3.4940 ] Packing sdram param for instance[8]
+[   3.4941 ] Packing sdram param for instance[9]
+[   3.4942 ] Packing sdram param for instance[10]
+[   3.4943 ] Packing sdram param for instance[11]
+[   3.4944 ] Packing sdram param for instance[12]
+[   3.4945 ] Packing sdram param for instance[13]
+[   3.4946 ] Packing sdram param for instance[14]
+[   3.4947 ] Packing sdram param for instance[15]
+[   3.5469 ] Getting sector size from pt
+[   3.5472 ] tegraparser_v2 --getsectorsize flash.xml.bin sector_info.bin
+[   3.5480 ] BlockSize read from layout is 0x200
+
+[   3.5483 ] tegrahost_v2 --chip 0x23 0 --blocksize 512 --magicid MEMB --addsigheader_multi tegra234-p3701-0005-sdram-l4t_cpp_1.bct tegra234-p3701-0005-sdram-l4t_cpp_2.bct tegra234-p3701-0005-sdram-l4t_cpp_3.bct tegra234-p3701-0005-sdram-l4t_cpp_4.bct --ratchet_blob ratchet_blob.bin
+[   3.5486 ] Binary 0 length is 58752
+[   3.5488 ] Binary 0 align length is 58880
+[   3.5496 ] Binary 1 length is 58752
+[   3.5497 ] Binary 1 align length is 58880
+[   3.5503 ] Binary 2 length is 58752
+[   3.5504 ] Binary 2 align length is 58880
+[   3.5510 ] Binary 3 length is 58752
+[   3.5511 ] Binary 3 align length is 58880
+[   3.5517 ] Buffer length is 235520
+[   3.5518 ] adding BCH for tegra234-p3701-0005-sdram-l4t_cpp_1.bct
+[   3.5519 ] new length is 243712
+[   3.5527 ] tegrahost_v2 --chip 0x23 0 --align mem_coldboot_aligned.bct
+[   3.5533 ] tegrahost_v2 --chip 0x23 0 --magicid MEMB --ratchet_blob ratchet_blob.bin --appendsigheader mem_coldboot_aligned.bct zerosbk
+[   3.5535 ] Header already present for mem_coldboot_aligned.bct
+[   3.5548 ] tegrasign_v3.py --key None --list mem_coldboot_aligned_sigheader.bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.5549 ] Assuming zero filled SBK key
+[   3.5559 ] Warning: pub_key.key is not found
+[   3.5558 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mem_coldboot_aligned_sigheader.bct.encrypt mem_coldboot_aligned_sigheader.bct.hash zerosbk
+[   3.5574 ] Generating recovery mem-bct
+[   3.5577 ] tegrabct_v2 --chip 0x23 0 --sdram tegra234-p3701-0005-sdram-l4t_cpp.dtb --wb0sdram tegra234-p3701-0005-wb0sdram-l4t_cpp.dtb --membct tegra234-p3701-0005-sdram-l4t_cpp_1.bct tegra234-p3701-0005-sdram-l4t_cpp_2.bct tegra234-p3701-0005-sdram-l4t_cpp_3.bct tegra234-p3701-0005-sdram-l4t_cpp_4.bct
+[   3.5579 ]  packing sdram params with Wb0 file tegra234-p3701-0005-wb0sdram-l4t_cpp.dtb
+[   3.6126 ] Packing sdram param for instance[0]
+[   3.6127 ] Packing sdram param for instance[1]
+[   3.6128 ] Packing sdram param for instance[2]
+[   3.6129 ] Packing sdram param for instance[3]
+[   3.6130 ] Packing sdram param for instance[4]
+[   3.6131 ] Packing sdram param for instance[5]
+[   3.6132 ] Packing sdram param for instance[6]
+[   3.6133 ] Packing sdram param for instance[7]
+[   3.6134 ] Packing sdram param for instance[8]
+[   3.6135 ] Packing sdram param for instance[9]
+[   3.6136 ] Packing sdram param for instance[10]
+[   3.6137 ] Packing sdram param for instance[11]
+[   3.6138 ] Packing sdram param for instance[12]
+[   3.6139 ] Packing sdram param for instance[13]
+[   3.6140 ] Packing sdram param for instance[14]
+[   3.6141 ] Packing sdram param for instance[15]
+[   3.6690 ] Generating mem_bct based on ramcode group number
+[   3.6690 ] Got ramcode 3 from the command line
+[   3.6690 ] Using ramcode group number 0
+[   3.6690 ] Disabled BPMP dtb trim, using default dtb
+[   3.6690 ] 
+[   3.6695 ] tegrahost_v2 --chip 0x23 0 --align mem_rcm_aligned.bct
+[   3.6703 ] tegrahost_v2 --chip 0x23 0 --magicid MEM0 --ratchet_blob ratchet_blob.bin --appendsigheader mem_rcm_aligned.bct zerosbk
+[   3.6705 ] adding BCH for mem_rcm_aligned.bct
+[   3.6731 ] tegrasign_v3.py --key None --list mem_rcm_aligned_sigheader.bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.6732 ] Assuming zero filled SBK key
+[   3.6743 ] Warning: pub_key.key is not found
+[   3.6740 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mem_rcm_aligned_sigheader.bct.encrypt mem_rcm_aligned_sigheader.bct.hash zerosbk
+[   3.6749 ] Generating all 4 mem_bct for ramcode group (0..3)
+[   3.6749 ] Disabled BPMP dtb trim, using default dtb
+[   3.6749 ] 
+[   3.6755 ] tegrahost_v2 --chip 0x23 0 --align mem_rcm_0_aligned.bct
+[   3.6762 ] tegrahost_v2 --chip 0x23 0 --magicid MEM0 --ratchet_blob ratchet_blob.bin --appendsigheader mem_rcm_0_aligned.bct zerosbk
+[   3.6764 ] adding BCH for mem_rcm_0_aligned.bct
+[   3.6790 ] tegrasign_v3.py --key None --list mem_rcm_0_aligned_sigheader.bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.6791 ] Assuming zero filled SBK key
+[   3.6801 ] Warning: pub_key.key is not found
+[   3.6799 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mem_rcm_0_aligned_sigheader.bct.encrypt mem_rcm_0_aligned_sigheader.bct.hash zerosbk
+[   3.6808 ] Disabled BPMP dtb trim, using default dtb
+[   3.6808 ] 
+[   3.6812 ] tegrahost_v2 --chip 0x23 0 --align mem_rcm_1_aligned.bct
+[   3.6818 ] tegrahost_v2 --chip 0x23 0 --magicid MEM1 --ratchet_blob ratchet_blob.bin --appendsigheader mem_rcm_1_aligned.bct zerosbk
+[   3.6820 ] adding BCH for mem_rcm_1_aligned.bct
+[   3.6845 ] tegrasign_v3.py --key None --list mem_rcm_1_aligned_sigheader.bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.6845 ] Assuming zero filled SBK key
+[   3.6855 ] Warning: pub_key.key is not found
+[   3.6853 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mem_rcm_1_aligned_sigheader.bct.encrypt mem_rcm_1_aligned_sigheader.bct.hash zerosbk
+[   3.6862 ] Disabled BPMP dtb trim, using default dtb
+[   3.6862 ] 
+[   3.6868 ] tegrahost_v2 --chip 0x23 0 --align mem_rcm_2_aligned.bct
+[   3.6873 ] tegrahost_v2 --chip 0x23 0 --magicid MEM2 --ratchet_blob ratchet_blob.bin --appendsigheader mem_rcm_2_aligned.bct zerosbk
+[   3.6875 ] adding BCH for mem_rcm_2_aligned.bct
+[   3.6901 ] tegrasign_v3.py --key None --list mem_rcm_2_aligned_sigheader.bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.6901 ] Assuming zero filled SBK key
+[   3.6912 ] Warning: pub_key.key is not found
+[   3.6909 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mem_rcm_2_aligned_sigheader.bct.encrypt mem_rcm_2_aligned_sigheader.bct.hash zerosbk
+[   3.6916 ] Disabled BPMP dtb trim, using default dtb
+[   3.6916 ] 
+[   3.6921 ] tegrahost_v2 --chip 0x23 0 --align mem_rcm_3_aligned.bct
+[   3.6926 ] tegrahost_v2 --chip 0x23 0 --magicid MEM3 --ratchet_blob ratchet_blob.bin --appendsigheader mem_rcm_3_aligned.bct zerosbk
+[   3.6928 ] adding BCH for mem_rcm_3_aligned.bct
+[   3.6954 ] tegrasign_v3.py --key None --list mem_rcm_3_aligned_sigheader.bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.6954 ] Assuming zero filled SBK key
+[   3.6964 ] Warning: pub_key.key is not found
+[   3.6961 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mem_rcm_3_aligned_sigheader.bct.encrypt mem_rcm_3_aligned_sigheader.bct.hash zerosbk
+[   3.6970 ] Copying signatures
+[   3.6973 ] tegrahost_v2 --chip 0x23 0 --partitionlayout flash.xml.bin --updatesig images_list_signed.xml
+[   3.7442 ] tegraparser_v2 --generategpt --pt flash.xml.bin
+[   3.7445 ] gpt_secondary_3_0.bin:
+[   3.7448 ] partition_id	partition_name			      StartingLba	EndingLba
+[   3.7450 ]            1	BCT                                 	       0	    2047
+[   3.7453 ]            2	A_mb1                               	    2048	    3071
+[   3.7455 ]            3	A_psc_bl1                           	    3072	    3583
+[   3.7457 ]            4	A_MB1_BCT                           	    3584	    3839
+[   3.7459 ]            5	A_MEM_BCT                           	    3840	    4351
+[   3.7461 ]            6	A_tsec-fw                           	    4352	    6399
+[   3.7462 ]            7	A_nvdec                             	    6400	    8447
+[   3.7464 ]            8	A_mb2                               	    8448	    9471
+[   3.7466 ]            9	A_xusb-fw                           	    9472	    9983
+[   3.7467 ]           10	A_bpmp-fw                           	    9984	   13055
+[   3.7469 ]           11	A_bpmp-fw-dtb                       	   13056	   21247
+[   3.7471 ]           12	A_psc-fw                            	   21248	   22783
+[   3.7472 ]           13	A_mts-mce                           	   22784	   23807
+[   3.7473 ]           14	A_sc7                               	   23808	   24191
+[   3.7473 ]           15	A_pscrf                             	   24192	   24575
+[   3.7473 ]           16	A_mb2rf                             	   24576	   24831
+[   3.7473 ]           17	A_cpu-bootloader                    	   24832	   31999
+[   3.7473 ]           18	A_secure-os                         	   32000	   40191
+[   3.7473 ]           19	A_smm-fw                            	   40192	   44287
+[   3.7473 ]           20	A_eks                               	   44288	   44799
+[   3.7473 ]           21	A_dce-fw                            	   44800	   55039
+[   3.7473 ]           22	A_spe-fw                            	   55040	   56191
+[   3.7473 ]           23	A_rce-fw                            	   56192	   58239
+[   3.7473 ]           24	A_adsp-fw                           	   58240	   62335
+[   3.7473 ]           25	A_pva-fw                            	   62336	   62847
+[   3.7473 ]           26	A_reserved_on_boot                  	   62848	   65023
+[   3.7473 ]           27	B_mb1                               	   65024	   66047
+[   3.7473 ]           28	B_psc_bl1                           	   66048	   66559
+[   3.7473 ]           29	B_MB1_BCT                           	   66560	   66815
+[   3.7473 ]           30	B_MEM_BCT                           	   66816	   67327
+[   3.7473 ]           31	B_tsec-fw                           	   67328	   69375
+[   3.7473 ]           32	B_nvdec                             	   69376	   71423
+[   3.7473 ]           33	B_mb2                               	   71424	   72447
+[   3.7473 ]           34	B_xusb-fw                           	   72448	   72959
+[   3.7473 ]           35	B_bpmp-fw                           	   72960	   76031
+[   3.7473 ]           36	B_bpmp-fw-dtb                       	   76032	   84223
+[   3.7473 ]           37	B_psc-fw                            	   84224	   85759
+[   3.7473 ]           38	B_mts-mce                           	   85760	   86783
+[   3.7473 ]           39	B_sc7                               	   86784	   87167
+[   3.7473 ]           40	B_pscrf                             	   87168	   87551
+[   3.7473 ]           41	B_mb2rf                             	   87552	   87807
+[   3.7473 ]           42	B_cpu-bootloader                    	   87808	   94975
+[   3.7473 ]           43	B_secure-os                         	   94976	  103167
+[   3.7473 ]           44	B_smm-fw                            	  103168	  107263
+[   3.7473 ]           45	B_eks                               	  107264	  107775
+[   3.7473 ]           46	B_dce-fw                            	  107776	  118015
+[   3.7473 ]           47	B_spe-fw                            	  118016	  119167
+[   3.7473 ]           48	B_rce-fw                            	  119168	  121215
+[   3.7473 ]           49	B_adsp-fw                           	  121216	  125311
+[   3.7473 ]           50	B_pva-fw                            	  125312	  125823
+[   3.7473 ]           51	B_reserved_on_boot                  	  125824	  127999
+[   3.7473 ]           52	uefi_variables                      	  128000	  128511
+[   3.7473 ]           53	uefi_ftw                            	  128512	  129535
+[   3.7473 ]           54	reserved                            	  129536	  129919
+[   3.7473 ]           55	worm                                	  129920	  130303
+[   3.7473 ]           56	BCT-boot-chain_backup               	  130304	  130431
+[   3.7473 ]           57	reserved_partition                  	  130432	  130559
+[   3.7473 ]           58	secondary_gpt_backup                	  130560	  130687
+[   3.7473 ]           59	B_VER                               	  130688	  130815
+[   3.7473 ]           60	A_VER                               	  130816	  130943
+[   3.7473 ] gpt_primary_1_3.bin:
+[   3.7473 ] partition_id	partition_name			      StartingLba	EndingLba
+[   3.7473 ]            1	APP                                 	70158912	119537623
+[   3.7473 ]            2	A_kernel                            	      40	  262183
+[   3.7473 ]            3	A_kernel-dtb                        	  262184	  263719
+[   3.7473 ]            4	A_reserved_on_user                  	  263720	  328487
+[   3.7473 ]            5	B_kernel                            	  328488	  590631
+[   3.7473 ]            6	B_kernel-dtb                        	  590632	  592167
+[   3.7473 ]            7	B_reserved_on_user                  	  592168	  656935
+[   3.7473 ]            8	recovery                            	  656936	  820775
+[   3.7473 ]            9	recovery-dtb                        	  820776	  821799
+[   3.7473 ]           10	esp                                 	  821800	  952871
+[   3.7473 ]           11	recovery_alt                        	  952872	 1116711
+[   3.7473 ]           12	recovery-dtb_alt                    	 1116712	 1117735
+[   3.7473 ]           13	esp_alt                             	 1117736	 1248807
+[   3.7473 ]           14	UDA                                 	 1248832	 2068031
+[   3.7473 ]           15	reserved                            	 2068032	 3050047
+[   3.7473 ]           16	DATA                                	 3050048	70158911
+[   3.7473 ] gpt_secondary_1_3.bin:
+[   3.7473 ] partition_id	partition_name			      StartingLba	EndingLba
+[   3.7473 ]            1	APP                                 	70158912	119537623
+[   3.7473 ]            2	A_kernel                            	      40	  262183
+[   3.7473 ]            3	A_kernel-dtb                        	  262184	  263719
+[   3.7473 ]            4	A_reserved_on_user                  	  263720	  328487
+[   3.7473 ]            5	B_kernel                            	  328488	  590631
+[   3.7473 ]            6	B_kernel-dtb                        	  590632	  592167
+[   3.7473 ]            7	B_reserved_on_user                  	  592168	  656935
+[   3.7473 ]            8	recovery                            	  656936	  820775
+[   3.7473 ]            9	recovery-dtb                        	  820776	  821799
+[   3.7473 ]           10	esp                                 	  821800	  952871
+[   3.7473 ]           11	recovery_alt                        	  952872	 1116711
+[   3.7473 ]           12	recovery-dtb_alt                    	 1116712	 1117735
+[   3.7473 ]           13	esp_alt                             	 1117736	 1248807
+[   3.7473 ]           14	UDA                                 	 1248832	 2068031
+[   3.7473 ]           15	reserved                            	 2068032	 3050047
+[   3.7473 ]           16	DATA                                	 3050048	70158911
+[   3.7473 ] 
+[   3.7487 ] Get magic id
+[   3.7491 ] tegraparser_v2 --get_magic psc_fw
+[   3.7493 ] PFWP
+[   3.7495 ] partition type psc_fw, magic id = PFWP
+[   3.7503 ] tegrahost_v2 --chip 0x23 0 --align pscfw_t234_prod_aligned.bin
+[   3.7509 ] tegrahost_v2 --chip 0x23 0 --magicid PFWP --ratchet_blob ratchet_blob.bin --appendsigheader pscfw_t234_prod_aligned.bin zerosbk
+[   3.7511 ] Header already present for pscfw_t234_prod_aligned.bin
+[   3.7563 ] tegrasign_v3.py --key None --list pscfw_t234_prod_aligned_sigheader.bin_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.7564 ] Assuming zero filled SBK key
+[   3.7576 ] Warning: pub_key.key is not found
+[   3.7574 ] tegrahost_v2 --chip 0x23 0 --updatesigheader pscfw_t234_prod_aligned_sigheader.bin.encrypt pscfw_t234_prod_aligned_sigheader.bin.hash zerosbk
+[   3.7591 ] Get magic id
+[   3.7593 ] tegraparser_v2 --get_magic mts_mce
+[   3.7595 ] MTSM
+[   3.7597 ] partition type mts_mce, magic id = MTSM
+[   3.7603 ] tegrahost_v2 --chip 0x23 0 --align mce_flash_o10_cr_prod_aligned.bin
+[   3.7610 ] tegrahost_v2 --chip 0x23 0 --magicid MTSM --ratchet_blob ratchet_blob.bin --appendsigheader mce_flash_o10_cr_prod_aligned.bin zerosbk
+[   3.7612 ] Header already present for mce_flash_o10_cr_prod_aligned.bin
+[   3.7645 ] tegrasign_v3.py --key None --list mce_flash_o10_cr_prod_aligned_sigheader.bin_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.7645 ] Assuming zero filled SBK key
+[   3.7656 ] Warning: pub_key.key is not found
+[   3.7654 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mce_flash_o10_cr_prod_aligned_sigheader.bin.encrypt mce_flash_o10_cr_prod_aligned_sigheader.bin.hash zerosbk
+[   3.7668 ] Get magic id
+[   3.7671 ] tegraparser_v2 --get_magic mb2_applet
+[   3.7673 ] MB2A
+[   3.7674 ] partition type mb2_applet, magic id = MB2A
+[   3.7679 ] tegrahost_v2 --chip 0x23 0 --align applet_t234_aligned.bin
+[   3.7684 ] tegrahost_v2 --chip 0x23 0 --magicid MB2A --ratchet_blob ratchet_blob.bin --appendsigheader applet_t234_aligned.bin zerosbk
+[   3.7686 ] adding BCH for applet_t234_aligned.bin
+[   3.7762 ] tegrasign_v3.py --key None --list applet_t234_aligned_sigheader.bin_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.7763 ] Assuming zero filled SBK key
+[   3.7774 ] Warning: pub_key.key is not found
+[   3.7772 ] tegrahost_v2 --chip 0x23 0 --updatesigheader applet_t234_aligned_sigheader.bin.encrypt applet_t234_aligned_sigheader.bin.hash zerosbk
+[   3.7786 ] Generating recovery mb2-bct
+[   3.7786 ] tegrabct_v2 --chip 0x23 0 --mb2bct mb2_bct.cfg --recov --mb2bctcfg tegra234-mb2-bct-misc-p3701-0000_cpp.dtb --scr tegra234-mb2-bct-scr-p3701-0000_cpp.dtb
+[   3.7788 ] WARNING: unknown property 'tfc_version'
+[   3.7800 ] WARNING: unknown property 'addr_header_version'
+[   3.7853 ] Updating mb2-bct with storage information for RCM
+[   3.7856 ] tegrabct_v2 --chip 0x23 0 --mb2bct mb2_bct_MB2.bct --updatestorageinfo flash.xml.bin
+[   3.7861 ] Concatenating mb2-bct to mb2 binary
+[   3.7861 ] mb2_bin_file = mb2_t234.bin
+[   3.7861 ] mb2_bct_file = mb2_bct_MB2.bct
+[   3.7865 ] Get magic id
+[   3.7868 ] tegraparser_v2 --get_magic mb2_bootloader
+[   3.7870 ] MB2B
+[   3.7871 ] partition type mb2_bootloader, magic id = MB2B
+[   3.7877 ] tegrahost_v2 --chip 0x23 0 --align mb2_t234_with_mb2_bct_MB2_aligned.bin
+[   3.7882 ] tegrahost_v2 --chip 0x23 0 --magicid MB2B --ratchet_blob ratchet_blob.bin --appendsigheader mb2_t234_with_mb2_bct_MB2_aligned.bin zerosbk
+[   3.7884 ] adding BCH for mb2_t234_with_mb2_bct_MB2_aligned.bin
+[   3.8003 ] tegrasign_v3.py --key None --list mb2_t234_with_mb2_bct_MB2_aligned_sigheader.bin_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.8004 ] Assuming zero filled SBK key
+[   3.8017 ] Warning: pub_key.key is not found
+[   3.8015 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mb2_t234_with_mb2_bct_MB2_aligned_sigheader.bin.encrypt mb2_t234_with_mb2_bct_MB2_aligned_sigheader.bin.hash zerosbk
+[   3.8032 ] Get magic id
+[   3.8035 ] tegraparser_v2 --get_magic xusb_fw
+[   3.8037 ] XUSB
+[   3.8038 ] partition type xusb_fw, magic id = XUSB
+[   3.8043 ] tegrahost_v2 --chip 0x23 0 --align xusb_t234_prod_aligned.bin
+[   3.8048 ] tegrahost_v2 --chip 0x23 0 --magicid XUSB --ratchet_blob ratchet_blob.bin --appendsigheader xusb_t234_prod_aligned.bin zerosbk
+[   3.8050 ] adding BCH for xusb_t234_prod_aligned.bin
+[   3.8101 ] tegrasign_v3.py --key None --list xusb_t234_prod_aligned_sigheader.bin_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.8101 ] Assuming zero filled SBK key
+[   3.8111 ] Warning: pub_key.key is not found
+[   3.8109 ] tegrahost_v2 --chip 0x23 0 --updatesigheader xusb_t234_prod_aligned_sigheader.bin.encrypt xusb_t234_prod_aligned_sigheader.bin.hash zerosbk
+[   3.8121 ] Get magic id
+[   3.8123 ] tegraparser_v2 --get_magic pva_fw
+[   3.8126 ] PVAF
+[   3.8127 ] partition type pva_fw, magic id = PVAF
+[   3.8158 ] tegrahost_v2 --chip 0x23 0 --align nvpva_020_aligned.fw
+[   3.8165 ] tegrahost_v2 --chip 0x23 0 --magicid PVAF --ratchet_blob ratchet_blob.bin --appendsigheader nvpva_020_aligned.fw zerosbk
+[   3.8167 ] adding BCH for nvpva_020_aligned.fw
+[   3.8721 ] tegrasign_v3.py --key None --list nvpva_020_aligned_sigheader.fw_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.8722 ] Assuming zero filled SBK key
+[   3.8772 ] Warning: pub_key.key is not found
+[   3.8771 ] tegrahost_v2 --chip 0x23 0 --updatesigheader nvpva_020_aligned_sigheader.fw.encrypt nvpva_020_aligned_sigheader.fw.hash zerosbk
+[   3.8826 ] Kernel DTB used: kernel_tegra234-p3737-0000+p3701-0005-nv.dtb
+[   3.8826 ] Concatenating kernel-dtb to dce-fw binary
+[   3.8826 ] dce_bin = display-t234-dce.bin
+[   3.8826 ] kernel_dtb = kernel_tegra234-p3737-0000+p3701-0005-nv.dtb
+[   3.8826 ] dce_with_dtb = display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv.bin
+[   3.8998 ] Get magic id
+[   3.9002 ] tegraparser_v2 --get_magic dce_fw
+[   3.9005 ] DCEF
+[   3.9007 ] partition type dce_fw, magic id = DCEF
+[   3.9170 ] tegrahost_v2 --chip 0x23 0 --align display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned.bin
+[   3.9177 ] tegrahost_v2 --chip 0x23 0 --magicid DCEF --ratchet_blob ratchet_blob.bin --appendsigheader display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned.bin zerosbk
+[   3.9178 ] adding BCH for display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned.bin
+[   4.2207 ] tegrasign_v3.py --key None --list display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned_sigheader.bin_list.xml --pubkeyhash pub_key.key --sha sha512
+[   4.2208 ] Assuming zero filled SBK key
+[   4.2579 ] Warning: pub_key.key is not found
+[   4.2578 ] tegrahost_v2 --chip 0x23 0 --updatesigheader display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned_sigheader.bin.encrypt display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned_sigheader.bin.hash zerosbk
+[   4.2961 ] Get magic id
+[   4.2964 ] tegraparser_v2 --get_magic nvdec
+[   4.2967 ] NDEC
+[   4.2969 ] partition type nvdec, magic id = NDEC
+[   4.2978 ] tegrahost_v2 --chip 0x23 0 --align nvdec_t234_prod_aligned.fw
+[   4.2984 ] tegrahost_v2 --chip 0x23 0 --magicid NDEC --ratchet_blob ratchet_blob.bin --appendsigheader nvdec_t234_prod_aligned.fw zerosbk
+[   4.2986 ] Header already present for nvdec_t234_prod_aligned.fw
+[   4.3035 ] tegrasign_v3.py --key None --list nvdec_t234_prod_aligned_sigheader.fw_list.xml --pubkeyhash pub_key.key --sha sha512
+[   4.3036 ] Assuming zero filled SBK key
+[   4.3052 ] Warning: pub_key.key is not found
+[   4.3050 ] tegrahost_v2 --chip 0x23 0 --updatesigheader nvdec_t234_prod_aligned_sigheader.fw.encrypt nvdec_t234_prod_aligned_sigheader.fw.hash zerosbk
+[   4.3065 ] Get magic id
+[   4.3068 ] tegraparser_v2 --get_magic bpmp_fw
+[   4.3071 ] BPMF
+[   4.3072 ] partition type bpmp_fw, magic id = BPMF
+[   4.3088 ] tegrahost_v2 --chip 0x23 0 --align bpmp_t234-TE990M-A1_prod_aligned.bin
+[   4.3095 ] tegrahost_v2 --chip 0x23 0 --magicid BPMF --ratchet_blob ratchet_blob.bin --appendsigheader bpmp_t234-TE990M-A1_prod_aligned.bin zerosbk
+[   4.3098 ] Header already present for bpmp_t234-TE990M-A1_prod_aligned.bin
+[   4.3237 ] tegrasign_v3.py --key None --list bpmp_t234-TE990M-A1_prod_aligned_sigheader.bin_list.xml --pubkeyhash pub_key.key --sha sha512
+[   4.3238 ] Assuming zero filled SBK key
+[   4.3270 ] Warning: pub_key.key is not found
+[   4.3269 ] tegrahost_v2 --chip 0x23 0 --updatesigheader bpmp_t234-TE990M-A1_prod_aligned_sigheader.bin.encrypt bpmp_t234-TE990M-A1_prod_aligned_sigheader.bin.hash zerosbk
+[   4.3303 ] Using bpmp-dtb concatenated with odmdata
+[   4.3303 ] Get magic id
+[   4.3306 ] tegraparser_v2 --get_magic bpmp_fw_dtb
+[   4.3308 ] BPMD
+[   4.3309 ] partition type bpmp_fw_dtb, magic id = BPMD
+[   4.3317 ] tegrahost_v2 --chip 0x23 0 --align tegra234-bpmp-3701-0005-3737-0000_with_odm_aligned.dtb
+[   4.3323 ] tegrahost_v2 --chip 0x23 0 --magicid BPMD --ratchet_blob ratchet_blob.bin --appendsigheader tegra234-bpmp-3701-0005-3737-0000_with_odm_aligned.dtb zerosbk
+[   4.3325 ] adding BCH for tegra234-bpmp-3701-0005-3737-0000_with_odm_aligned.dtb
+[   4.3400 ] tegrasign_v3.py --key None --list tegra234-bpmp-3701-0005-3737-0000_with_odm_aligned_sigheader.dtb_list.xml --pubkeyhash pub_key.key --sha sha512
+[   4.3400 ] Assuming zero filled SBK key
+[   4.3412 ] Warning: pub_key.key is not found
+[   4.3409 ] tegrahost_v2 --chip 0x23 0 --updatesigheader tegra234-bpmp-3701-0005-3737-0000_with_odm_aligned_sigheader.dtb.encrypt tegra234-bpmp-3701-0005-3737-0000_with_odm_aligned_sigheader.dtb.hash zerosbk
+[   4.3423 ] Get magic id
+[   4.3426 ] tegraparser_v2 --get_magic rce_fw
+[   4.3429 ] RCEF
+[   4.3430 ] partition type rce_fw, magic id = RCEF
+[   4.3440 ] tegrahost_v2 --chip 0x23 0 --align camera-rtcpu-t234-rce_aligned.img
+[   4.3445 ] tegrahost_v2 --chip 0x23 0 --magicid RCEF --ratchet_blob ratchet_blob.bin --appendsigheader camera-rtcpu-t234-rce_aligned.img zerosbk
+[   4.3447 ] adding BCH for camera-rtcpu-t234-rce_aligned.img
+[   4.3571 ] tegrasign_v3.py --key None --list camera-rtcpu-t234-rce_aligned_sigheader.img_list.xml --pubkeyhash pub_key.key --sha sha512
+[   4.3572 ] Assuming zero filled SBK key
+[   4.3586 ] Warning: pub_key.key is not found
+[   4.3583 ] tegrahost_v2 --chip 0x23 0 --updatesigheader camera-rtcpu-t234-rce_aligned_sigheader.img.encrypt camera-rtcpu-t234-rce_aligned_sigheader.img.hash zerosbk
+[   4.3603 ] Get magic id
+[   4.3606 ] tegraparser_v2 --get_magic ape_fw
+[   4.3608 ] APEF
+[   4.3609 ] partition type ape_fw, magic id = APEF
+[   4.3615 ] tegrahost_v2 --chip 0x23 0 --align adsp-fw_aligned.bin
+[   4.3621 ] tegrahost_v2 --chip 0x23 0 --magicid APEF --ratchet_blob ratchet_blob.bin --appendsigheader adsp-fw_aligned.bin zerosbk
+[   4.3623 ] adding BCH for adsp-fw_aligned.bin
+[   4.3661 ] tegrasign_v3.py --key None --list adsp-fw_aligned_sigheader.bin_list.xml --pubkeyhash pub_key.key --sha sha512
+[   4.3662 ] Assuming zero filled SBK key
+[   4.3674 ] Warning: pub_key.key is not found
+[   4.3671 ] tegrahost_v2 --chip 0x23 0 --updatesigheader adsp-fw_aligned_sigheader.bin.encrypt adsp-fw_aligned_sigheader.bin.hash zerosbk
+[   4.3680 ] Get magic id
+[   4.3682 ] tegraparser_v2 --get_magic spe_fw
+[   4.3684 ] SPEF
+[   4.3686 ] partition type spe_fw, magic id = SPEF
+[   4.3691 ] tegrahost_v2 --chip 0x23 0 --align spe_t234_aligned.bin
+[   4.3696 ] tegrahost_v2 --chip 0x23 0 --magicid SPEF --ratchet_blob ratchet_blob.bin --appendsigheader spe_t234_aligned.bin zerosbk
+[   4.3698 ] adding BCH for spe_t234_aligned.bin
+[   4.3772 ] tegrasign_v3.py --key None --list spe_t234_aligned_sigheader.bin_list.xml --pubkeyhash pub_key.key --sha sha512
+[   4.3773 ] Assuming zero filled SBK key
+[   4.3784 ] Warning: pub_key.key is not found
+[   4.3782 ] tegrahost_v2 --chip 0x23 0 --updatesigheader spe_t234_aligned_sigheader.bin.encrypt spe_t234_aligned_sigheader.bin.hash zerosbk
+[   4.3794 ] Get magic id
+[   4.3797 ] tegraparser_v2 --get_magic tsec_fw
+[   4.3799 ] TSEC
+[   4.3800 ] partition type tsec_fw, magic id = TSEC
+[   4.3804 ] tegrahost_v2 --chip 0x23 0 --align tsec_t234_aligned.bin
+[   4.3810 ] tegrahost_v2 --chip 0x23 0 --magicid TSEC --ratchet_blob ratchet_blob.bin --appendsigheader tsec_t234_aligned.bin zerosbk
+[   4.3811 ] Header already present for tsec_t234_aligned.bin
+[   4.3846 ] tegrasign_v3.py --key None --list tsec_t234_aligned_sigheader.bin_list.xml --pubkeyhash pub_key.key --sha sha512
+[   4.3846 ] Assuming zero filled SBK key
+[   4.3856 ] Warning: pub_key.key is not found
+[   4.3854 ] tegrahost_v2 --chip 0x23 0 --updatesigheader tsec_t234_aligned_sigheader.bin.encrypt tsec_t234_aligned_sigheader.bin.hash zerosbk
+[   4.3866 ] Get magic id
+[   4.3868 ] tegraparser_v2 --get_magic tos
+[   4.3869 ] TOSB
+[   4.3871 ] partition type tos, magic id = TOSB
+[   4.3888 ] tegrahost_v2 --chip 0x23 0 --align tos-optee_t234_aligned.img
+[   4.3893 ] tegrahost_v2 --chip 0x23 0 --magicid TOSB --ratchet_blob ratchet_blob.bin --appendsigheader tos-optee_t234_aligned.img zerosbk
+[   4.3895 ] adding BCH for tos-optee_t234_aligned.img
+[   4.4315 ] tegrasign_v3.py --key None --list tos-optee_t234_aligned_sigheader.img_list.xml --pubkeyhash pub_key.key --sha sha512
+[   4.4316 ] Assuming zero filled SBK key
+[   4.4355 ] Warning: pub_key.key is not found
+[   4.4353 ] tegrahost_v2 --chip 0x23 0 --updatesigheader tos-optee_t234_aligned_sigheader.img.encrypt tos-optee_t234_aligned_sigheader.img.hash zerosbk
+[   4.4408 ] Get magic id
+[   4.4411 ] tegraparser_v2 --get_magic eks
+[   4.4414 ] EKSB
+[   4.4416 ] partition type eks, magic id = EKSB
+[   4.4420 ] tegrahost_v2 --chip 0x23 0 --align eks_aligned.img
+[   4.4427 ] tegrahost_v2 --chip 0x23 0 --magicid EKSB --ratchet_blob ratchet_blob.bin --appendsigheader eks_aligned.img zerosbk
+[   4.4430 ] adding BCH for eks_aligned.img
+[   4.4440 ] tegrasign_v3.py --key None --list eks_aligned_sigheader.img_list.xml --pubkeyhash pub_key.key --sha sha512
+[   4.4440 ] Assuming zero filled SBK key
+[   4.4451 ] Warning: pub_key.key is not found
+[   4.4449 ] tegrahost_v2 --chip 0x23 0 --updatesigheader eks_aligned_sigheader.img.encrypt eks_aligned_sigheader.img.hash zerosbk
+[   4.4477 ] tegrahost_v2 --chip 0x23 0 --align uefi_t23x_rcmboot_with_dtb_aligned.bin
+[   4.4484 ] tegrahost_v2 --chip 0x23 0 --magicid CPBL --ratchet_blob ratchet_blob.bin --appendsigheader uefi_t23x_rcmboot_with_dtb_aligned.bin zerosbk
+[   4.4486 ] adding BCH for uefi_t23x_rcmboot_with_dtb_aligned.bin
+[   4.5000 ] tegrasign_v3.py --key None --list uefi_t23x_rcmboot_with_dtb_aligned_sigheader.bin_list.xml --pubkeyhash pub_key.key --sha sha512
+[   4.5001 ] Assuming zero filled SBK key
+[   4.5050 ] Warning: pub_key.key is not found
+[   4.5049 ] tegrahost_v2 --chip 0x23 0 --updatesigheader uefi_t23x_rcmboot_with_dtb_aligned_sigheader.bin.encrypt uefi_t23x_rcmboot_with_dtb_aligned_sigheader.bin.hash zerosbk
+[   4.5099 ] Copying enc and signed file in /home/marsuser/flash-6b/signed
+[   4.5375 ] Copying br bct for multi chains
+[   4.5376 ] Signed BCT for boot chain A is copied to /home/marsuser/flash-6b/signed/br_bct_BR.bct
+
+[   4.5377 ] Signed BCT for boot chain B is copied to /home/marsuser/flash-6b/signed/br_bct_b_BR.bct
+
+[   4.5377 ] Copying BCT backup image bct_backup.img to /home/marsuser/flash-6b/signed/bct_backup.img
+[   4.5416 ] Copying pscfw_t234_prod_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5419 ] Signed file: /home/marsuser/flash-6b/signed/pscfw_t234_prod_sigheader.bin.encrypt
+[   4.5419 ] Copying mce_flash_o10_cr_prod_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5421 ] Signed file: /home/marsuser/flash-6b/signed/mce_flash_o10_cr_prod_sigheader.bin.encrypt
+[   4.5421 ] Copying applet_t234_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5424 ] Signed file: /home/marsuser/flash-6b/signed/applet_t234_sigheader.bin.encrypt
+[   4.5424 ] Copying mb2_t234_with_mb2_bct_MB2_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5427 ] Signed file: /home/marsuser/flash-6b/signed/mb2_t234_with_mb2_bct_MB2_sigheader.bin.encrypt
+[   4.5427 ] Copying xusb_t234_prod_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5429 ] Signed file: /home/marsuser/flash-6b/signed/xusb_t234_prod_sigheader.bin.encrypt
+[   4.5429 ] Copying nvpva_020_sigheader.fw.encrypt to /home/marsuser/flash-6b/signed
+[   4.5442 ] Signed file: /home/marsuser/flash-6b/signed/nvpva_020_sigheader.fw.encrypt
+[   4.5442 ] Copying display-t234-dce_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5509 ] Signed file: /home/marsuser/flash-6b/signed/display-t234-dce_sigheader.bin.encrypt
+[   4.5509 ] Copying display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5576 ] Signed file: /home/marsuser/flash-6b/signed/display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_sigheader.bin.encrypt
+[   4.5576 ] Copying nvdec_t234_prod_sigheader.fw.encrypt to /home/marsuser/flash-6b/signed
+[   4.5579 ] Signed file: /home/marsuser/flash-6b/signed/nvdec_t234_prod_sigheader.fw.encrypt
+[   4.5579 ] Copying bpmp_t234-TE990M-A1_prod_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5588 ] Signed file: /home/marsuser/flash-6b/signed/bpmp_t234-TE990M-A1_prod_sigheader.bin.encrypt
+[   4.5588 ] Copying tegra234-bpmp-3701-0005-3737-0000_with_odm_sigheader.dtb.encrypt to /home/marsuser/flash-6b/signed
+[   4.5591 ] Signed file: /home/marsuser/flash-6b/signed/tegra234-bpmp-3701-0005-3737-0000_with_odm_sigheader.dtb.encrypt
+[   4.5591 ] Copying camera-rtcpu-t234-rce_sigheader.img.encrypt to /home/marsuser/flash-6b/signed
+[   4.5595 ] Signed file: /home/marsuser/flash-6b/signed/camera-rtcpu-t234-rce_sigheader.img.encrypt
+[   4.5595 ] Copying adsp-fw_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5597 ] Signed file: /home/marsuser/flash-6b/signed/adsp-fw_sigheader.bin.encrypt
+[   4.5597 ] Copying spe_t234_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5600 ] Signed file: /home/marsuser/flash-6b/signed/spe_t234_sigheader.bin.encrypt
+[   4.5600 ] Copying tsec_t234_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5602 ] Signed file: /home/marsuser/flash-6b/signed/tsec_t234_sigheader.bin.encrypt
+[   4.5602 ] Copying tos-optee_t234_sigheader.img.encrypt to /home/marsuser/flash-6b/signed
+[   4.5615 ] Signed file: /home/marsuser/flash-6b/signed/tos-optee_t234_sigheader.img.encrypt
+[   4.5615 ] Copying eks_sigheader.img.encrypt to /home/marsuser/flash-6b/signed
+[   4.5616 ] Signed file: /home/marsuser/flash-6b/signed/eks_sigheader.img.encrypt
+[   4.5616 ] Copying uefi_t23x_rcmboot_with_dtb_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5628 ] Signed file: /home/marsuser/flash-6b/signed/uefi_t23x_rcmboot_with_dtb_sigheader.bin.encrypt
+[   4.5642 ] tegraparser_v2 --pt flash.xml.bin --generateflashindex /home/marsuser/flash-6b/signed/flash.xml.tmp flash.idx
+Using bpmp-dtb concatenated with odmdata in blob for t23x
+./tegraflash.py --bl uefi_t23x_rcmboot_with_dtb_sigheader.bin.encrypt --bct br_bct_BR.bct --applet rcm_2_encrypt.rcm --applet_softfuse rcm_1_encrypt.rcm --cmd "secureflash;reboot"  --cfg secureflash.xml --chip 0x23 --mb1_bct mb1_bct_MB1_sigheader.bct.encrypt --mem_bct mem_rcm_sigheader.bct.encrypt --mb1_cold_boot_bct mb1_cold_boot_bct_MB1_sigheader.bct.encrypt --mb1_bin mb1_t234_prod_aligned_sigheader.bin.encrypt --psc_bl1_bin psc_bl1_t234_prod_aligned_sigheader.bin.encrypt --mem_bct_cold_boot mem_coldboot_sigheader.bct.encrypt  --bins "psc_fw pscfw_t234_prod_sigheader.bin.encrypt; mts_mce mce_flash_o10_cr_prod_sigheader.bin.encrypt; mb2_applet applet_t234_sigheader.bin.encrypt; mb2_bootloader mb2_t234_with_mb2_bct_MB2_sigheader.bin.encrypt; xusb_fw xusb_t234_prod_sigheader.bin.encrypt; pva_fw nvpva_020_sigheader.fw.encrypt; dce_fw display-t234-dce_sigheader.bin.encrypt; nvdec nvdec_t234_prod_sigheader.fw.encrypt; bpmp_fw bpmp_t234-TE990M-A1_prod_sigheader.bin.encrypt; bpmp_fw_dtb tegra234-bpmp-3701-0005-3737-0000_with_odm_sigheader.dtb.encrypt; rce_fw camera-rtcpu-t234-rce_sigheader.img.encrypt; ape_fw adsp-fw_sigheader.bin.encrypt; spe_fw spe_t234_sigheader.bin.encrypt; tsec_fw tsec_t234_sigheader.bin.encrypt; tos tos-optee_t234_sigheader.img.encrypt; eks eks_sigheader.img.encrypt"   --instance 3-3  --bct_backup 
+saving flash command in flashcmd.txt
+
+*** no-flash flag enabled. Exiting now... *** 
+
+User can run above saved command in factory environment without 
+providing pkc and sbk keys to flash a device
+
+Example:
+
+    $ cd bootloader 
+    $ sudo bash ./flashcmd.txt
+
+./tegraflash.py --chip 0x23 --bl uefi_t23x_rcmboot_with_dtb.bin --sdram_config tegra234-p3701-0005-sdram-l4t.dts --odmdata gbe-uphy-config-22,hsstp-lane-map-3,nvhs-uphy-config-0,hsio-uphy-config-0,gbe0-enable-10g --applet mb1_t234_prod.bin --cmd "sign"  --skipuid --cfg flash.xml --bct_backup --boot_chain A --uphy tegra234-mb1-bct-uphylane-si.dtsi --minratchet_config tegra234-mb1-bct-ratchet-p3701-0000.dts --device_config tegra234-mb1-bct-device-p3701-0000.dts --misc_config tegra234-mb1-bct-misc-p3701-0000.dts --scr_config tegra234-mb2-bct-scr-p3701-0000.dts --pinmux_config tegra234-mb1-bct-pinmux-p3701-0000-a04.dtsi --gpioint_config tegra234-mb1-bct-gpioint-p3701-0000.dts --pmic_config tegra234-mb1-bct-pmic-p3701-0005.dts --pmc_config tegra234-mb1-bct-padvoltage-p3701-0000-a04.dtsi --prod_config tegra234-mb1-bct-prod-p3701-0000.dts --br_cmd_config tegra234-mb1-bct-reset-p3701-0000.dts --dev_params tegra234-br-bct-p3701-0000.dts,tegra234-br-bct_b-p3701-0000.dts --deviceprod_config tegra234-mb1-bct-cprod-p3701-0000.dts --wb0sdram_config tegra234-p3701-0005-wb0sdram-l4t.dts --mb2bct_cfg tegra234-mb2-bct-misc-p3701-0000.dts --bldtb tegra234-p3737-0000+p3701-0005-nv.dtb --concat_cpubl_bldtb --cpubl uefi_t23x_general.bin --cpubl_rcm uefi_t23x_rcmboot.bin --overlay_dtb L4TConfiguration-rcmboot.dtbo,tegra234-p3737-0000+p3701-0000-dynamic.dtbo,tegra234-carveouts.dtbo,tegra-optee.dtbo,tegra234-p3737-camera-dual-imx274-overlay.dtbo,tegra234-p3737-camera-e3331-overlay.dtbo,tegra234-p3737-camera-e3333-overlay.dtbo,tegra234-p3737-camera-imx185-overlay.dtbo --cust_info custinfo_out.bin --ramcode 3 --bins "psc_fw pscfw_t234_prod.bin; mts_mce mce_flash_o10_cr_prod.bin; mb2_applet applet_t234.bin; mb2_bootloader mb2_t234.bin; xusb_fw xusb_t234_prod.bin; pva_fw nvpva_020.fw; dce_fw display-t234-dce.bin; nvdec nvdec_t234_prod.fw; bpmp_fw bpmp_t234-TE990M-A1_prod.bin; bpmp_fw_dtb tegra234-bpmp-3701-0005-3737-0000.dtb; rce_fw camera-rtcpu-t234-rce.img; ape_fw adsp-fw.bin; spe_fw spe_t234.bin; tsec_fw tsec_t234.bin; tos tos-optee_t234.img; eks eks.img; kernel initrd-flash.img; kernel_dtb kernel_tegra234-p3737-0000+p3701-0005-nv.dtb" --ramcode 3 
+Welcome to Tegra Flash
+version 1.0.0
+Type ? or help for help and q or quit to exit
+Use ! to execute system commands
+ 
+[   0.0215 ] tegrasign_v3.py --key None --getmode mode.txt
+[   0.0216 ] Assuming zero filled SBK key
+[   0.0212 ] Parsing partition layout
+[   0.0215 ] tegraparser_v2 --pt flash.xml.tmp
+[   0.0247 ] Change tegra234-bpmp-3701-0005-3737-0000.dtb to tegra234-bpmp-3701-0005-3737-0000_with_odm.dtb
+[   0.0247 ] Change tegra234-bpmp-3701-0005-3737-0000.dtb to tegra234-bpmp-3701-0005-3737-0000_with_odm.dtb
+[   0.0559 ] /usr/bin/python3 dtbcheck.py -c t234 -o tegra234-bpmp-3701-0005-3737-0000_with_odm.dtb tegra234-bpmp-3701-0005-3737-0000_with_odm_tmp.dtb
+[   0.2228 ] Concatenating L4TConfiguration-rcmboot.dtbo,tegra234-p3737-0000+p3701-0000-dynamic.dtbo,tegra234-carveouts.dtbo,tegra-optee.dtbo,tegra234-p3737-camera-dual-imx274-overlay.dtbo,tegra234-p3737-camera-e3331-overlay.dtbo,tegra234-p3737-camera-e3333-overlay.dtbo,tegra234-p3737-camera-imx185-overlay.dtbo to tegra234-p3737-0000+p3701-0005-nv_with_odm_overlay.dtb.updated
+[   0.2231 ] Concatenating bl dtb to cpubl binary
+[   0.2252 ] Concatenating bl dtb:(tegra234-p3737-0000+p3701-0005-nv_with_odm_overlay.dtb.updated), to cpubl binary: uefi_t23x_rcmboot.bin
+[   0.2270 ] MB2 binary: mb2_t234.bin
+[   0.2270 ] Pre-processing mb2bct config: tegra234-mb2-bct-misc-p3701-0000.dts
+[   0.2354 ] Pre-processing mb2bct config: tegra234-mb2-bct-scr-p3701-0000.dts
+[   0.3660 ] Generating coldboot mb2-bct
+[   0.3660 ] tegrabct_v2 --chip 0x23 0 --mb2bct mb2_cold_boot_bct.cfg --mb2bctcfg tegra234-mb2-bct-misc-p3701-0000_cpp.dtb --scr tegra234-mb2-bct-scr-p3701-0000_cpp.dtb
+[   0.3662 ] WARNING: unknown property 'tfc_version'
+[   0.3675 ] WARNING: unknown property 'addr_header_version'
+[   0.3729 ] Updating mb2-bct with storage information
+[   0.3732 ] tegrabct_v2 --chip 0x23 0 --mb2bct mb2_cold_boot_bct_MB2.bct --updatestorageinfo flash.xml.bin
+[   0.3741 ] Concatenating mb2-bct to mb2 binary
+[   0.3741 ] mb2_bin_file = mb2_t234.bin
+[   0.3741 ] mb2_bct_file = mb2_cold_boot_bct_MB2.bct
+[   0.3774 ] DCE binary: display-t234-dce.bin
+[   0.3775 ] Kernel DTB used: kernel_tegra234-p3737-0000+p3701-0005-nv.dtb
+[   0.3775 ] Concatenating kernel-dtb to dce-fw binary
+[   0.3775 ] dce_bin = display-t234-dce.bin
+[   0.3775 ] kernel_dtb = kernel_tegra234-p3737-0000+p3701-0005-nv.dtb
+[   0.3775 ] dce_with_dtb = display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv.bin
+[   0.3885 ] Update display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv.bin to dce_fw partitions
+[   0.3908 ] Parsing partition layout
+[   0.3911 ] tegraparser_v2 --pt flash.xml.tmp
+[   0.3920 ] Creating list of images to be signed
+[   0.3923 ] Generating ratchet blob
+[   0.3923 ] Pre-processing config: tegra234-mb1-bct-reset-p3701-0000.dts
+[   0.3977 ] Pre-processing config: tegra234-mb1-bct-device-p3701-0000.dts
+[   0.4026 ] Pre-processing config: tegra234-mb1-bct-cprod-p3701-0000.dts
+[   0.4076 ] Pre-processing config: tegra234-mb1-bct-gpioint-p3701-0000.dts
+[   0.4135 ] Pre-processing config: tegra234-mb1-bct-misc-p3701-0000.dts
+[   0.4214 ] Pre-processing config: tegra234-mb1-bct-pinmux-p3701-0000-a04.dtsi
+[   0.4300 ] Pre-processing config: tegra234-mb1-bct-padvoltage-p3701-0000-a04.dtsi
+[   0.4353 ] Pre-processing config: tegra234-mb1-bct-pmic-p3701-0005.dts
+[   0.4411 ] Pre-processing config: tegra234-mb1-bct-prod-p3701-0000.dts
+[   0.4461 ] Pre-processing config: tegra234-p3701-0005-sdram-l4t.dts
+[   1.1627 ] Pre-processing config: tegra234-mb1-bct-uphylane-si.dtsi
+[   1.1686 ] Pre-processing config: tegra234-p3701-0005-wb0sdram-l4t.dts
+[   1.8796 ] Pre-processing config: tegra234-mb1-bct-ratchet-p3701-0000.dts
+[   1.8859 ] Generating coldboot mb1-bct
+[   1.8861 ] tegrabct_v2 --chip 0x23 0 --mb1bct mb1_cold_boot_bct.cfg --misc tegra234-mb1-bct-misc-p3701-0000_cpp.dtb --wb0sdram tegra234-p3701-0005-wb0sdram-l4t_cpp.dtb --pinmux tegra234-mb1-bct-pinmux-p3701-0000-a04_cpp.dtb --pmc tegra234-mb1-bct-padvoltage-p3701-0000-a04_cpp.dtb --pmic tegra234-mb1-bct-pmic-p3701-0005_cpp.dtb --brcommand tegra234-mb1-bct-reset-p3701-0000_cpp.dtb --prod tegra234-mb1-bct-prod-p3701-0000_cpp.dtb --gpioint tegra234-mb1-bct-gpioint-p3701-0000_cpp.dtb --uphy tegra234-mb1-bct-uphylane-si_cpp.dtb --device tegra234-mb1-bct-device-p3701-0000_cpp.dtb --deviceprod tegra234-mb1-bct-cprod-p3701-0000_cpp.dtb --minratchet tegra234-mb1-bct-ratchet-p3701-0000_cpp.dtb --ratchet_blob ratchet_blob.bin
+[   1.8872 ] MB1-BCT version: 0.13
+
+[   1.8884 ] Parsing config file :tegra234-mb1-bct-pinmux-p3701-0000-a04_cpp.dtb 
+[   1.8885 ] Added Platform Config 0 data with size :- 2936
+
+[   1.8898 ] Parsing config file :tegra234-mb1-bct-padvoltage-p3701-0000-a04_cpp.dtb 
+[   1.8899 ] WARNING: unknown node 'g2'
+[   1.8900 ] WARNING: unknown node 'g2'
+[   1.8900 ] WARNING: unknown node 'g9'
+[   1.8901 ] WARNING: unknown node 'g9'
+[   1.8901 ] Added Platform Config 2 data with size :- 24
+[   1.8903 ] 
+[   1.8903 ] Parsing config file :tegra234-mb1-bct-pmic-p3701-0005_cpp.dtb 
+[   1.8903 ] WARNING: unknown property 'i2c-update-only'
+[   1.8903 ] WARNING: unknown property 'i2c-verify-only'
+[   1.8903 ] WARNING: unknown property 'i2c-update-verify'
+[   1.8903 ] WARNING: unknown property 'i2c-update-only'
+[   1.8903 ] WARNING: unknown property 'i2c-verify-only'
+[   1.8903 ] WARNING: unknown property 'i2c-update-only'
+[   1.8903 ] WARNING: unknown property 'i2c-verify-only'
+[   1.8903 ] Added Platform Config 4 data with size :- 844
+[   1.8903 ] 
+[   1.8903 ] Parsing config file :tegra234-mb1-bct-reset-p3701-0000_cpp.dtb 
+[   1.8903 ] Added Platform Config 3 data with size :- 52
+[   1.8903 ] 
+[   1.8903 ] Parsing config file :tegra234-mb1-bct-prod-p3701-0000_cpp.dtb 
+[   1.8903 ] WARNING: unknown property 'major'
+[   1.8903 ] WARNING: unknown property 'minor'
+[   1.8903 ] Added Platform Config 5 data with size :- 524
+[   1.8903 ] 
+[   1.8903 ] Parsing config file :tegra234-mb1-bct-gpioint-p3701-0000_cpp.dtb 
+[   1.8903 ] WARNING: unknown property 'major'
+[   1.8903 ] WARNING: unknown property 'minor'
+[   1.8903 ] Added Platform Config 7 data with size :- 380
+[   1.8903 ] 
+[   1.8903 ] Parsing config file :tegra234-mb1-bct-uphylane-si_cpp.dtb 
+[   1.8903 ] Added Platform Config 8 data with size :- 24
+[   1.8903 ] 
+[   1.8903 ] Parsing config file :tegra234-mb1-bct-device-p3701-0000_cpp.dtb 
+[   1.8903 ] Added Platform Config 9 data with size :- 100
+[   1.8903 ] 
+[   1.8903 ] Parsing config file :tegra234-mb1-bct-cprod-p3701-0000_cpp.dtb 
+[   1.8903 ] ModuleCount 0 NumProdNames 0
+[   1.8903 ] Added Platform Config 6 data with size :- 16
+[   1.8903 ] 
+[   1.8903 ] Parsing config file :tegra234-mb1-bct-ratchet-p3701-0000_cpp.dtb 
+[   1.8903 ] 
+[   1.8903 ] Updating mb1-bct with firmware information
+[   1.8905 ] tegrabct_v2 --chip 0x23 0 --mb1bct mb1_cold_boot_bct_MB1.bct --updatefwinfo flash.xml.bin
+[   1.9000 ] tegrahost_v2 --chip 0x23 0 --align mb1_cold_boot_bct_MB1_aligned.bct
+[   1.9004 ] Generating SHA2 Hash for mb1bct
+[   1.9018 ] Sha saved in mb1_cold_boot_bct_MB1_aligned.sha
+[   1.9024 ] Sha saved in mb1_cold_boot_bct_MB1.sha
+[   1.9021 ] tegrahost_v2 --chip 0x23 0 --magicid MBCT --ratchet_blob ratchet_blob.bin --appendsigheader mb1_cold_boot_bct_MB1_aligned.bct zerosbk
+[   1.9023 ] adding BCH for mb1_cold_boot_bct_MB1_aligned.bct
+[   1.9036 ] tegrasign_v3.py --key None --list mb1_cold_boot_bct_MB1_aligned_sigheader.bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   1.9037 ] Assuming zero filled SBK key
+[   1.9045 ] Warning: pub_key.key is not found
+[   1.9042 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mb1_cold_boot_bct_MB1_aligned_sigheader.bct.encrypt mb1_cold_boot_bct_MB1_aligned_sigheader.bct.hash zerosbk
+[   1.9049 ] tegrahost_v2 --chip 0x23 0 --partitionlayout flash.xml.bin --ratchet_blob ratchet_blob.bin --list images_list.xml zerosbk
+[   1.9051 ] MB1: Nvheader already present is mb1_t234_prod_aligned.bin
+[   1.9060 ] Header already present for mb1_t234_prod_aligned_sigheader.bin
+[   1.9063 ] MB1: Nvheader already present is psc_bl1_t234_prod_aligned.bin
+[   1.9102 ] Header already present for psc_bl1_t234_prod_aligned_sigheader.bin
+[   1.9103 ] Header already present for tsec_t234_aligned.bin
+[   1.9123 ] Header already present for nvdec_t234_prod_aligned.fw
+[   1.9154 ] adding BCH for mb2_t234_with_mb2_cold_boot_bct_MB2_aligned.bin
+[   1.9199 ] adding BCH for xusb_t234_prod_aligned.bin
+[   1.9308 ] Header already present for bpmp_t234-TE990M-A1_prod_aligned.bin
+[   1.9372 ] adding BCH for tegra234-bpmp-3701-0005-3737-0000_with_odm_aligned.dtb
+[   1.9501 ] Header already present for pscfw_t234_prod_aligned.bin
+[   1.9570 ] Header already present for mce_flash_o10_cr_prod_aligned.bin
+[   1.9608 ] Header already present for sc7_t234_prod.bin
+[   1.9632 ] Header already present for psc_rf_t234_prod_aligned.bin
+[   1.9658 ] adding BCH for mb2rf_t234_aligned.bin
+[   1.9676 ] INFO: compressing uefi_t23x_general_with_dtb_aligned.bin
+[   2.0196 ] INFO: complete compression, uefi_t23x_general_with_dtb_aligned.bin, ratio = 90%
+[   2.0238 ] adding BCH for uefi_t23x_general_with_dtb_aligned_blob_w_bin_aligned.bin
+[   2.0706 ] adding BCH for tos-optee_t234_aligned.img
+[   2.1150 ] adding BCH for eks_aligned.img
+[   2.1551 ] INFO: compressing display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned.bin
+[   2.3243 ] INFO: complete compression, display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned.bin, ratio = 6%
+[   2.3397 ] adding BCH for display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned_blob_w_bin_aligned.bin
+[   2.3570 ] adding BCH for spe_t234_aligned.bin
+[   2.3671 ] adding BCH for camera-rtcpu-t234-rce_aligned.img
+[   2.3742 ] adding BCH for adsp-fw_aligned.bin
+[   2.3854 ] INFO: compressing nvpva_020_aligned.fw
+[   2.4184 ] INFO: complete compression, nvpva_020_aligned.fw, ratio = 2%
+[   2.4206 ] adding BCH for nvpva_020_aligned_blob_w_bin_aligned.fw
+[   2.4225 ] MB1: Nvheader already present is mb1_t234_prod_aligned.bin
+[   2.4238 ] Header already present for mb1_t234_prod_aligned_sigheader.bin
+[   2.4325 ] MB1: Nvheader already present is psc_bl1_t234_prod_aligned.bin
+[   2.4367 ] Header already present for psc_bl1_t234_prod_aligned_sigheader.bin
+[   2.4369 ] Header already present for tsec_t234_aligned.bin
+[   2.4390 ] Header already present for nvdec_t234_prod_aligned.fw
+[   2.4421 ] adding BCH for mb2_t234_with_mb2_cold_boot_bct_MB2_aligned.bin
+[   2.4468 ] adding BCH for xusb_t234_prod_aligned.bin
+[   2.4578 ] Header already present for bpmp_t234-TE990M-A1_prod_aligned.bin
+[   2.4645 ] adding BCH for tegra234-bpmp-3701-0005-3737-0000_with_odm_aligned.dtb
+[   2.4778 ] Header already present for pscfw_t234_prod_aligned.bin
+[   2.4847 ] Header already present for mce_flash_o10_cr_prod_aligned.bin
+[   2.4889 ] Header already present for sc7_t234_prod.bin
+[   2.4913 ] Header already present for psc_rf_t234_prod_aligned.bin
+[   2.4940 ] adding BCH for mb2rf_t234_aligned.bin
+[   2.4959 ] INFO: compressing uefi_t23x_general_with_dtb_aligned.bin
+[   2.5493 ] INFO: complete compression, uefi_t23x_general_with_dtb_aligned.bin, ratio = 90%
+[   2.5533 ] adding BCH for uefi_t23x_general_with_dtb_aligned_blob_w_bin_aligned.bin
+[   2.6018 ] adding BCH for tos-optee_t234_aligned.img
+[   2.6478 ] adding BCH for eks_aligned.img
+[   2.6886 ] INFO: compressing display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned.bin
+[   2.8614 ] INFO: complete compression, display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned.bin, ratio = 6%
+[   2.8768 ] adding BCH for display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned_blob_w_bin_aligned.bin
+[   2.8947 ] adding BCH for spe_t234_aligned.bin
+[   2.9052 ] adding BCH for camera-rtcpu-t234-rce_aligned.img
+[   2.9126 ] adding BCH for adsp-fw_aligned.bin
+[   2.9240 ] INFO: compressing nvpva_020_aligned.fw
+[   2.9576 ] INFO: complete compression, nvpva_020_aligned.fw, ratio = 2%
+[   2.9599 ] adding BCH for nvpva_020_aligned_blob_w_bin_aligned.fw
+[   2.9627 ] Filling MB1 storage info
+[   2.9628 ] Parsing dev params for multi chains
+[   2.9698 ] Generating br-bct
+[   2.9700 ] Updating dev and MSS params in BR BCT
+[   2.9700 ] tegrabct_v2 --dev_param tegra234-br-bct-p3701-0000_cpp.dtb --sdram tegra234-p3701-0005-sdram-l4t_cpp.dtb --brbct br_bct.cfg --chip 0x23 0
+[   3.0253 ] Updating bl info
+[   3.0259 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --updateblinfo flash.xml.bin
+[   3.0323 ] Generating br-bct
+[   3.0325 ] Updating dev and MSS params in BR BCT
+[   3.0325 ] tegrabct_v2 --dev_param tegra234-br-bct_b-p3701-0000_cpp.dtb --sdram tegra234-p3701-0005-sdram-l4t_cpp.dtb --brbct br_bct.cfg --chip 0x23 0
+[   3.0882 ] Updating bl info
+[   3.0888 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --updateblinfo flash.xml.bin
+[   3.0898 ] Generating BCT backup image
+[   3.0898 ] dd if=/dev/zero of=bct_backup.img bs=1 count=32768
+[   3.0901 ] 32768+0 records in
+[   3.1267 ] 32768+0 records out
+[   3.1267 ] 32768 bytes (33 kB, 32 KiB) copied, 0.036057 s, 909 kB/s
+[   3.1267 ] 
+[   3.1267 ] Concatenating BCT for chain A to bct_backup.img
+
+[   3.1267 ] dd if=br_bct_BR.bct of=bct_backup.img bs=1 seek=0 conv=notrunc
+[   3.1270 ] 8192+0 records in
+[   3.1376 ] 8192+0 records out
+[   3.1376 ] 8192 bytes (8.2 kB, 8.0 KiB) copied, 0.00994053 s, 824 kB/s
+[   3.1376 ] 
+[   3.1376 ] Concatenating BCT for chain B to bct_backup.img
+
+[   3.1376 ] dd if=br_bct_b_BR.bct of=bct_backup.img bs=1 seek=16384 conv=notrunc
+[   3.1379 ] 8192+0 records in
+[   3.1479 ] 8192+0 records out
+[   3.1479 ] 8192 bytes (8.2 kB, 8.0 KiB) copied, 0.00945697 s, 866 kB/s
+[   3.1479 ] 
+[   3.1479 ] Generating signatures
+[   3.1485 ] tegrasign_v3.py --key None --list images_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.1485 ] Assuming zero filled SBK key
+[   3.2295 ] Warning: pub_key.key is not found
+[   3.2308 ] Parsing dev params for multi chains
+[   3.2308 ] Generating br-bct
+[   3.2310 ] Updating dev and MSS params in BR BCT
+[   3.2310 ] tegrabct_v2 --dev_param tegra234-br-bct-p3701-0000_cpp.dtb --sdram tegra234-p3701-0005-sdram-l4t_cpp.dtb --brbct br_bct.cfg --chip 0x23 0
+[   3.2851 ] Updating customer data section
+[   3.2854 ] tegrabct_v2 --chip 0x23 0 --brbct br_bct_BR.bct --update_custinfo custinfo_out.bin
+[   3.2859 ] Updating bl info
+[   3.2862 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --updateblinfo flash.xml.bin --updatesig images_list_signed.xml
+[   3.2877 ] Generating SHA2 Hash
+[   3.2888 ] Sha saved in br_bct_BR.sha
+[   3.2884 ] Get Signed section of bct
+[   3.2886 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --listbct bct_list.xml
+[   3.2891 ] Signing BCT
+[   3.2896 ] tegrasign_v3.py --key None --list bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.2897 ] Assuming zero filled SBK key
+[   3.2909 ] Sha saved in br_bct_BR.sha
+[   3.2911 ] Warning: pub_key.key is not found
+[   3.2906 ] Updating BCT with signature
+[   3.2908 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --updatesig bct_list_signed.xml
+[   3.2909 ] Offset :4608 Len :3584
+[   3.2913 ] Generating SHA2 Hash
+[   3.2918 ] tegrasign_v3.py --key None --list bct_list.xml --sha sha512
+[   3.2919 ] Assuming zero filled SBK key
+[   3.2919 ] Assuming zero filled SBK key
+[   3.2931 ] Sha saved in br_bct_BR.sha
+[   3.2927 ] Updating BCT with SHA2 Hash
+[   3.2929 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --updatesha bct_list_signed.xml
+[   3.2931 ] Offset :4608 Len :3584
+[   3.2934 ] Offset :68 Len :8124
+[   3.2935 ] Generating br-bct
+[   3.2937 ] Updating dev and MSS params in BR BCT
+[   3.2937 ] tegrabct_v2 --dev_param tegra234-br-bct_b-p3701-0000_cpp.dtb --sdram tegra234-p3701-0005-sdram-l4t_cpp.dtb --brbct br_bct.cfg --chip 0x23 0
+[   3.3483 ] Updating customer data section
+[   3.3486 ] tegrabct_v2 --chip 0x23 0 --brbct br_bct_BR.bct --update_custinfo custinfo_out.bin
+[   3.3491 ] Updating bl info
+[   3.3494 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --updateblinfo flash.xml.bin --updatesig images_list_signed.xml
+[   3.3507 ] Generating SHA2 Hash
+[   3.3519 ] Sha saved in br_bct_BR.sha
+[   3.3514 ] Get Signed section of bct
+[   3.3517 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --listbct bct_list.xml
+[   3.3521 ] Signing BCT
+[   3.3527 ] tegrasign_v3.py --key None --list bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.3527 ] Assuming zero filled SBK key
+[   3.3543 ] Sha saved in br_bct_BR.sha
+[   3.3545 ] Warning: pub_key.key is not found
+[   3.3540 ] Updating BCT with signature
+[   3.3543 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --updatesig bct_list_signed.xml
+[   3.3545 ] Offset :4608 Len :3584
+[   3.3549 ] Generating SHA2 Hash
+[   3.3554 ] tegrasign_v3.py --key None --list bct_list.xml --sha sha512
+[   3.3555 ] Assuming zero filled SBK key
+[   3.3555 ] Assuming zero filled SBK key
+[   3.3569 ] Sha saved in br_bct_BR.sha
+[   3.3565 ] Updating BCT with SHA2 Hash
+[   3.3567 ] tegrabct_v2 --brbct br_bct_BR.bct --chip 0x23 0 --updatesha bct_list_signed.xml
+[   3.3569 ] Offset :4608 Len :3584
+[   3.3573 ] Offset :68 Len :8124
+[   3.3575 ] Generating BCT backup image
+[   3.3576 ] dd if=/dev/zero of=bct_backup.img bs=1 count=32768
+[   3.3578 ] 32768+0 records in
+[   3.3956 ] 32768+0 records out
+[   3.3956 ] 32768 bytes (33 kB, 32 KiB) copied, 0.0370789 s, 884 kB/s
+[   3.3956 ] 
+[   3.3956 ] Concatenating BCT for chain A to bct_backup.img
+
+[   3.3956 ] dd if=br_bct_BR.bct of=bct_backup.img bs=1 seek=0 conv=notrunc
+[   3.3960 ] 8192+0 records in
+[   3.4062 ] 8192+0 records out
+[   3.4062 ] 8192 bytes (8.2 kB, 8.0 KiB) copied, 0.0096389 s, 850 kB/s
+[   3.4062 ] 
+[   3.4062 ] Concatenating BCT for chain B to bct_backup.img
+
+[   3.4062 ] dd if=br_bct_b_BR.bct of=bct_backup.img bs=1 seek=16384 conv=notrunc
+[   3.4065 ] 8192+0 records in
+[   3.4176 ] 8192+0 records out
+[   3.4176 ] 8192 bytes (8.2 kB, 8.0 KiB) copied, 0.0105344 s, 778 kB/s
+[   3.4176 ] 
+[   3.4176 ] Generating coldboot mb1-bct
+[   3.4179 ] tegrabct_v2 --chip 0x23 0 --mb1bct mb1_cold_boot_bct.cfg --misc tegra234-mb1-bct-misc-p3701-0000_cpp.dtb --wb0sdram tegra234-p3701-0005-wb0sdram-l4t_cpp.dtb --pinmux tegra234-mb1-bct-pinmux-p3701-0000-a04_cpp.dtb --pmc tegra234-mb1-bct-padvoltage-p3701-0000-a04_cpp.dtb --pmic tegra234-mb1-bct-pmic-p3701-0005_cpp.dtb --brcommand tegra234-mb1-bct-reset-p3701-0000_cpp.dtb --prod tegra234-mb1-bct-prod-p3701-0000_cpp.dtb --gpioint tegra234-mb1-bct-gpioint-p3701-0000_cpp.dtb --uphy tegra234-mb1-bct-uphylane-si_cpp.dtb --device tegra234-mb1-bct-device-p3701-0000_cpp.dtb --deviceprod tegra234-mb1-bct-cprod-p3701-0000_cpp.dtb --minratchet tegra234-mb1-bct-ratchet-p3701-0000_cpp.dtb --ratchet_blob ratchet_blob.bin
+[   3.4182 ] MB1-BCT version: 0.13
+
+[   3.4196 ] Parsing config file :tegra234-mb1-bct-pinmux-p3701-0000-a04_cpp.dtb 
+[   3.4198 ] Added Platform Config 0 data with size :- 2936
+
+[   3.4212 ] Parsing config file :tegra234-mb1-bct-padvoltage-p3701-0000-a04_cpp.dtb 
+[   3.4214 ] WARNING: unknown node 'g2'
+[   3.4215 ] WARNING: unknown node 'g2'
+[   3.4216 ] WARNING: unknown node 'g9'
+[   3.4217 ] WARNING: unknown node 'g9'
+[   3.4217 ] Added Platform Config 2 data with size :- 24
+[   3.4217 ] 
+[   3.4217 ] Parsing config file :tegra234-mb1-bct-pmic-p3701-0005_cpp.dtb 
+[   3.4217 ] WARNING: unknown property 'i2c-update-only'
+[   3.4217 ] WARNING: unknown property 'i2c-verify-only'
+[   3.4217 ] WARNING: unknown property 'i2c-update-verify'
+[   3.4217 ] WARNING: unknown property 'i2c-update-only'
+[   3.4217 ] WARNING: unknown property 'i2c-verify-only'
+[   3.4217 ] WARNING: unknown property 'i2c-update-only'
+[   3.4217 ] WARNING: unknown property 'i2c-verify-only'
+[   3.4217 ] Added Platform Config 4 data with size :- 844
+[   3.4217 ] 
+[   3.4217 ] Parsing config file :tegra234-mb1-bct-reset-p3701-0000_cpp.dtb 
+[   3.4217 ] Added Platform Config 3 data with size :- 52
+[   3.4217 ] 
+[   3.4217 ] Parsing config file :tegra234-mb1-bct-prod-p3701-0000_cpp.dtb 
+[   3.4217 ] WARNING: unknown property 'major'
+[   3.4217 ] WARNING: unknown property 'minor'
+[   3.4217 ] Added Platform Config 5 data with size :- 524
+[   3.4217 ] 
+[   3.4217 ] Parsing config file :tegra234-mb1-bct-gpioint-p3701-0000_cpp.dtb 
+[   3.4217 ] WARNING: unknown property 'major'
+[   3.4217 ] WARNING: unknown property 'minor'
+[   3.4217 ] Added Platform Config 7 data with size :- 380
+[   3.4217 ] 
+[   3.4217 ] Parsing config file :tegra234-mb1-bct-uphylane-si_cpp.dtb 
+[   3.4217 ] Added Platform Config 8 data with size :- 24
+[   3.4217 ] 
+[   3.4217 ] Parsing config file :tegra234-mb1-bct-device-p3701-0000_cpp.dtb 
+[   3.4217 ] Added Platform Config 9 data with size :- 100
+[   3.4217 ] 
+[   3.4217 ] Parsing config file :tegra234-mb1-bct-cprod-p3701-0000_cpp.dtb 
+[   3.4217 ] ModuleCount 0 NumProdNames 0
+[   3.4217 ] Added Platform Config 6 data with size :- 16
+[   3.4217 ] 
+[   3.4217 ] Parsing config file :tegra234-mb1-bct-ratchet-p3701-0000_cpp.dtb 
+[   3.4217 ] 
+[   3.4217 ] Updating mb1-bct with firmware information
+[   3.4220 ] tegrabct_v2 --chip 0x23 0 --mb1bct mb1_cold_boot_bct_MB1.bct --updatefwinfo flash.xml.bin
+[   3.4229 ] tegrahost_v2 --chip 0x23 0 --align mb1_cold_boot_bct_MB1_aligned.bct
+[   3.4233 ] Generating SHA2 Hash for mb1bct
+[   3.4245 ] Sha saved in mb1_cold_boot_bct_MB1_aligned.sha
+[   3.4252 ] Sha saved in mb1_cold_boot_bct_MB1.sha
+[   3.4250 ] tegrahost_v2 --chip 0x23 0 --magicid MBCT --ratchet_blob ratchet_blob.bin --appendsigheader mb1_cold_boot_bct_MB1_aligned.bct zerosbk
+[   3.4253 ] adding BCH for mb1_cold_boot_bct_MB1_aligned.bct
+[   3.4269 ] tegrasign_v3.py --key None --list mb1_cold_boot_bct_MB1_aligned_sigheader.bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.4270 ] Assuming zero filled SBK key
+[   3.4282 ] Warning: pub_key.key is not found
+[   3.4281 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mb1_cold_boot_bct_MB1_aligned_sigheader.bct.encrypt mb1_cold_boot_bct_MB1_aligned_sigheader.bct.hash zerosbk
+[   3.4289 ] Generating recovery mb1-bct
+[   3.4292 ] tegrabct_v2 --chip 0x23 0 --mb1bct mb1_bct.cfg --misc tegra234-mb1-bct-misc-p3701-0000_cpp.dtb --wb0sdram tegra234-p3701-0005-wb0sdram-l4t_cpp.dtb --pinmux tegra234-mb1-bct-pinmux-p3701-0000-a04_cpp.dtb --pmc tegra234-mb1-bct-padvoltage-p3701-0000-a04_cpp.dtb --pmic tegra234-mb1-bct-pmic-p3701-0005_cpp.dtb --brcommand tegra234-mb1-bct-reset-p3701-0000_cpp.dtb --prod tegra234-mb1-bct-prod-p3701-0000_cpp.dtb --gpioint tegra234-mb1-bct-gpioint-p3701-0000_cpp.dtb --uphy tegra234-mb1-bct-uphylane-si_cpp.dtb --device tegra234-mb1-bct-device-p3701-0000_cpp.dtb --deviceprod tegra234-mb1-bct-cprod-p3701-0000_cpp.dtb --minratchet tegra234-mb1-bct-ratchet-p3701-0000_cpp.dtb --ratchet_blob ratchet_blob.bin
+[   3.4294 ] MB1-BCT version: 0.13
+
+[   3.4305 ] Parsing config file :tegra234-mb1-bct-pinmux-p3701-0000-a04_cpp.dtb 
+[   3.4307 ] Added Platform Config 0 data with size :- 2936
+
+[   3.4320 ] Parsing config file :tegra234-mb1-bct-padvoltage-p3701-0000-a04_cpp.dtb 
+[   3.4322 ] WARNING: unknown node 'g2'
+[   3.4322 ] WARNING: unknown node 'g2'
+[   3.4323 ] WARNING: unknown node 'g9'
+[   3.4324 ] WARNING: unknown node 'g9'
+[   3.4324 ] Added Platform Config 2 data with size :- 24
+[   3.4324 ] 
+[   3.4324 ] Parsing config file :tegra234-mb1-bct-pmic-p3701-0005_cpp.dtb 
+[   3.4324 ] WARNING: unknown property 'i2c-update-only'
+[   3.4324 ] WARNING: unknown property 'i2c-verify-only'
+[   3.4324 ] WARNING: unknown property 'i2c-update-verify'
+[   3.4324 ] WARNING: unknown property 'i2c-update-only'
+[   3.4324 ] WARNING: unknown property 'i2c-verify-only'
+[   3.4324 ] WARNING: unknown property 'i2c-update-only'
+[   3.4324 ] WARNING: unknown property 'i2c-verify-only'
+[   3.4324 ] Added Platform Config 4 data with size :- 844
+[   3.4324 ] 
+[   3.4324 ] Parsing config file :tegra234-mb1-bct-reset-p3701-0000_cpp.dtb 
+[   3.4324 ] Added Platform Config 3 data with size :- 52
+[   3.4324 ] 
+[   3.4324 ] Parsing config file :tegra234-mb1-bct-prod-p3701-0000_cpp.dtb 
+[   3.4324 ] WARNING: unknown property 'major'
+[   3.4324 ] WARNING: unknown property 'minor'
+[   3.4324 ] Added Platform Config 5 data with size :- 524
+[   3.4324 ] 
+[   3.4324 ] Parsing config file :tegra234-mb1-bct-gpioint-p3701-0000_cpp.dtb 
+[   3.4324 ] WARNING: unknown property 'major'
+[   3.4324 ] WARNING: unknown property 'minor'
+[   3.4324 ] Added Platform Config 7 data with size :- 380
+[   3.4324 ] 
+[   3.4324 ] Parsing config file :tegra234-mb1-bct-uphylane-si_cpp.dtb 
+[   3.4324 ] Added Platform Config 8 data with size :- 24
+[   3.4324 ] 
+[   3.4324 ] Parsing config file :tegra234-mb1-bct-device-p3701-0000_cpp.dtb 
+[   3.4324 ] Added Platform Config 9 data with size :- 100
+[   3.4324 ] 
+[   3.4324 ] Parsing config file :tegra234-mb1-bct-cprod-p3701-0000_cpp.dtb 
+[   3.4324 ] ModuleCount 0 NumProdNames 0
+[   3.4324 ] Added Platform Config 6 data with size :- 16
+[   3.4324 ] 
+[   3.4324 ] Parsing config file :tegra234-mb1-bct-ratchet-p3701-0000_cpp.dtb 
+[   3.4324 ] 
+[   3.4324 ] Updating mb1-bct with firmware information
+[   3.4327 ] tegrabct_v2 --chip 0x23 0 --mb1bct mb1_bct_MB1.bct --recov --updatefwinfo flash.xml.bin
+[   3.4335 ] tegrahost_v2 --chip 0x23 0 --align mb1_bct_MB1_aligned.bct
+[   3.4338 ] Generating SHA2 Hash for mb1bct
+[   3.4350 ] Sha saved in mb1_bct_MB1_aligned.sha
+[   3.4357 ] Sha saved in mb1_bct_MB1.sha
+[   3.4355 ] tegrahost_v2 --chip 0x23 0 --magicid MBCT --ratchet_blob ratchet_blob.bin --appendsigheader mb1_bct_MB1_aligned.bct zerosbk
+[   3.4357 ] adding BCH for mb1_bct_MB1_aligned.bct
+[   3.4370 ] tegrasign_v3.py --key None --list mb1_bct_MB1_aligned_sigheader.bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.4371 ] Assuming zero filled SBK key
+[   3.4379 ] Warning: pub_key.key is not found
+[   3.4377 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mb1_bct_MB1_aligned_sigheader.bct.encrypt mb1_bct_MB1_aligned_sigheader.bct.hash zerosbk
+[   3.4385 ] Generating coldboot mem-bct
+[   3.4388 ] tegrabct_v2 --chip 0x23 0 --sdram tegra234-p3701-0005-sdram-l4t_cpp.dtb --wb0sdram tegra234-p3701-0005-wb0sdram-l4t_cpp.dtb --membct tegra234-p3701-0005-sdram-l4t_cpp_1.bct tegra234-p3701-0005-sdram-l4t_cpp_2.bct tegra234-p3701-0005-sdram-l4t_cpp_3.bct tegra234-p3701-0005-sdram-l4t_cpp_4.bct
+[   3.4390 ]  packing sdram params with Wb0 file tegra234-p3701-0005-wb0sdram-l4t_cpp.dtb
+[   3.4944 ] Packing sdram param for instance[0]
+[   3.4945 ] Packing sdram param for instance[1]
+[   3.4946 ] Packing sdram param for instance[2]
+[   3.4947 ] Packing sdram param for instance[3]
+[   3.4948 ] Packing sdram param for instance[4]
+[   3.4949 ] Packing sdram param for instance[5]
+[   3.4950 ] Packing sdram param for instance[6]
+[   3.4951 ] Packing sdram param for instance[7]
+[   3.4952 ] Packing sdram param for instance[8]
+[   3.4952 ] Packing sdram param for instance[9]
+[   3.4953 ] Packing sdram param for instance[10]
+[   3.4954 ] Packing sdram param for instance[11]
+[   3.4955 ] Packing sdram param for instance[12]
+[   3.4956 ] Packing sdram param for instance[13]
+[   3.4957 ] Packing sdram param for instance[14]
+[   3.4958 ] Packing sdram param for instance[15]
+[   3.5494 ] Getting sector size from pt
+[   3.5499 ] tegraparser_v2 --getsectorsize flash.xml.bin sector_info.bin
+[   3.5505 ] BlockSize read from layout is 0x200
+
+[   3.5507 ] tegrahost_v2 --chip 0x23 0 --blocksize 512 --magicid MEMB --addsigheader_multi tegra234-p3701-0005-sdram-l4t_cpp_1.bct tegra234-p3701-0005-sdram-l4t_cpp_2.bct tegra234-p3701-0005-sdram-l4t_cpp_3.bct tegra234-p3701-0005-sdram-l4t_cpp_4.bct --ratchet_blob ratchet_blob.bin
+[   3.5509 ] Binary 0 length is 58752
+[   3.5511 ] Binary 0 align length is 58880
+[   3.5518 ] Binary 1 length is 58752
+[   3.5519 ] Binary 1 align length is 58880
+[   3.5526 ] Binary 2 length is 58752
+[   3.5526 ] Binary 2 align length is 58880
+[   3.5533 ] Binary 3 length is 58752
+[   3.5533 ] Binary 3 align length is 58880
+[   3.5540 ] Buffer length is 235520
+[   3.5541 ] adding BCH for tegra234-p3701-0005-sdram-l4t_cpp_1.bct
+[   3.5542 ] new length is 243712
+[   3.5549 ] tegrahost_v2 --chip 0x23 0 --align mem_coldboot_aligned.bct
+[   3.5555 ] tegrahost_v2 --chip 0x23 0 --magicid MEMB --ratchet_blob ratchet_blob.bin --appendsigheader mem_coldboot_aligned.bct zerosbk
+[   3.5557 ] Header already present for mem_coldboot_aligned.bct
+[   3.5569 ] tegrasign_v3.py --key None --list mem_coldboot_aligned_sigheader.bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.5570 ] Assuming zero filled SBK key
+[   3.5581 ] Warning: pub_key.key is not found
+[   3.5578 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mem_coldboot_aligned_sigheader.bct.encrypt mem_coldboot_aligned_sigheader.bct.hash zerosbk
+[   3.5594 ] Generating recovery mem-bct
+[   3.5597 ] tegrabct_v2 --chip 0x23 0 --sdram tegra234-p3701-0005-sdram-l4t_cpp.dtb --wb0sdram tegra234-p3701-0005-wb0sdram-l4t_cpp.dtb --membct tegra234-p3701-0005-sdram-l4t_cpp_1.bct tegra234-p3701-0005-sdram-l4t_cpp_2.bct tegra234-p3701-0005-sdram-l4t_cpp_3.bct tegra234-p3701-0005-sdram-l4t_cpp_4.bct
+[   3.5600 ]  packing sdram params with Wb0 file tegra234-p3701-0005-wb0sdram-l4t_cpp.dtb
+[   3.6164 ] Packing sdram param for instance[0]
+[   3.6165 ] Packing sdram param for instance[1]
+[   3.6166 ] Packing sdram param for instance[2]
+[   3.6166 ] Packing sdram param for instance[3]
+[   3.6167 ] Packing sdram param for instance[4]
+[   3.6168 ] Packing sdram param for instance[5]
+[   3.6169 ] Packing sdram param for instance[6]
+[   3.6170 ] Packing sdram param for instance[7]
+[   3.6171 ] Packing sdram param for instance[8]
+[   3.6172 ] Packing sdram param for instance[9]
+[   3.6173 ] Packing sdram param for instance[10]
+[   3.6174 ] Packing sdram param for instance[11]
+[   3.6175 ] Packing sdram param for instance[12]
+[   3.6176 ] Packing sdram param for instance[13]
+[   3.6177 ] Packing sdram param for instance[14]
+[   3.6178 ] Packing sdram param for instance[15]
+[   3.6708 ] Generating mem_bct based on ramcode group number
+[   3.6708 ] Got ramcode 3 from the command line
+[   3.6708 ] Using ramcode group number 0
+[   3.6708 ] Disabled BPMP dtb trim, using default dtb
+[   3.6708 ] 
+[   3.6717 ] tegrahost_v2 --chip 0x23 0 --align mem_rcm_aligned.bct
+[   3.6725 ] tegrahost_v2 --chip 0x23 0 --magicid MEM0 --ratchet_blob ratchet_blob.bin --appendsigheader mem_rcm_aligned.bct zerosbk
+[   3.6727 ] adding BCH for mem_rcm_aligned.bct
+[   3.6751 ] tegrasign_v3.py --key None --list mem_rcm_aligned_sigheader.bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.6751 ] Assuming zero filled SBK key
+[   3.6762 ] Warning: pub_key.key is not found
+[   3.6760 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mem_rcm_aligned_sigheader.bct.encrypt mem_rcm_aligned_sigheader.bct.hash zerosbk
+[   3.6770 ] Generating all 4 mem_bct for ramcode group (0..3)
+[   3.6770 ] Disabled BPMP dtb trim, using default dtb
+[   3.6770 ] 
+[   3.6776 ] tegrahost_v2 --chip 0x23 0 --align mem_rcm_0_aligned.bct
+[   3.6782 ] tegrahost_v2 --chip 0x23 0 --magicid MEM0 --ratchet_blob ratchet_blob.bin --appendsigheader mem_rcm_0_aligned.bct zerosbk
+[   3.6784 ] adding BCH for mem_rcm_0_aligned.bct
+[   3.6811 ] tegrasign_v3.py --key None --list mem_rcm_0_aligned_sigheader.bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.6811 ] Assuming zero filled SBK key
+[   3.6821 ] Warning: pub_key.key is not found
+[   3.6819 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mem_rcm_0_aligned_sigheader.bct.encrypt mem_rcm_0_aligned_sigheader.bct.hash zerosbk
+[   3.6829 ] Disabled BPMP dtb trim, using default dtb
+[   3.6829 ] 
+[   3.6834 ] tegrahost_v2 --chip 0x23 0 --align mem_rcm_1_aligned.bct
+[   3.6841 ] tegrahost_v2 --chip 0x23 0 --magicid MEM1 --ratchet_blob ratchet_blob.bin --appendsigheader mem_rcm_1_aligned.bct zerosbk
+[   3.6843 ] adding BCH for mem_rcm_1_aligned.bct
+[   3.6868 ] tegrasign_v3.py --key None --list mem_rcm_1_aligned_sigheader.bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.6869 ] Assuming zero filled SBK key
+[   3.6878 ] Warning: pub_key.key is not found
+[   3.6876 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mem_rcm_1_aligned_sigheader.bct.encrypt mem_rcm_1_aligned_sigheader.bct.hash zerosbk
+[   3.6884 ] Disabled BPMP dtb trim, using default dtb
+[   3.6885 ] 
+[   3.6889 ] tegrahost_v2 --chip 0x23 0 --align mem_rcm_2_aligned.bct
+[   3.6895 ] tegrahost_v2 --chip 0x23 0 --magicid MEM2 --ratchet_blob ratchet_blob.bin --appendsigheader mem_rcm_2_aligned.bct zerosbk
+[   3.6897 ] adding BCH for mem_rcm_2_aligned.bct
+[   3.6922 ] tegrasign_v3.py --key None --list mem_rcm_2_aligned_sigheader.bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.6923 ] Assuming zero filled SBK key
+[   3.6932 ] Warning: pub_key.key is not found
+[   3.6930 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mem_rcm_2_aligned_sigheader.bct.encrypt mem_rcm_2_aligned_sigheader.bct.hash zerosbk
+[   3.6938 ] Disabled BPMP dtb trim, using default dtb
+[   3.6938 ] 
+[   3.6945 ] tegrahost_v2 --chip 0x23 0 --align mem_rcm_3_aligned.bct
+[   3.6952 ] tegrahost_v2 --chip 0x23 0 --magicid MEM3 --ratchet_blob ratchet_blob.bin --appendsigheader mem_rcm_3_aligned.bct zerosbk
+[   3.6954 ] adding BCH for mem_rcm_3_aligned.bct
+[   3.6980 ] tegrasign_v3.py --key None --list mem_rcm_3_aligned_sigheader.bct_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.6981 ] Assuming zero filled SBK key
+[   3.6990 ] Warning: pub_key.key is not found
+[   3.6988 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mem_rcm_3_aligned_sigheader.bct.encrypt mem_rcm_3_aligned_sigheader.bct.hash zerosbk
+[   3.6997 ] Copying signatures
+[   3.7000 ] tegrahost_v2 --chip 0x23 0 --partitionlayout flash.xml.bin --updatesig images_list_signed.xml
+[   3.7464 ] tegraparser_v2 --generategpt --pt flash.xml.bin
+[   3.7466 ] gpt_secondary_3_0.bin:
+[   3.7470 ] partition_id	partition_name			      StartingLba	EndingLba
+[   3.7472 ]            1	BCT                                 	       0	    2047
+[   3.7475 ]            2	A_mb1                               	    2048	    3071
+[   3.7477 ]            3	A_psc_bl1                           	    3072	    3583
+[   3.7479 ]            4	A_MB1_BCT                           	    3584	    3839
+[   3.7481 ]            5	A_MEM_BCT                           	    3840	    4351
+[   3.7482 ]            6	A_tsec-fw                           	    4352	    6399
+[   3.7484 ]            7	A_nvdec                             	    6400	    8447
+[   3.7486 ]            8	A_mb2                               	    8448	    9471
+[   3.7488 ]            9	A_xusb-fw                           	    9472	    9983
+[   3.7489 ]           10	A_bpmp-fw                           	    9984	   13055
+[   3.7491 ]           11	A_bpmp-fw-dtb                       	   13056	   21247
+[   3.7493 ]           12	A_psc-fw                            	   21248	   22783
+[   3.7495 ]           13	A_mts-mce                           	   22784	   23807
+[   3.7496 ]           14	A_sc7                               	   23808	   24191
+[   3.7496 ]           15	A_pscrf                             	   24192	   24575
+[   3.7496 ]           16	A_mb2rf                             	   24576	   24831
+[   3.7496 ]           17	A_cpu-bootloader                    	   24832	   31999
+[   3.7496 ]           18	A_secure-os                         	   32000	   40191
+[   3.7496 ]           19	A_smm-fw                            	   40192	   44287
+[   3.7496 ]           20	A_eks                               	   44288	   44799
+[   3.7496 ]           21	A_dce-fw                            	   44800	   55039
+[   3.7496 ]           22	A_spe-fw                            	   55040	   56191
+[   3.7496 ]           23	A_rce-fw                            	   56192	   58239
+[   3.7496 ]           24	A_adsp-fw                           	   58240	   62335
+[   3.7496 ]           25	A_pva-fw                            	   62336	   62847
+[   3.7496 ]           26	A_reserved_on_boot                  	   62848	   65023
+[   3.7496 ]           27	B_mb1                               	   65024	   66047
+[   3.7496 ]           28	B_psc_bl1                           	   66048	   66559
+[   3.7496 ]           29	B_MB1_BCT                           	   66560	   66815
+[   3.7496 ]           30	B_MEM_BCT                           	   66816	   67327
+[   3.7496 ]           31	B_tsec-fw                           	   67328	   69375
+[   3.7496 ]           32	B_nvdec                             	   69376	   71423
+[   3.7496 ]           33	B_mb2                               	   71424	   72447
+[   3.7496 ]           34	B_xusb-fw                           	   72448	   72959
+[   3.7496 ]           35	B_bpmp-fw                           	   72960	   76031
+[   3.7496 ]           36	B_bpmp-fw-dtb                       	   76032	   84223
+[   3.7496 ]           37	B_psc-fw                            	   84224	   85759
+[   3.7496 ]           38	B_mts-mce                           	   85760	   86783
+[   3.7496 ]           39	B_sc7                               	   86784	   87167
+[   3.7496 ]           40	B_pscrf                             	   87168	   87551
+[   3.7496 ]           41	B_mb2rf                             	   87552	   87807
+[   3.7496 ]           42	B_cpu-bootloader                    	   87808	   94975
+[   3.7496 ]           43	B_secure-os                         	   94976	  103167
+[   3.7496 ]           44	B_smm-fw                            	  103168	  107263
+[   3.7496 ]           45	B_eks                               	  107264	  107775
+[   3.7496 ]           46	B_dce-fw                            	  107776	  118015
+[   3.7496 ]           47	B_spe-fw                            	  118016	  119167
+[   3.7496 ]           48	B_rce-fw                            	  119168	  121215
+[   3.7496 ]           49	B_adsp-fw                           	  121216	  125311
+[   3.7496 ]           50	B_pva-fw                            	  125312	  125823
+[   3.7496 ]           51	B_reserved_on_boot                  	  125824	  127999
+[   3.7496 ]           52	uefi_variables                      	  128000	  128511
+[   3.7496 ]           53	uefi_ftw                            	  128512	  129535
+[   3.7496 ]           54	reserved                            	  129536	  129919
+[   3.7496 ]           55	worm                                	  129920	  130303
+[   3.7496 ]           56	BCT-boot-chain_backup               	  130304	  130431
+[   3.7496 ]           57	reserved_partition                  	  130432	  130559
+[   3.7496 ]           58	secondary_gpt_backup                	  130560	  130687
+[   3.7496 ]           59	B_VER                               	  130688	  130815
+[   3.7496 ]           60	A_VER                               	  130816	  130943
+[   3.7496 ] gpt_primary_1_3.bin:
+[   3.7496 ] partition_id	partition_name			      StartingLba	EndingLba
+[   3.7496 ]            1	APP                                 	70158912	119537623
+[   3.7496 ]            2	A_kernel                            	      40	  262183
+[   3.7496 ]            3	A_kernel-dtb                        	  262184	  263719
+[   3.7496 ]            4	A_reserved_on_user                  	  263720	  328487
+[   3.7496 ]            5	B_kernel                            	  328488	  590631
+[   3.7496 ]            6	B_kernel-dtb                        	  590632	  592167
+[   3.7496 ]            7	B_reserved_on_user                  	  592168	  656935
+[   3.7496 ]            8	recovery                            	  656936	  820775
+[   3.7496 ]            9	recovery-dtb                        	  820776	  821799
+[   3.7496 ]           10	esp                                 	  821800	  952871
+[   3.7496 ]           11	recovery_alt                        	  952872	 1116711
+[   3.7496 ]           12	recovery-dtb_alt                    	 1116712	 1117735
+[   3.7496 ]           13	esp_alt                             	 1117736	 1248807
+[   3.7496 ]           14	UDA                                 	 1248832	 2068031
+[   3.7496 ]           15	reserved                            	 2068032	 3050047
+[   3.7496 ]           16	DATA                                	 3050048	70158911
+[   3.7496 ] gpt_secondary_1_3.bin:
+[   3.7496 ] partition_id	partition_name			      StartingLba	EndingLba
+[   3.7496 ]            1	APP                                 	70158912	119537623
+[   3.7496 ]            2	A_kernel                            	      40	  262183
+[   3.7496 ]            3	A_kernel-dtb                        	  262184	  263719
+[   3.7496 ]            4	A_reserved_on_user                  	  263720	  328487
+[   3.7496 ]            5	B_kernel                            	  328488	  590631
+[   3.7496 ]            6	B_kernel-dtb                        	  590632	  592167
+[   3.7496 ]            7	B_reserved_on_user                  	  592168	  656935
+[   3.7496 ]            8	recovery                            	  656936	  820775
+[   3.7496 ]            9	recovery-dtb                        	  820776	  821799
+[   3.7496 ]           10	esp                                 	  821800	  952871
+[   3.7496 ]           11	recovery_alt                        	  952872	 1116711
+[   3.7496 ]           12	recovery-dtb_alt                    	 1116712	 1117735
+[   3.7496 ]           13	esp_alt                             	 1117736	 1248807
+[   3.7496 ]           14	UDA                                 	 1248832	 2068031
+[   3.7496 ]           15	reserved                            	 2068032	 3050047
+[   3.7496 ]           16	DATA                                	 3050048	70158911
+[   3.7496 ] 
+[   3.7511 ] Get magic id
+[   3.7514 ] tegraparser_v2 --get_magic psc_fw
+[   3.7517 ] PFWP
+[   3.7518 ] partition type psc_fw, magic id = PFWP
+[   3.7527 ] tegrahost_v2 --chip 0x23 0 --align pscfw_t234_prod_aligned.bin
+[   3.7533 ] tegrahost_v2 --chip 0x23 0 --magicid PFWP --ratchet_blob ratchet_blob.bin --appendsigheader pscfw_t234_prod_aligned.bin zerosbk
+[   3.7535 ] Header already present for pscfw_t234_prod_aligned.bin
+[   3.7583 ] tegrasign_v3.py --key None --list pscfw_t234_prod_aligned_sigheader.bin_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.7584 ] Assuming zero filled SBK key
+[   3.7596 ] Warning: pub_key.key is not found
+[   3.7594 ] tegrahost_v2 --chip 0x23 0 --updatesigheader pscfw_t234_prod_aligned_sigheader.bin.encrypt pscfw_t234_prod_aligned_sigheader.bin.hash zerosbk
+[   3.7611 ] Get magic id
+[   3.7614 ] tegraparser_v2 --get_magic mts_mce
+[   3.7616 ] MTSM
+[   3.7617 ] partition type mts_mce, magic id = MTSM
+[   3.7623 ] tegrahost_v2 --chip 0x23 0 --align mce_flash_o10_cr_prod_aligned.bin
+[   3.7629 ] tegrahost_v2 --chip 0x23 0 --magicid MTSM --ratchet_blob ratchet_blob.bin --appendsigheader mce_flash_o10_cr_prod_aligned.bin zerosbk
+[   3.7631 ] Header already present for mce_flash_o10_cr_prod_aligned.bin
+[   3.7664 ] tegrasign_v3.py --key None --list mce_flash_o10_cr_prod_aligned_sigheader.bin_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.7665 ] Assuming zero filled SBK key
+[   3.7676 ] Warning: pub_key.key is not found
+[   3.7674 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mce_flash_o10_cr_prod_aligned_sigheader.bin.encrypt mce_flash_o10_cr_prod_aligned_sigheader.bin.hash zerosbk
+[   3.7688 ] Get magic id
+[   3.7691 ] tegraparser_v2 --get_magic mb2_applet
+[   3.7693 ] MB2A
+[   3.7694 ] partition type mb2_applet, magic id = MB2A
+[   3.7699 ] tegrahost_v2 --chip 0x23 0 --align applet_t234_aligned.bin
+[   3.7705 ] tegrahost_v2 --chip 0x23 0 --magicid MB2A --ratchet_blob ratchet_blob.bin --appendsigheader applet_t234_aligned.bin zerosbk
+[   3.7707 ] adding BCH for applet_t234_aligned.bin
+[   3.7788 ] tegrasign_v3.py --key None --list applet_t234_aligned_sigheader.bin_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.7788 ] Assuming zero filled SBK key
+[   3.7800 ] Warning: pub_key.key is not found
+[   3.7798 ] tegrahost_v2 --chip 0x23 0 --updatesigheader applet_t234_aligned_sigheader.bin.encrypt applet_t234_aligned_sigheader.bin.hash zerosbk
+[   3.7816 ] Generating recovery mb2-bct
+[   3.7816 ] tegrabct_v2 --chip 0x23 0 --mb2bct mb2_bct.cfg --recov --mb2bctcfg tegra234-mb2-bct-misc-p3701-0000_cpp.dtb --scr tegra234-mb2-bct-scr-p3701-0000_cpp.dtb
+[   3.7818 ] WARNING: unknown property 'tfc_version'
+[   3.7828 ] WARNING: unknown property 'addr_header_version'
+[   3.7884 ] Updating mb2-bct with storage information for RCM
+[   3.7886 ] tegrabct_v2 --chip 0x23 0 --mb2bct mb2_bct_MB2.bct --updatestorageinfo flash.xml.bin
+[   3.7892 ] Concatenating mb2-bct to mb2 binary
+[   3.7892 ] mb2_bin_file = mb2_t234.bin
+[   3.7892 ] mb2_bct_file = mb2_bct_MB2.bct
+[   3.7896 ] Get magic id
+[   3.7899 ] tegraparser_v2 --get_magic mb2_bootloader
+[   3.7901 ] MB2B
+[   3.7902 ] partition type mb2_bootloader, magic id = MB2B
+[   3.7908 ] tegrahost_v2 --chip 0x23 0 --align mb2_t234_with_mb2_bct_MB2_aligned.bin
+[   3.7914 ] tegrahost_v2 --chip 0x23 0 --magicid MB2B --ratchet_blob ratchet_blob.bin --appendsigheader mb2_t234_with_mb2_bct_MB2_aligned.bin zerosbk
+[   3.7916 ] adding BCH for mb2_t234_with_mb2_bct_MB2_aligned.bin
+[   3.8036 ] tegrasign_v3.py --key None --list mb2_t234_with_mb2_bct_MB2_aligned_sigheader.bin_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.8036 ] Assuming zero filled SBK key
+[   3.8049 ] Warning: pub_key.key is not found
+[   3.8047 ] tegrahost_v2 --chip 0x23 0 --updatesigheader mb2_t234_with_mb2_bct_MB2_aligned_sigheader.bin.encrypt mb2_t234_with_mb2_bct_MB2_aligned_sigheader.bin.hash zerosbk
+[   3.8067 ] Get magic id
+[   3.8070 ] tegraparser_v2 --get_magic xusb_fw
+[   3.8072 ] XUSB
+[   3.8074 ] partition type xusb_fw, magic id = XUSB
+[   3.8079 ] tegrahost_v2 --chip 0x23 0 --align xusb_t234_prod_aligned.bin
+[   3.8085 ] tegrahost_v2 --chip 0x23 0 --magicid XUSB --ratchet_blob ratchet_blob.bin --appendsigheader xusb_t234_prod_aligned.bin zerosbk
+[   3.8087 ] adding BCH for xusb_t234_prod_aligned.bin
+[   3.8135 ] tegrasign_v3.py --key None --list xusb_t234_prod_aligned_sigheader.bin_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.8137 ] Assuming zero filled SBK key
+[   3.8150 ] Warning: pub_key.key is not found
+[   3.8148 ] tegrahost_v2 --chip 0x23 0 --updatesigheader xusb_t234_prod_aligned_sigheader.bin.encrypt xusb_t234_prod_aligned_sigheader.bin.hash zerosbk
+[   3.8164 ] Get magic id
+[   3.8168 ] tegraparser_v2 --get_magic pva_fw
+[   3.8169 ] PVAF
+[   3.8171 ] partition type pva_fw, magic id = PVAF
+[   3.8199 ] tegrahost_v2 --chip 0x23 0 --align nvpva_020_aligned.fw
+[   3.8205 ] tegrahost_v2 --chip 0x23 0 --magicid PVAF --ratchet_blob ratchet_blob.bin --appendsigheader nvpva_020_aligned.fw zerosbk
+[   3.8208 ] adding BCH for nvpva_020_aligned.fw
+[   3.8746 ] tegrasign_v3.py --key None --list nvpva_020_aligned_sigheader.fw_list.xml --pubkeyhash pub_key.key --sha sha512
+[   3.8747 ] Assuming zero filled SBK key
+[   3.8794 ] Warning: pub_key.key is not found
+[   3.8793 ] tegrahost_v2 --chip 0x23 0 --updatesigheader nvpva_020_aligned_sigheader.fw.encrypt nvpva_020_aligned_sigheader.fw.hash zerosbk
+[   3.8856 ] Kernel DTB used: kernel_tegra234-p3737-0000+p3701-0005-nv.dtb
+[   3.8856 ] Concatenating kernel-dtb to dce-fw binary
+[   3.8857 ] dce_bin = display-t234-dce.bin
+[   3.8857 ] kernel_dtb = kernel_tegra234-p3737-0000+p3701-0005-nv.dtb
+[   3.8857 ] dce_with_dtb = display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv.bin
+[   3.9031 ] Get magic id
+[   3.9034 ] tegraparser_v2 --get_magic dce_fw
+[   3.9037 ] DCEF
+[   3.9039 ] partition type dce_fw, magic id = DCEF
+[   3.9198 ] tegrahost_v2 --chip 0x23 0 --align display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned.bin
+[   3.9204 ] tegrahost_v2 --chip 0x23 0 --magicid DCEF --ratchet_blob ratchet_blob.bin --appendsigheader display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned.bin zerosbk
+[   3.9207 ] adding BCH for display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned.bin
+[   4.2290 ] tegrasign_v3.py --key None --list display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned_sigheader.bin_list.xml --pubkeyhash pub_key.key --sha sha512
+[   4.2291 ] Assuming zero filled SBK key
+[   4.2660 ] Warning: pub_key.key is not found
+[   4.2660 ] tegrahost_v2 --chip 0x23 0 --updatesigheader display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned_sigheader.bin.encrypt display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_aligned_sigheader.bin.hash zerosbk
+[   4.3168 ] Get magic id
+[   4.3172 ] tegraparser_v2 --get_magic nvdec
+[   4.3174 ] NDEC
+[   4.3176 ] partition type nvdec, magic id = NDEC
+[   4.3184 ] tegrahost_v2 --chip 0x23 0 --align nvdec_t234_prod_aligned.fw
+[   4.3191 ] tegrahost_v2 --chip 0x23 0 --magicid NDEC --ratchet_blob ratchet_blob.bin --appendsigheader nvdec_t234_prod_aligned.fw zerosbk
+[   4.3193 ] Header already present for nvdec_t234_prod_aligned.fw
+[   4.3239 ] tegrasign_v3.py --key None --list nvdec_t234_prod_aligned_sigheader.fw_list.xml --pubkeyhash pub_key.key --sha sha512
+[   4.3240 ] Assuming zero filled SBK key
+[   4.3255 ] Warning: pub_key.key is not found
+[   4.3252 ] tegrahost_v2 --chip 0x23 0 --updatesigheader nvdec_t234_prod_aligned_sigheader.fw.encrypt nvdec_t234_prod_aligned_sigheader.fw.hash zerosbk
+[   4.3267 ] Get magic id
+[   4.3270 ] tegraparser_v2 --get_magic bpmp_fw
+[   4.3272 ] BPMF
+[   4.3273 ] partition type bpmp_fw, magic id = BPMF
+[   4.3286 ] tegrahost_v2 --chip 0x23 0 --align bpmp_t234-TE990M-A1_prod_aligned.bin
+[   4.3292 ] tegrahost_v2 --chip 0x23 0 --magicid BPMF --ratchet_blob ratchet_blob.bin --appendsigheader bpmp_t234-TE990M-A1_prod_aligned.bin zerosbk
+[   4.3294 ] Header already present for bpmp_t234-TE990M-A1_prod_aligned.bin
+[   4.3433 ] tegrasign_v3.py --key None --list bpmp_t234-TE990M-A1_prod_aligned_sigheader.bin_list.xml --pubkeyhash pub_key.key --sha sha512
+[   4.3434 ] Assuming zero filled SBK key
+[   4.3461 ] Warning: pub_key.key is not found
+[   4.3458 ] tegrahost_v2 --chip 0x23 0 --updatesigheader bpmp_t234-TE990M-A1_prod_aligned_sigheader.bin.encrypt bpmp_t234-TE990M-A1_prod_aligned_sigheader.bin.hash zerosbk
+[   4.3490 ] Using bpmp-dtb concatenated with odmdata
+[   4.3490 ] Get magic id
+[   4.3492 ] tegraparser_v2 --get_magic bpmp_fw_dtb
+[   4.3494 ] BPMD
+[   4.3495 ] partition type bpmp_fw_dtb, magic id = BPMD
+[   4.3500 ] tegrahost_v2 --chip 0x23 0 --align tegra234-bpmp-3701-0005-3737-0000_with_odm_aligned.dtb
+[   4.3506 ] tegrahost_v2 --chip 0x23 0 --magicid BPMD --ratchet_blob ratchet_blob.bin --appendsigheader tegra234-bpmp-3701-0005-3737-0000_with_odm_aligned.dtb zerosbk
+[   4.3508 ] adding BCH for tegra234-bpmp-3701-0005-3737-0000_with_odm_aligned.dtb
+[   4.3583 ] tegrasign_v3.py --key None --list tegra234-bpmp-3701-0005-3737-0000_with_odm_aligned_sigheader.dtb_list.xml --pubkeyhash pub_key.key --sha sha512
+[   4.3583 ] Assuming zero filled SBK key
+[   4.3594 ] Warning: pub_key.key is not found
+[   4.3592 ] tegrahost_v2 --chip 0x23 0 --updatesigheader tegra234-bpmp-3701-0005-3737-0000_with_odm_aligned_sigheader.dtb.encrypt tegra234-bpmp-3701-0005-3737-0000_with_odm_aligned_sigheader.dtb.hash zerosbk
+[   4.3605 ] Get magic id
+[   4.3607 ] tegraparser_v2 --get_magic rce_fw
+[   4.3609 ] RCEF
+[   4.3610 ] partition type rce_fw, magic id = RCEF
+[   4.3618 ] tegrahost_v2 --chip 0x23 0 --align camera-rtcpu-t234-rce_aligned.img
+[   4.3623 ] tegrahost_v2 --chip 0x23 0 --magicid RCEF --ratchet_blob ratchet_blob.bin --appendsigheader camera-rtcpu-t234-rce_aligned.img zerosbk
+[   4.3625 ] adding BCH for camera-rtcpu-t234-rce_aligned.img
+[   4.3746 ] tegrasign_v3.py --key None --list camera-rtcpu-t234-rce_aligned_sigheader.img_list.xml --pubkeyhash pub_key.key --sha sha512
+[   4.3746 ] Assuming zero filled SBK key
+[   4.3759 ] Warning: pub_key.key is not found
+[   4.3757 ] tegrahost_v2 --chip 0x23 0 --updatesigheader camera-rtcpu-t234-rce_aligned_sigheader.img.encrypt camera-rtcpu-t234-rce_aligned_sigheader.img.hash zerosbk
+[   4.3775 ] Get magic id
+[   4.3777 ] tegraparser_v2 --get_magic ape_fw
+[   4.3779 ] APEF
+[   4.3780 ] partition type ape_fw, magic id = APEF
+[   4.3785 ] tegrahost_v2 --chip 0x23 0 --align adsp-fw_aligned.bin
+[   4.3790 ] tegrahost_v2 --chip 0x23 0 --magicid APEF --ratchet_blob ratchet_blob.bin --appendsigheader adsp-fw_aligned.bin zerosbk
+[   4.3791 ] adding BCH for adsp-fw_aligned.bin
+[   4.3830 ] tegrasign_v3.py --key None --list adsp-fw_aligned_sigheader.bin_list.xml --pubkeyhash pub_key.key --sha sha512
+[   4.3831 ] Assuming zero filled SBK key
+[   4.3840 ] Warning: pub_key.key is not found
+[   4.3838 ] tegrahost_v2 --chip 0x23 0 --updatesigheader adsp-fw_aligned_sigheader.bin.encrypt adsp-fw_aligned_sigheader.bin.hash zerosbk
+[   4.3847 ] Get magic id
+[   4.3849 ] tegraparser_v2 --get_magic spe_fw
+[   4.3851 ] SPEF
+[   4.3852 ] partition type spe_fw, magic id = SPEF
+[   4.3857 ] tegrahost_v2 --chip 0x23 0 --align spe_t234_aligned.bin
+[   4.3862 ] tegrahost_v2 --chip 0x23 0 --magicid SPEF --ratchet_blob ratchet_blob.bin --appendsigheader spe_t234_aligned.bin zerosbk
+[   4.3864 ] adding BCH for spe_t234_aligned.bin
+[   4.3940 ] tegrasign_v3.py --key None --list spe_t234_aligned_sigheader.bin_list.xml --pubkeyhash pub_key.key --sha sha512
+[   4.3941 ] Assuming zero filled SBK key
+[   4.3951 ] Warning: pub_key.key is not found
+[   4.3949 ] tegrahost_v2 --chip 0x23 0 --updatesigheader spe_t234_aligned_sigheader.bin.encrypt spe_t234_aligned_sigheader.bin.hash zerosbk
+[   4.3963 ] Get magic id
+[   4.3966 ] tegraparser_v2 --get_magic tsec_fw
+[   4.3967 ] TSEC
+[   4.3969 ] partition type tsec_fw, magic id = TSEC
+[   4.3973 ] tegrahost_v2 --chip 0x23 0 --align tsec_t234_aligned.bin
+[   4.3979 ] tegrahost_v2 --chip 0x23 0 --magicid TSEC --ratchet_blob ratchet_blob.bin --appendsigheader tsec_t234_aligned.bin zerosbk
+[   4.3980 ] Header already present for tsec_t234_aligned.bin
+[   4.4014 ] tegrasign_v3.py --key None --list tsec_t234_aligned_sigheader.bin_list.xml --pubkeyhash pub_key.key --sha sha512
+[   4.4015 ] Assuming zero filled SBK key
+[   4.4025 ] Warning: pub_key.key is not found
+[   4.4022 ] tegrahost_v2 --chip 0x23 0 --updatesigheader tsec_t234_aligned_sigheader.bin.encrypt tsec_t234_aligned_sigheader.bin.hash zerosbk
+[   4.4033 ] Get magic id
+[   4.4036 ] tegraparser_v2 --get_magic tos
+[   4.4038 ] TOSB
+[   4.4039 ] partition type tos, magic id = TOSB
+[   4.4057 ] tegrahost_v2 --chip 0x23 0 --align tos-optee_t234_aligned.img
+[   4.4063 ] tegrahost_v2 --chip 0x23 0 --magicid TOSB --ratchet_blob ratchet_blob.bin --appendsigheader tos-optee_t234_aligned.img zerosbk
+[   4.4064 ] adding BCH for tos-optee_t234_aligned.img
+[   4.4487 ] tegrasign_v3.py --key None --list tos-optee_t234_aligned_sigheader.img_list.xml --pubkeyhash pub_key.key --sha sha512
+[   4.4488 ] Assuming zero filled SBK key
+[   4.4526 ] Warning: pub_key.key is not found
+[   4.4525 ] tegrahost_v2 --chip 0x23 0 --updatesigheader tos-optee_t234_aligned_sigheader.img.encrypt tos-optee_t234_aligned_sigheader.img.hash zerosbk
+[   4.4576 ] Get magic id
+[   4.4579 ] tegraparser_v2 --get_magic eks
+[   4.4582 ] EKSB
+[   4.4584 ] partition type eks, magic id = EKSB
+[   4.4589 ] tegrahost_v2 --chip 0x23 0 --align eks_aligned.img
+[   4.4596 ] tegrahost_v2 --chip 0x23 0 --magicid EKSB --ratchet_blob ratchet_blob.bin --appendsigheader eks_aligned.img zerosbk
+[   4.4598 ] adding BCH for eks_aligned.img
+[   4.4609 ] tegrasign_v3.py --key None --list eks_aligned_sigheader.img_list.xml --pubkeyhash pub_key.key --sha sha512
+[   4.4609 ] Assuming zero filled SBK key
+[   4.4619 ] Warning: pub_key.key is not found
+[   4.4616 ] tegrahost_v2 --chip 0x23 0 --updatesigheader eks_aligned_sigheader.img.encrypt eks_aligned_sigheader.img.hash zerosbk
+[   4.4644 ] tegrahost_v2 --chip 0x23 0 --align uefi_t23x_rcmboot_with_dtb_aligned.bin
+[   4.4651 ] tegrahost_v2 --chip 0x23 0 --magicid CPBL --ratchet_blob ratchet_blob.bin --appendsigheader uefi_t23x_rcmboot_with_dtb_aligned.bin zerosbk
+[   4.4654 ] adding BCH for uefi_t23x_rcmboot_with_dtb_aligned.bin
+[   4.5174 ] tegrasign_v3.py --key None --list uefi_t23x_rcmboot_with_dtb_aligned_sigheader.bin_list.xml --pubkeyhash pub_key.key --sha sha512
+[   4.5175 ] Assuming zero filled SBK key
+[   4.5225 ] Warning: pub_key.key is not found
+[   4.5224 ] tegrahost_v2 --chip 0x23 0 --updatesigheader uefi_t23x_rcmboot_with_dtb_aligned_sigheader.bin.encrypt uefi_t23x_rcmboot_with_dtb_aligned_sigheader.bin.hash zerosbk
+[   4.5283 ] Copying enc and signed file in /home/marsuser/flash-6b/signed
+[   4.5562 ] Copying br bct for multi chains
+[   4.5563 ] Signed BCT for boot chain A is copied to /home/marsuser/flash-6b/signed/br_bct_BR.bct
+
+[   4.5564 ] Signed BCT for boot chain B is copied to /home/marsuser/flash-6b/signed/br_bct_b_BR.bct
+
+[   4.5564 ] Copying BCT backup image bct_backup.img to /home/marsuser/flash-6b/signed/bct_backup.img
+[   4.5597 ] Copying pscfw_t234_prod_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5601 ] Signed file: /home/marsuser/flash-6b/signed/pscfw_t234_prod_sigheader.bin.encrypt
+[   4.5601 ] Copying mce_flash_o10_cr_prod_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5603 ] Signed file: /home/marsuser/flash-6b/signed/mce_flash_o10_cr_prod_sigheader.bin.encrypt
+[   4.5603 ] Copying applet_t234_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5605 ] Signed file: /home/marsuser/flash-6b/signed/applet_t234_sigheader.bin.encrypt
+[   4.5605 ] Copying mb2_t234_with_mb2_bct_MB2_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5608 ] Signed file: /home/marsuser/flash-6b/signed/mb2_t234_with_mb2_bct_MB2_sigheader.bin.encrypt
+[   4.5608 ] Copying xusb_t234_prod_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5610 ] Signed file: /home/marsuser/flash-6b/signed/xusb_t234_prod_sigheader.bin.encrypt
+[   4.5611 ] Copying nvpva_020_sigheader.fw.encrypt to /home/marsuser/flash-6b/signed
+[   4.5624 ] Signed file: /home/marsuser/flash-6b/signed/nvpva_020_sigheader.fw.encrypt
+[   4.5624 ] Copying display-t234-dce_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5698 ] Signed file: /home/marsuser/flash-6b/signed/display-t234-dce_sigheader.bin.encrypt
+[   4.5698 ] Copying display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5772 ] Signed file: /home/marsuser/flash-6b/signed/display-t234-dce_with_kernel_tegra234-p3737-0000+p3701-0005-nv_sigheader.bin.encrypt
+[   4.5772 ] Copying nvdec_t234_prod_sigheader.fw.encrypt to /home/marsuser/flash-6b/signed
+[   4.5775 ] Signed file: /home/marsuser/flash-6b/signed/nvdec_t234_prod_sigheader.fw.encrypt
+[   4.5775 ] Copying bpmp_t234-TE990M-A1_prod_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5785 ] Signed file: /home/marsuser/flash-6b/signed/bpmp_t234-TE990M-A1_prod_sigheader.bin.encrypt
+[   4.5785 ] Copying tegra234-bpmp-3701-0005-3737-0000_with_odm_sigheader.dtb.encrypt to /home/marsuser/flash-6b/signed
+[   4.5788 ] Signed file: /home/marsuser/flash-6b/signed/tegra234-bpmp-3701-0005-3737-0000_with_odm_sigheader.dtb.encrypt
+[   4.5788 ] Copying camera-rtcpu-t234-rce_sigheader.img.encrypt to /home/marsuser/flash-6b/signed
+[   4.5793 ] Signed file: /home/marsuser/flash-6b/signed/camera-rtcpu-t234-rce_sigheader.img.encrypt
+[   4.5793 ] Copying adsp-fw_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5795 ] Signed file: /home/marsuser/flash-6b/signed/adsp-fw_sigheader.bin.encrypt
+[   4.5795 ] Copying spe_t234_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5798 ] Signed file: /home/marsuser/flash-6b/signed/spe_t234_sigheader.bin.encrypt
+[   4.5798 ] Copying tsec_t234_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5800 ] Signed file: /home/marsuser/flash-6b/signed/tsec_t234_sigheader.bin.encrypt
+[   4.5801 ] Copying tos-optee_t234_sigheader.img.encrypt to /home/marsuser/flash-6b/signed
+[   4.5815 ] Signed file: /home/marsuser/flash-6b/signed/tos-optee_t234_sigheader.img.encrypt
+[   4.5815 ] Copying eks_sigheader.img.encrypt to /home/marsuser/flash-6b/signed
+[   4.5816 ] Signed file: /home/marsuser/flash-6b/signed/eks_sigheader.img.encrypt
+[   4.5816 ] Copying uefi_t23x_rcmboot_with_dtb_sigheader.bin.encrypt to /home/marsuser/flash-6b/signed
+[   4.5829 ] Signed file: /home/marsuser/flash-6b/signed/uefi_t23x_rcmboot_with_dtb_sigheader.bin.encrypt
+[   4.5845 ] tegraparser_v2 --pt flash.xml.bin --generateflashindex /home/marsuser/flash-6b/signed/flash.xml.tmp flash.idx
+Using bpmp-dtb concatenated with odmdata in blob for t23x
+./tegraflash.py --bl uefi_t23x_rcmboot_with_dtb_sigheader.bin.encrypt --bct br_bct_BR.bct --securedev  --applet rcm_2_encrypt.rcm --applet_softfuse rcm_1_encrypt.rcm --cmd "rcmboot"  --cfg secureflash.xml --chip 0x23 --mb1_bct mb1_bct_MB1_sigheader.bct.encrypt --mem_bct mem_rcm_sigheader.bct.encrypt --mb1_cold_boot_bct mb1_cold_boot_bct_MB1_sigheader.bct.encrypt --mb1_bin mb1_t234_prod_aligned_sigheader.bin.encrypt --psc_bl1_bin psc_bl1_t234_prod_aligned_sigheader.bin.encrypt --mem_bct_cold_boot mem_coldboot_sigheader.bct.encrypt  --bins "psc_fw pscfw_t234_prod_sigheader.bin.encrypt; mts_mce mce_flash_o10_cr_prod_sigheader.bin.encrypt; mb2_applet applet_t234_sigheader.bin.encrypt; mb2_bootloader mb2_t234_with_mb2_cold_boot_bct_MB2_sigheader.bin.encrypt; xusb_fw xusb_t234_prod_sigheader.bin.encrypt; pva_fw nvpva_020_sigheader.fw.encrypt; dce_fw display-t234-dce_sigheader.bin.encrypt; nvdec nvdec_t234_prod_sigheader.fw.encrypt; bpmp_fw bpmp_t234-TE990M-A1_prod_sigheader.bin.encrypt; bpmp_fw_dtb tegra234-bpmp-3701-0005-3737-0000_with_odm_sigheader.dtb.encrypt; rce_fw camera-rtcpu-t234-rce_sigheader.img.encrypt; ape_fw adsp-fw_sigheader.bin.encrypt; spe_fw spe_t234_sigheader.bin.encrypt; tsec_fw tsec_t234_sigheader.bin.encrypt; tos tos-optee_t234_sigheader.img.encrypt; eks eks_sigheader.img.encrypt; kernel initrd-flash.img; kernel_dtb kernel_tegra234-p3737-0000+p3701-0005-nv.dtb"   --instance 3-3  --bct_backup 
+saving flash command in flashcmd.txt
+--rcm-boot with --no-flash, prepare rcmboot_blob.
+tegraflashcmd with --no_flash:
+./tegraflash.py --bl uefi_t23x_rcmboot_with_dtb_sigheader.bin.encrypt --bct br_bct_BR.bct --securedev  --applet rcm_2_encrypt.rcm --applet_softfuse rcm_1_encrypt.rcm --cmd "rcmboot"  --cfg secureflash.xml --chip 0x23 --mb1_bct mb1_bct_MB1_sigheader.bct.encrypt --mem_bct mem_rcm_sigheader.bct.encrypt --mb1_cold_boot_bct mb1_cold_boot_bct_MB1_sigheader.bct.encrypt --mb1_bin mb1_t234_prod_aligned_sigheader.bin.encrypt --psc_bl1_bin psc_bl1_t234_prod_aligned_sigheader.bin.encrypt --mem_bct_cold_boot mem_coldboot_sigheader.bct.encrypt  --bins "psc_fw pscfw_t234_prod_sigheader.bin.encrypt; mts_mce mce_flash_o10_cr_prod_sigheader.bin.encrypt; mb2_applet applet_t234_sigheader.bin.encrypt; mb2_bootloader mb2_t234_with_mb2_cold_boot_bct_MB2_sigheader.bin.encrypt; xusb_fw xusb_t234_prod_sigheader.bin.encrypt; pva_fw nvpva_020_sigheader.fw.encrypt; dce_fw display-t234-dce_sigheader.bin.encrypt; nvdec nvdec_t234_prod_sigheader.fw.encrypt; bpmp_fw bpmp_t234-TE990M-A1_prod_sigheader.bin.encrypt; bpmp_fw_dtb tegra234-bpmp-3701-0005-3737-0000_with_odm_sigheader.dtb.encrypt; rce_fw camera-rtcpu-t234-rce_sigheader.img.encrypt; ape_fw adsp-fw_sigheader.bin.encrypt; spe_fw spe_t234_sigheader.bin.encrypt; tsec_fw tsec_t234_sigheader.bin.encrypt; tos tos-optee_t234_sigheader.img.encrypt; eks eks_sigheader.img.encrypt; kernel initrd-flash.img; kernel_dtb kernel_tegra234-p3737-0000+p3701-0005-nv.dtb"   --instance 3-3  --bct_backup  --no_flash 
+Welcome to Tegra Flash
+version 1.0.0
+Type ? or help for help and q or quit to exit
+Use ! to execute system commands
+ 
+
+ Entering RCM boot
+
+[   0.0217 ] mb1_t234_prod_aligned_sigheader.bin.encrypt filename is from --mb1_bin
+[   0.0217 ] psc_bl1_t234_prod_aligned_sigheader.bin.encrypt filename is from --psc_bl1_bin
+[   0.0217 ] rcm boot with presigned binaries
+[   0.0219 ] Generating blob for T23x
+[   0.0229 ] tegrahost_v2 --chip 0x23 0 --generateblob blob.xml blob.bin
+[   0.0231 ] The number of images in blob is 19
+[   0.0234 ] blobsize is 96460064
+[   0.0235 ] Added binary blob_uefi_t23x_rcmboot_with_dtb_sigheader.bin.encrypt of size 2027584
+[   0.0700 ] Added binary blob_pscfw_t234_prod_sigheader.bin.encrypt of size 310768
+[   0.0704 ] Added binary blob_mce_flash_o10_cr_prod_sigheader.bin.encrypt of size 187120
+[   0.0706 ] Added binary blob_applet_t234_sigheader.bin.encrypt of size 279808
+[   0.0708 ] Not supported type: mb2_applet
+[   0.0709 ] Added binary blob_mb2_t234_with_mb2_cold_boot_bct_MB2_sigheader.bin.encrypt of size 440880
+[   0.0711 ] Added binary blob_xusb_t234_prod_sigheader.bin.encrypt of size 164864
+[   0.0713 ] Added binary blob_nvpva_020_sigheader.fw.encrypt of size 2164640
+[   0.0726 ] Added binary blob_display-t234-dce_sigheader.bin.encrypt of size 12084032
+[   0.0828 ] Added binary blob_nvdec_t234_prod_sigheader.fw.encrypt of size 294912
+[   0.0847 ] Added binary blob_bpmp_t234-TE990M-A1_prod_sigheader.bin.encrypt of size 1027008
+[   0.0854 ] Added binary blob_tegra234-bpmp-3701-0005-3737-0000_with_odm_sigheader.dtb.encrypt of size 264512
+[   0.0857 ] Added binary blob_camera-rtcpu-t234-rce_sigheader.img.encrypt of size 458096
+[   0.0859 ] Added binary blob_adsp-fw_sigheader.bin.encrypt of size 124832
+[   0.0861 ] Added binary blob_spe_t234_sigheader.bin.encrypt of size 270336
+[   0.0862 ] Added binary blob_tsec_t234_sigheader.bin.encrypt of size 192512
+[   0.0864 ] Added binary blob_tos-optee_t234_sigheader.img.encrypt of size 1656896
+[   0.0873 ] Added binary blob_eks_sigheader.img.encrypt of size 9232
+[   0.0875 ] Added binary blob_initrd-flash.img of size 74246144
+[   0.1412 ] Added binary blob_kernel_tegra234-p3737-0000+p3701-0005-nv.dtb of size 254784
+[   0.2818 ] All RCM required files are saved in rcmboot_blob folder
+rcmboot_blob generated.
+
+*** no-flash flag enabled. Exiting now... *** 
+
+User can run above saved command in factory environment without 
+providing pkc and sbk keys to flash a device
+
+Example:
+
+    $ cd bootloader 
+    $ sudo bash ./flashcmd.txt
+
+== Step 2: Boot Jetson via RCM at 2026-11-08T13:10:46+05:30 ==
+Found Jetson device in recovery mode at USB 3-3
+BR_CID: 0x80012344705DF6572400000017FE8180
+Sending bct_br
+Sending mb1
+Sending psc_bl1
+Sending bct_mb1
+BL: version 1.4.0.8-t234-54845784-06547379 last_boot_error: 0
+Sending bct_mem
+Sending blob
+== Step 3: Sending flash sequence commands at 2026-11-08T13:10:49+05:30 ==
+Waiting for USB storage device flashpkg from 056a547a......[/dev/sdb]
+Device size in blocks: 262144
+Unmounted /dev/sdb.
+== Step 4: Writing partitions on internal storage device at 2026-11-08T13:11:05+05:30 ==
+Waiting for USB storage device mmcblk0 from 056a547a...[/dev/sdb]
+Creating partitions
+  [02] name=A_kernel start=0 size=262144 sectors
+  [03] name=A_kernel-dtb start=0 size=1536 sectors
+  [04] name=A_reserved_on_user start=0 size=64768 sectors
+  [05] name=B_kernel start=0 size=262144 sectors
+  [06] name=B_kernel-dtb start=0 size=1536 sectors
+  [07] name=B_reserved_on_user start=0 size=64768 sectors
+  [08] name=recovery start=0 size=163840 sectors
+  [09] name=recovery-dtb start=0 size=1024 sectors
+  [10] name=esp start=0 size=131072 sectors
+  [11] name=recovery_alt start=0 size=163840 sectors
+  [12] name=recovery-dtb_alt start=0 size=1024 sectors
+  [13] name=esp_alt start=0 size=131072 sectors
+  [14] name=UDA start=0 size=819200 sectors
+  [15] name=reserved start=0 size=982016 sectors
+  [16] name=DATA start=0 size=67108864 sectors
+  [01] name=APP (fills to end)
+Writing partitions
+  Writing boot.img (size=48211968) to /dev/sdb2 (size=134217728)...
+  Writing kernel_tegra234-p3737-0000+p3701-0005-nv.dtb (size=254784) to /dev/sdb3 (size=786432)...
+  Writing boot.img (size=48211968) to /dev/sdb5 (size=134217728)...
+  Writing kernel_tegra234-p3737-0000+p3701-0005-nv.dtb (size=254784) to /dev/sdb6 (size=786432)...
+  Writing esp.img (size=67108864) to /dev/sdb10 (size=67108864)...
+  Writing myrobot-image.ext4 (size=17179869184) to /dev/sdb1 (size=27660369408)...
+[OK: /dev/sdb]
+== Step 5: Waiting for final status from device at 2026-11-08T13:13:48+05:30 ==
+Waiting for USB storage device flashpkg from 056a547a..............[/dev/sdb]
+Unmounted /dev/sdb.
+Final status: SUCCESS
+Successfully finished at 2026-11-08T13:14:48+05:30

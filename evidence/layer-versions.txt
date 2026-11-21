@@ -1,0 +1,8 @@
+poky
+9517df0a9af21f1e0f9d6ba5a78c5ae1d7c83184
+meta-openembedded
+2db6aece32c7f8ebf6015b468e1b4e21de072e3b
+meta-tegra
+6d7cc8f27e8b3bda2abfa68b2fcfe8d6ecf10464
+meta-ros
+d8b213ec652c7f5ec0fb725cde2d041aaaec3ce5

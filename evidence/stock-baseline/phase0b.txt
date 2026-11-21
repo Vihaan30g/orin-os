@@ -1,0 +1,203 @@
+
+
+marsorin@ubuntu:~$ {
+echo "== installed size of all packages (MB)"
+dpkg-query -W -f='${Installed-Size}\n' | awk '{s+=$1} END {printf "%.0f MB\n", s/1024}'
+echo "== top-level sizes"
+sudo du -xh --max-depth=1 /usr /var /opt /lib 2>/dev/null | sort -h | tail -15
+echo "== kernel modules dir"; du -sh /lib/modules/$(uname -r)
+echo "== kernel cmdline"; cat /proc/cmdline
+echo "== Wi-Fi hardware"; lspci | grep -i -E 'network|wireless'; iw dev 2>/dev/null; nmcli device 2>/dev/null
+echo "== Wi-Fi modules"; lsmod | grep -i -E 'rtl|cfg80211|mac80211|iwl|brcm'
+echo "== USB devices (plug the webcam in first)"; lsusb; v4l2-ctl --list-devices 2>/dev/null
+echo "== camera modules"; lsmod | grep -i -E 'uvc|videodev'
+echo "== partition details"; lsblk -f
+echo "== boot entries"; sudo efibootmgr -v 2>/dev/null
+} 2>&1 | tee ~/baseline2.txt
+== installed size of all packages (MB)
+19277 MB
+== top-level sizes
+[sudo] password for marsorin: 
+
+341M	/opt/ota_package
+379M	/usr/include
+385M	/opt/Foxglove
+483M	/usr/src
+579M	/usr/bin
+596M	/opt/ros
+682M	/var/cache
+2.4G	/opt/nvidia
+2.5G	/usr/share
+3.7G	/opt
+5.9G	/usr/local
+7.7G	/usr/lib
+18G	/usr
+44G	/var
+44G	/var/lib
+== kernel modules dir
+93M	/lib/modules/5.15.199-tegra
+== kernel cmdline
+root=/dev/nvme0n1p1 rw rootwait rootfstype=ext4 mminit_loglevel=4 console=ttyTCU0,115200 console=ttyAMA0,115200 firmware_class.path=/etc/firmware fbcon=map:0 video=efifb:off console=tty0 efi=runtime nvme.use_threaded_interrupts=1 pci=pcie_bus_perf nv-auto-config bl_prof_dataptr=2031616@0x102C610000 bl_prof_ro_ptr=65536@0x102C600000 
+== Wi-Fi hardware
+0001:01:00.0 Network controller: Realtek Semiconductor Co., Ltd. RTL8822CE 802.11ac PCIe Wireless Network Adapter
+phy#0
+	Interface wlP1p1s0
+		ifindex 2
+		wdev 0x1
+		addr 58:02:05:66:07:51
+		ssid GalaxyS21
+		type managed
+		channel 149 (5745 MHz), width: 80 MHz, center1: 5775 MHz
+		txpower 7.00 dBm
+DEVICE            TYPE      STATE                   CONNECTION 
+wlP1p1s0          wifi      connected               GalaxyS21  
+docker0           bridge    connected (externally)  docker0    
+p2p-dev-wlP1p1s0  wifi-p2p  disconnected            --         
+eno1              ethernet  unavailable             --         
+l4tbr0            bridge    unmanaged               --         
+can0              can       unmanaged               --         
+can1              can       unmanaged               --         
+usb0              ethernet  unmanaged               --         
+usb1              ethernet  unmanaged               --         
+lo                loopback  unmanaged               --         
+== Wi-Fi modules
+btrtl                  24576  1 btusb
+rtl8822ce            3461120  0
+cfg80211              765952  1 rtl8822ce
+== USB devices (plug the webcam in first)
+Bus 002 Device 003: ID 05e3:0626 Genesys Logic, Inc. USB3.1 Hub
+Bus 002 Device 002: ID 0bda:0420 Realtek Semiconductor Corp. 4-Port USB 3.0 Hub
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 006: ID 046d:c077 Logitech, Inc. M105 Optical Mouse
+Bus 001 Device 005: ID 413c:2113 Dell Computer Corp. KB216 Wired Keyboard
+Bus 001 Device 004: ID 05e3:0610 Genesys Logic, Inc. Hub
+Bus 001 Device 003: ID 0bda:5420 Realtek Semiconductor Corp. 4-Port USB 2.0 Hub
+Bus 001 Device 002: ID 13d3:3549 IMC Networks Bluetooth Radio
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+== camera modules
+videodev              249856  4 v4l2_async,videobuf2_v4l2,tegra_camera,videobuf2_common
+mc                     57344  4 videodev,videobuf2_v4l2,tegra_camera,videobuf2_common
+== partition details
+NAME         FSTYPE   FSVER LABEL      UUID                                 FSAVAIL FSUSE% MOUNTPOINTS
+loop0        squashfs 4.0                                                         0   100% /snap/bare/5
+loop1        squashfs 4.0                                                         0   100% /snap/core24/1644
+loop2        squashfs 4.0                                                         0   100% /snap/core24/2125
+loop3        squashfs 4.0                                                         0   100% /snap/firefox/8661
+loop4        squashfs 4.0                                                         0   100% /snap/firefox/8994
+loop5        squashfs 4.0                                                         0   100% /snap/gnome-46-2404/154
+loop6        squashfs 4.0                                                         0   100% /snap/gtk-common-themes/1535
+loop7        squashfs 4.0                                                         0   100% /snap/mesa-2404/1166
+loop8        squashfs 4.0                                                         0   100% /snap/mesa-2404/1836
+loop9        squashfs 4.0                                                         0   100% /snap/snapd/27740
+loop10       squashfs 4.0                                                         0   100% /snap/snapd/28255
+loop11       vfat     FAT16 L4T-README 1234-ABCD                                           
+mmcblk0                                                                                    
+├─mmcblk0p1  ext4     1.0              26c43d50-b70b-43ff-b62c-6d197094e333                
+├─mmcblk0p2                                                                                
+├─mmcblk0p3                                                                                
+├─mmcblk0p4                                                                                
+├─mmcblk0p5                                                                                
+├─mmcblk0p6                                                                                
+├─mmcblk0p7                                                                                
+├─mmcblk0p8                                                                                
+├─mmcblk0p9                                                                                
+├─mmcblk0p10 vfat     FAT32            6FDA-00D2                                           
+├─mmcblk0p11                                                                               
+├─mmcblk0p12                                                                               
+├─mmcblk0p13                                                                               
+├─mmcblk0p14                                                                               
+└─mmcblk0p15                                                                               
+mmcblk0boot0                                                                               
+mmcblk0boot1                                                                               
+zram0                                                                                      [SWAP]
+zram1                                                                                      [SWAP]
+zram2                                                                                      [SWAP]
+zram3                                                                                      [SWAP]
+zram4                                                                                      [SWAP]
+zram5                                                                                      [SWAP]
+zram6                                                                                      [SWAP]
+zram7                                                                                      [SWAP]
+nvme0n1                                                                                    
+├─nvme0n1p1  ext4     1.0              c4928f92-6e1e-4fd1-8786-f442cde4a611   42.1G    85% /
+├─nvme0n1p2                                                                                
+├─nvme0n1p3                                                                                
+├─nvme0n1p4                                                                                
+├─nvme0n1p5                                                                                
+├─nvme0n1p6                                                                                
+├─nvme0n1p7                                                                                
+├─nvme0n1p8                                                                                
+├─nvme0n1p9                                                                                
+├─nvme0n1p10 vfat     FAT32            766D-D9A1                              62.9M     0% /boot/efi
+├─nvme0n1p11                                                                               
+├─nvme0n1p12                                                                               
+├─nvme0n1p13                                                                               
+├─nvme0n1p14                                                                               
+└─nvme0n1p15                                                                               
+== boot entries
+BootCurrent: 0001
+Timeout: 5 seconds
+BootOrder: 0001,0000,0002,0003,0004,0005,0006,0007,0008
+Boot0000* Enter Setup	FvVol(49a79a15-8f69-4be7-a30c-a172f44abce7)/FvFile(462caa21-7614-4503-836e-8ab6f4662331)
+Boot0001* UEFI CT480E100SSD8	VenHw(1e5a432c-0466-4d31-b009-d4d9239271d3)/MemoryMapped(11,0x14160000,0x1417ffff)/PciRoot(0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/NVMe(0x1,00-A0-75-01-EA-C8-5F-40)N.....YM....R,Y.
+Boot0002* UEFI eMMC Device	VenHw(1e5a432c-0466-4d31-b009-d4d9239271d3)/MemoryMapped(11,0x3460000,0x347ffff)/eMMC(0)/Ctrl(0x0)N.....YM....R,Y.
+Boot0003* UEFI PXEv4 (MAC:3C6D6663733F)	VenHw(1e5a432c-0466-4d31-b009-d4d9239271d3)/MemoryMapped(11,0x6800000,0x680ffff)/MAC(3c6d6663733f,1)/IPv4(0.0.0.00.0.0.0,0,0)N.....YM....R,Y.
+Boot0004* UEFI PXEv6 (MAC:3C6D6663733F)	VenHw(1e5a432c-0466-4d31-b009-d4d9239271d3)/MemoryMapped(11,0x6800000,0x680ffff)/MAC(3c6d6663733f,1)/IPv6([::]:<->[::]:,0,0)N.....YM....R,Y.
+Boot0005* UEFI HTTPv4 (MAC:3C6D6663733F)	VenHw(1e5a432c-0466-4d31-b009-d4d9239271d3)/MemoryMapped(11,0x6800000,0x680ffff)/MAC(3c6d6663733f,1)/IPv4(0.0.0.00.0.0.0,0,0)/Uri()N.....YM....R,Y.
+Boot0006* UEFI HTTPv6 (MAC:3C6D6663733F)	VenHw(1e5a432c-0466-4d31-b009-d4d9239271d3)/MemoryMapped(11,0x6800000,0x680ffff)/MAC(3c6d6663733f,1)/IPv6([::]:<->[::]:,0,0)/Uri()N.....YM....R,Y.
+Boot0007* BootManagerMenuApp	FvVol(49a79a15-8f69-4be7-a30c-a172f44abce7)/FvFile(eec25bdc-67f2-4d95-b1d5-f81b2039d11d)
+Boot0008* UEFI Shell	FvVol(49a79a15-8f69-4be7-a30c-a172f44abce7)/FvFile(7c04a583-9e3e-4f1c-ad65-e05268d0b4d1)
+marsorin@ubuntu:~$ 
+marsorin@ubuntu:~$ v4l2-ctl --list-formats-ext -d /dev/video0 
+-bash: v4l2-ctl: command not found
+marsorin@ubuntu:~$ v4l2-ctl --list-formats-ext -d /dev/
+-bash: v4l2-ctl: command not found
+marsorin@ubuntu:~$ sudo apt update
+sudo apt install v4l-utils
+Hit:1 https://download.docker.com/linux/ubuntu jammy InRelease                                                                                     
+Hit:2 http://ports.ubuntu.com/ubuntu-ports jammy InRelease                                                                                         
+Hit:3 https://packages.microsoft.com/repos/code stable InRelease                                                             
+Hit:4 https://repo.download.nvidia.com/jetson/common r36.5 InRelease                                   
+Hit:5 https://apt.foxglove.dev/studio stable InRelease                                               
+Hit:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates InRelease                                                                
+Hit:7 https://repo.download.nvidia.com/jetson/t234 r36.5 InRelease                                                               
+Hit:8 http://ports.ubuntu.com/ubuntu-ports jammy-backports InRelease                          
+Hit:9 http://packages.ros.org/ros2/ubuntu jammy InRelease                                              
+Hit:10 https://repo.download.nvidia.com/jetson/ffmpeg r36.5 InRelease                                  
+Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-security InRelease [129 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [3,542 kB]
+Get:13 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1,141 kB]
+Fetched 4,812 kB in 5s (1,014 kB/s)                          
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+605 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libfwupdplugin5 libgcab-1.0-0
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  libv4l2rds0
+The following NEW packages will be installed:
+  libv4l2rds0 v4l-utils
+0 upgraded, 2 newly installed, 0 to remove and 605 not upgraded.
+Need to get 669 kB of archives.
+After this operation, 2,200 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 libv4l2rds0 arm64 1.22.1-2build1 [17.4 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports jammy/universe arm64 v4l-utils arm64 1.22.1-2build1 [652 kB]
+Fetched 669 kB in 3s (224 kB/s)    
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package libv4l2rds0:arm64.
+(Reading database ... 273177 files and directories currently installed.)
+Preparing to unpack .../libv4l2rds0_1.22.1-2build1_arm64.deb ...
+Unpacking libv4l2rds0:arm64 (1.22.1-2build1) ...
+Selecting previously unselected package v4l-utils.
+Preparing to unpack .../v4l-utils_1.22.1-2build1_arm64.deb ...
+Unpacking v4l-utils (1.22.1-2build1) ...
+Setting up libv4l2rds0:arm64 (1.22.1-2build1) ...
+Setting up v4l-utils (1.22.1-2build1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.14) ...
+Processing triggers for man-db (2.10.2-1) ...
+marsorin@ubuntu:~$

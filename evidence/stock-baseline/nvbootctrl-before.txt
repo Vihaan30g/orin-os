@@ -1,0 +1,7 @@
+Current version: 36.5.2
+Capsule update status: 1
+Current bootloader slot: B
+Active bootloader slot: B
+num_slots: 2
+slot: 0,             status: normal
+slot: 1,             status: normal
