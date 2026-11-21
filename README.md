@@ -52,10 +52,9 @@ Two things I would flag when reading these numbers:
 
 | # | What it shows | Link |
 |---|---|---|
-| 1 | **Wi-Fi working.** The Orin has no cable to the laptop, yet its ROS 2 topics appear on the laptop. | [![Video 1: Wi-Fi and ROS 2 topics](https://img.shields.io/badge/YouTube-Video%201%20(placeholder)-red?logo=youtube)](https://www.youtube.com/watch?v=VIDEO_1_ID) |
-| 2 | **AI detector demo.** `ros2 topic echo --once /detections`: with a hand over the camera nothing is detected. With a person in front, a `person` is detected with a high score. | [![Video 2: YOLO detection demo](https://img.shields.io/badge/YouTube-Video%202%20(placeholder)-red?logo=youtube)](https://www.youtube.com/watch?v=VIDEO_2_ID) |
+| 1 | **Wi-Fi working.** The Orin has no cable to the laptop, yet its ROS 2 topics appear on the laptop. | [![Video 1: Wi-Fi and ROS 2 topics](https://img.shields.io/badge/YouTube-Watch%20Video%201-red?logo=youtube)](https://youtu.be/9s7tojoJLZA) |
+| 2 | **AI detector demo.** `ros2 topic echo --once /detections`: with a hand over the camera nothing is detected. With a person in front, a `person` is detected with a high score. | [![Video 2: YOLO detection demo](https://img.shields.io/badge/YouTube-Watch%20Video%202-red?logo=youtube)](https://youtu.be/a8GqsjYVbrs) |
 
-> The links above are placeholders. To fill them in, replace `VIDEO_1_ID` and `VIDEO_2_ID` with the YouTube video IDs.
 
 ## 4. What is in this repository
 
